@@ -49,14 +49,12 @@
 @media (max-width:600px) {
     #show-from form{
         width: 420px;
-        position: relative;
      
     }
 }
 @media (max-width:400px) {
     #show-from form{
         width: 320px;
-        position: relative;
      
     }
 }
@@ -65,10 +63,13 @@ form .btn-closer {
     right: 25px;
     top: 15px;
     color: var(--color-white-from);
-    font-size: 30px;
+    font-size: 36px;
     cursor: pointer;
+    
 }
-
+form .btn-closer:hover i{
+    animation: rotatex 1s ease-in;
+}
 form .title-box {
     font-size: 30px;
     text-align: center;
