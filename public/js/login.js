@@ -20,7 +20,7 @@ let passUser =$$('#password');
 
 form.addEventListener('submit', e => {
     e.preventDefault();
-    
+
     checkInputForm();
 });
 
