@@ -1,0 +1,240 @@
+@import url('https://fonts.googleapis.com/css2?family=Chewy&family=Lato:wght@100;300;400;700;900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    background-color: #1e1b3a;
+    color: white;
+}
+
+body a {
+    text-decoration: none;
+    color: white;
+}
+
+body a:hover {
+    color: white !important;
+}
+
+.container__admin {
+    display: flex;
+
+}
+
+.sidebar {
+    .logo {
+        text-align: center;
+    }
+
+    transition: 0.3s;
+    position: relative;
+    width:250px;
+    height: 100%;
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    background: #26275e;
+    opacity: 0.8;
+    box-shadow: rgbb(2, 4, 24);
+    padding: 0;
+    border-right: 2px solid rgba(255, 255, 255, 0.09);
+
+    .logo {
+        img {
+            width: 96px;
+        }
+    }
+
+    nav {
+        .nav-title {
+            font-size: 1.6rem;
+        }
+
+        .nav-item {
+            margin: 0 12px;
+            cursor: pointer;
+            padding: 4px 12px;
+            font-size: 1.8rem;
+            border-radius: 4px;
+            margin-top: 12px;
+
+            i {
+                margin-right: 8px;
+            }
+
+            &:hover {
+                background-color: rgb(233, 12, 49);
+
+                a {
+                    color: white;
+                }
+            }
+        }
+
+        .nav-item.active {
+            background-color: rgb(233, 12, 49);
+        }
+    }
+
+    .toggle--icon {
+        position: absolute;
+        top: 10%;
+        right: -15px;
+        background-color: rgb(226, 77, 77);
+        width: 30px;
+        height: 30px;
+        font-size: 2rem;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+    }
+
+}
+
+.open {
+    width: 100px;
+
+    .nav-item {
+        text-align: center;
+    }
+
+    .nav-title {
+        display: none;
+    }
+
+    .nav-sub_item {
+        display: none;
+    }
+}
+
+.content {
+    flex: 1;
+    padding: 12px 24px;
+    color: white;
+    font-size: 1.8rem;
+}
+
+.home {
+    .manage--content {
+
+        .manager--box {
+            padding: 12px 24px;
+            background-color: rgb(5, 39, 70);
+
+            &:first-child {
+                border-top-left-radius: 8px;
+                border-bottom-left-radius: 8px;
+            }
+
+            &:last-child {
+                border-top-right-radius: 8px;
+                border-bottom-right-radius: 8px;
+            }
+        }
+
+        .manager--box {
+            border-left: 1px dashed rgb(31, 221, 212);
+        }
+    }
+
+}
+
+#myChart {
+    margin-top: 4px;
+    flex: 1;
+    margin-right: 12px;
+    color: white;
+    background-color: rgb(5, 39, 70);
+
+}
+
+.direct {
+    text-align: center;
+    font-size: 1.4rem;
+
+    a {
+        &:last-child {
+            color: rgb(199, 186, 161);
+        }
+    }
+}
+
+.btn {
+    background-color: rgb(134, 134, 2);
+
+    a {
+        color: white;
+        font-size: 1.6rem;
+    }
+
+    &:hover {
+        opacity: 0.8;
+    }
+}
+
+table {
+    text-align: center;
+    margin-top: 20px;
+
+    thead {
+        background-color: rgb(28, 29, 29);
+    }
+
+    tr {
+        color: rgb(233, 227, 227) !important;
+
+        &:hover {
+            background-color: rgb(24, 26, 25);
+        }
+
+        cursor: pointer;
+    }
+}
+
+.permission {
+    button {
+        padding: auto 12px;
+        font-size: 16px;
+        min-width: 100px;
+        color: white;
+        border-radius: 8px;
+    }
+
+    .admin {
+        background-color: rgb(129, 0, 129);
+    }
+
+    .member {
+        background-color: rgb(151, 177, 2);
+    }
+}
+
+form {
+    input {
+        padding: 4px 12px;
+        height: 36px;
+    }
+    label{
+        margin: 10px 0;
+    }
+    
+}
+.form-select{
+    width: 200px;
+    font-size: 2.4rem;
+}
+.btn-submitform{
+    padding: 4px 12px;
+    font-size: 1.8rem;
+    color: white;
+    border-radius: 8px;
+}

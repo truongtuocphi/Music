@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="/public/css/style.css">
+    <link rel="stylesheet" href="/public/css/login.css">
+    <title>Life & Music</title>
+</head>
+
+<body>
+    <div class="container__web--music">
+        <input type="checkbox" hidden name="" id="menucheck">
+        <menu class="open">
+            <div class="menu--brand">
+                <img class="logo" src="./public/image/logo.png" alt="">
+            </div>
+            <nav>
+                <p class="nav--header">MENU</p>
+                <ul>
+                    <li title="Home"><a href="javascript:void()">
+                            <i class="fa-solid fa-house"></i>
+                            <span class="nav--title">Home</span>
+                        </a>
+                    </li>
+                    <li title="Expolore"><a href="javascript:void()">
+                            <i class="fa-regular fa-compass"></i>
+                            <span class="nav--title">Explore</span></a>
+                    </li>
+                    <li title="Videos"><a href="javascript:void()">
+                            <i class="fa-solid fa-video"></i> <span class="nav--title">Videos</span></a>
+                    </li>
+                </ul>
+                <p class="nav--header mt-2">LIBRARY</p>
+                <ul>
+                    <li title="Recent"><a href="javascript:void()"><i class="fa-solid fa-clock-rotate-left"></i> <span
+                                class="nav--title">Recent</span></a></li>
+                    <li title="Albums"><a href="javascript:void()"><i class="fa-solid fa-record-vinyl"></i> <span
+                                class="nav--title">Albums</span></a></li>
+                    <li title="Downloads"><a href="javascript:void()"><i class="fa-solid fa-download"></i> <span
+                                class="nav--title">Downloads</span></a></li>
+                    <li title="Locals"><a href="javascript:void()"><i class="fa-solid fa-map-location-dot"></i> <span
+                                class="nav--title">Locals</span></a></li>
+                    <li title="Creat New"><a href="javascript:void()"><i class="fa-solid fa-cloud-arrow-up"></i> <span
+                                class="nav--title">Creat
+                                New</span></a></li>
+                </ul>
+            </nav>
+            <div class="close__menu--mobile">
+                <label for="menucheck">
+                    <i class="fa-solid fa-xmark"></i>
+                </label>
+            </div>
+        </menu>
+
+        <main>
+            <div class="menu--brand__mobile w-100">
+                <img class="logo" src="./public/image/logo.png" alt="">
+            </div>
+            <div class="menu--main">
+                <div class="menu--main__container row">
+                    <div class="d-lg-none d-block col-1 ">
+                        <label for="menucheck">
+                            <div class="menu-navbar">
+                                <i class="fa-solid fa-bars fs-1"></i>
+                            </div>
+                        </label>
+                    </div>
+
+                    <ul class="list--menu__item col-3 d-lg-flex d-none">
+                        <li><a class="openMenuSub" onclick="openMenuSub(this,0)">MUSIC</a></li>
+                        <li class="mx-3"><a onclick="openMenuSub(this,1)" class="openMenuSub">ARTISTS</a></li>
+                        <li><a class="openMenuSub active" onclick="openMenuSub(this,2)">TREND</a></li>
+                    </ul>
+
+                    <div class="menu--search col-lg-5 col-md-8 col-12 mt-2 mt-md-0  ">
+                        <div class="box__search">
+                            <input id="search" type="text" placeholder="Nhập tên bài hát, nghệ sĩ hoặc MV "><i
+                                class="fa-solid fa-magnifying-glass"></i>
+                        </div>
+                        <div class="result__search hidden">
+                            <div class="result__search--key">
+                                Tìm kiếm theo ký tự : <code id="result__search">ABC</code>
+                            </div>
+                            <ul class="list_result__search">
+                                <li><a class="singer" href="javascript:void()">
+                                        <img class="singer--avata" src="/public/image/lisa.jpg" alt="">
+                                        <div class="singer--imf ps-2">
+                                            <h3 class="singer--name">Lalisa</h3>
+                                            <p class="singer--des">lisa</p>
+                                        </div>
+                                    </a></li>
+                                <li><a class="singer" href="javascript:void()">
+                                        <img class="singer--avata" src="/public/image/lisa.jpg" alt="">
+                                        <div class="singer--imf ps-2">
+                                            <h3 class="singer--name">Lalisa</h3>
+                                            <p class="singer--des">lisa</p>
+                                        </div>
+                                    </a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="user--profile  col-lg-3 col-md-3 col-sm-4 col-7">
+                        <div class="profile--notice">
+                            <div class="main--notice guide__menufirst box__flex-style btn_submenu">
+                                <i class="fa-solid fa-shirt"></i>
+                                <span class="total--notice">Chủ đề</span>
+                                <div class="submenu--settings hidden">
+                                    <div class="clothes__defaut">
+                                        <h5>Giao diện mặc định</h5>
+                                        <div class="box__clothes">
+
+                                            <div onclick="chagenBgDefault(1)" class="clothes__color bgdefault">
+
+                                            </div>
+                                            <div onclick="chagenBgDefault(2)" class="clothes__color bgwhite">
+
+                                            </div>
+
+                                            <div onclick="chagenBgDefault(3)" class="clothes__color bgblue">
+
+                                            </div>
+                                        </div>
+                                        <div class="row my-2">
+                                            <h6><code>Thay đổi giao diện <br> tùy thích</code></h6>
+                                            <div class="col-6">
+                                                <h6>Menu</h6>
+                                                <input style="height: 40px; cursor: pointer;" class="w-100" type="color"
+                                                    name="" id="menu__color">
+                                            </div>
+                                            <div class="col-6">
+                                                <h6>BackGround</h6>
+                                                <input style="height: 40px; cursor: pointer;" class="w-100" type="color"
+                                                    name="" id="container__color">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="main--settings guide__menufirst box__flex-style btn_submenu">
+                                <i class="fa-solid fa-gear"></i>
+                                <span class="total--notice">Cài Đặt</span>
+                                <div class="submenu--settings hidden">
+                                    <ul>
+                                        <li><a href="javascript:void()0"> Giới thiệu</a></li>
+                                        <li><a href="javascript:void()0"> Liên hệ</a></li>
+                                        <li><a href="javascript:void()0"> Quảng cáo</a></li>
+                                        <li><a href="javascript:void()0"> Thỏa thuận sử dụng</a></li>
+                                        <li><a href="javascript:void()0"> Chính sách bảo mật</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <label for="uploadfile" class="main--uploadfile guide__menufirst box__flex-style">
+                                <i class="fa-solid fa-upload"></i>
+                                <span style="min-width: 100px;" class="total--notice">Thay Avata</span>
+                                <input type="file" name="uploadfile" hidden id="uploadfile">
+                            </label>
+
+                            <div class="main--profiles guide__menufirst btn_submenu">
+                                <img src="/public/image/lisa.jpg" alt="">
+                                <span style="min-width: 140px;" class="total--notice">Phạm Hoài Nam</span>
+                                <div class="submenu--settings hidden">
+                                    <ul>
+                                        <li ><a href="javascript:void()0" id="open-login"> Đăng Nhập</a></li>
+                                        <li><a href="javascript:void()0">Đăng Ký</a></li>
+                                        <li><a href="javascript:void()0">Đăng Xuất</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <article>
+
+                <div id="music__container" class="menu__leftsearch hidden">
+                    <img src="/public/image/singer.png" class="singer__background" alt="">
+                    <div class="d-inline-block">
+                        <p>Treding</p>
+                        <h2 class="singer-name">Godly</h2>
+                        <p>Phạm Hoài Nam</p>
+                    </div>
+                    <div class="music--box__header">
+                        <button class="btn-play">Play Now <i class="ms-2 fa-solid fa-play"></i></button>
+                        <button class="btn-add "><i class="fa-solid fa-plus"></i></button>
+                    </div>
+                    <div class="music--topchart music--Billboard mt-4">
+                        <div class="music--topchart__head">
+                            <h2>Billboard Topchart</h2>
+                            <p><a href="http://">See All</a></p>
+                        </div>
+
+                        <div class="list--topchart_singer">
+                            <a class="topchart_singer--box" href="http://">
+                                <img src="./public/image/lisa.jpg" alt="">
+                                <p class="singer--name">Lisa</p>
+                                <p class="singer--des">Backpign</p>
+                            </a>
+                            <a class="topchart_singer--box" href="http://">
+                                <img src="./public/image/lisa.jpg" alt="">
+                                <p class="singer--name">Lisa</p>
+                                <p class="singer--des">Backpign</p>
+                            </a>
+                            <a class="topchart_singer--box" href="http://">
+                                <img src="./public/image/lisa.jpg" alt="">
+                                <p class="singer--name">Lisa</p>
+                                <p class="singer--des">Backpign</p>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="music--topchart mt-4" id="music--artist">
+                        <div class="music--topchart__head">
+                            <h2>Top Artists</h2>
+                            <p><a href="http://">See All</a></p>
+                        </div>
+
+                        <div class="row ">
+                            <a class="topchart_singer--box col-lg-3 col-xl-2 col-md-3 col-4" href="http://">
+                                <img src="./public/image/lisa.jpg" alt="">
+                                <p class="singer--name">Lisa</p>
+                                <p class="singer--des">8.5M player</p>
+                            </a>
+                            <a class="topchart_singer--box col-lg-3 col-xl-2 col-md-3 col-4" href="http://">
+                                <img src="./public/image/lisa.jpg" alt="">
+                                <p class="singer--name">Lisa</p>
+                                <p class="singer--des">8.5M player</p>
+                            </a>
+                            <a class="topchart_singer--box col-lg-3 col-xl-2 col-md-3 col-4" href="http://">
+                                <img src="./public/image/lisa.jpg" alt="">
+                                <p class="singer--name">Lisa</p>
+                                <p class="singer--des">8.5M player</p>
+                            </a>
+                            <a class="topchart_singer--box col-lg-3 col-xl-2 col-md-3 col-4" href="http://">
+                                <img src="./public/image/lisa.jpg" alt="">
+                                <p class="singer--name">Lisa</p>
+                                <p class="singer--des">8.5M player</p>
+                            </a>
+                            <a class="topchart_singer--box col-lg-3 col-xl-2 col-md-3 col-4" href="http://">
+                                <img src="./public/image/lisa.jpg" alt="">
+                                <p class="singer--name">Lisa</p>
+                                <p class="singer--des">8.5M player</p>
+                            </a>
+                            <a class="topchart_singer--box col-lg-3 col-xl-2 col-md-3 col-4" href="http://">
+                                <img src="./public/image/lisa.jpg" alt="">
+                                <p class="singer--name">Lisa</p>
+                                <p class="singer--des">8.5M player</p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="id_astists" class="menu__leftsearch hidden">
+                    <div class="row">
+                        <div class="col-xl-3 col-md-4 col-6">
+                            <div class="box_astist">
+                                <img src="/public/image/lisa.jpg" alt="">
+                                <div class="artists__des">
+                                    <h2 class="artists__des--singer">Lisa</h2>
+                                    <p class="artists__des--song__des">8.5M.Player</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-xl-3 col-md-4 col-6">
+                            <div class="box_astist">
+                                <img src="/public/image/lisa.jpg" alt="">
+                                <div class="artists__des">
+                                    <h2 class="artists__des--singer">Lisa</h2>
+                                    <p class="artists__des--song__des">8.5M.Player</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-md-4 col-6">
+                            <div class="box_astist">
+                                <img src="/public/image/lisa.jpg" alt="">
+                                <div class="artists__des">
+                                    <h2 class="artists__des--singer">Lisa</h2>
+                                    <p class="artists__des--song__des">8.5M.Player</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-md-4 col-6">
+                            <div class="box_astist">
+                                <img src="/public/image/lisa.jpg" alt="">
+                                <div class="artists__des">
+                                    <h2 class="artists__des--singer">Lisa</h2>
+                                    <p class="artists__des--song__des">8.5M.Player</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-md-4 col-6">
+                            <div class="box_astist">
+                                <img src="/public/image/lisa.jpg" alt="">
+                                <div class="artists__des">
+                                    <h2 class="artists__des--singer">Lisa</h2>
+                                    <p class="artists__des--song__des">8.5M.Player</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-md-4 col-6">
+                            <div class="box_astist">
+                                <img src="/public/image/lisa.jpg" alt="">
+                                <div class="artists__des">
+                                    <h2 class="artists__des--singer">Lisa</h2>
+                                    <p class="artists__des--song__des">8.5M.Player</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div id="id_trends" class="menu__leftsearch">
+                    <h1 class="fs-4"># Top 10 HOT TREND</h1>
+                    <!-- musicArtists(Element,id,index) -->
+                    <div class="playlists" data-id="1">
+                        <div class="playlist--box__item d-flex-align-center-justify-between">
+                            <div onclick="musicArtists(this,1,0)"
+                                class="playlist__singer d-flex-align-center-justify-between">
+                                <div class="playlist__song-rank">
+                                    1
+                                </div>
+                                <div class="playlists__avata">
+                                    <img src="./public/image/lisa.jpg" alt="">
+                                    <div class="playlists__avata--wave">
+                                        <div class="playlists__avata--pause">
+                                            <i class="fa-solid fa-play"></i>
+                                        </div>
+                                        <div class="playlists__avata--playing hidden">
+                                            <div class="bar"></div>
+                                            <div class="bar"></div>
+                                            <div class="bar"></div>
+                                            <div class="bar"></div>
+                                            <div class="bar"></div>
+                                            <div class="bar"></div>
+                                            <div class="bar"></div>
+                                            <div class="bar"></div>
+                                            <div class="bar"></div>
+                                            <div class="bar"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <h2 class="playlist__singer-song m-0">Wasdasdasdsating for you</h2>
+                                    <p class="playlist__singer-name m-0">Lissadsadsasdaa</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="playlist__singer-time">
+                            4:30
+                        </div>
+                        <div class="playlist__controller d-flex-align-center-justify-between">
+                            <div class="playlist__heart me-2">
+                                <i class="fa-regular fa-heart"></i>
+                                <i class="fa-solid fa-heart text-danger hidden"></i>
+                            </div>
+                            <div class="playlist__option">
+                                <i class="fa-solid fa-ellipsis"></i>
+                                <div class="playlist__option-box">
+                                    <div class="option_box-song">
+                                        <div>
+                                            <img src="./public/image/lisa.jpg" alt="">
+                                        </div>
+                                        <div>
+                                            <h3 class="fs-6">Quân Hữu Vận</h3>
+                                            <div class="fs-6">
+                                                <i class="fa-regular fa-heart"></i>
+                                                <span class="total_heart me-2">34k</span>
+                                                <i class="fa-solid fa-headphones"></i>
+                                                <span class="total_heart">2.6M</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="option_box--controller">
+                                        <ul>
+                                            <li><a href="" download><i class="fa-solid fa-download"></i> Tải xuống</a>
+                                            </li>
+                                            <li><a><i class="fa-solid fa-play"></i> Phát</a></li>
+                                            <li><a><i class="fa-solid fa-plus"></i> Thêm vào playlist</a></li>
+                                            <li><a><i class="fa-solid fa-comment"></i> Bình Luận</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="playlists" data-id="2">
+                        <div class="playlist--box__item d-flex-align-center-justify-between">
+                            <div onclick="musicArtists(this,2,1)"
+                                class="playlist__singer d-flex-align-center-justify-between">
+                                <div class="playlist__song-rank">
+                                    1
+                                </div>
+                                <div class="playlists__avata">
+                                    <img src="./public/image/lisa.jpg" alt="">
+                                    <div class="playlists__avata--wave">
+                                        <div class="playlists__avata--pause">
+                                            <i class="fa-solid fa-play"></i>
+                                        </div>
+                                        <div class="playlists__avata--playing hidden">
+                                            <div class="bar"></div>
+                                            <div class="bar"></div>
+                                            <div class="bar"></div>
+                                            <div class="bar"></div>
+                                            <div class="bar"></div>
+                                            <div class="bar"></div>
+                                            <div class="bar"></div>
+                                            <div class="bar"></div>
+                                            <div class="bar"></div>
+                                            <div class="bar"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <h2 class="playlist__singer-song m-0">Wasdasdasdsating for you</h2>
+                                    <p class="playlist__singer-name m-0">Lissadsadsasdaa</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="playlist__singer-time">
+                            4:30
+                        </div>
+                        <div class="playlist__controller d-flex-align-center-justify-between">
+                            <div class="playlist__heart me-2">
+                                <i class="fa-regular fa-heart"></i>
+                                <i class="fa-solid fa-heart text-danger hidden"></i>
+                            </div>
+                            <div class="playlist__option">
+                                <i class="fa-solid fa-ellipsis"></i>
+                                <div class="playlist__option-box">
+                                    <div class="option_box-song">
+                                        <div>
+                                            <img src="./public/image/lisa.jpg" alt="">
+                                        </div>
+                                        <div>
+                                            <h3 class="fs-6">Quân Hữu Vận</h3>
+                                            <div class="fs-6">
+                                                <i class="fa-regular fa-heart"></i>
+                                                <span class="total_heart me-2">34k</span>
+                                                <i class="fa-solid fa-headphones"></i>
+                                                <span class="total_heart">2.6M</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="option_box--controller">
+                                        <ul>
+                                            <li><a href="" download><i class="fa-solid fa-download"></i> Tải xuống</a>
+                                            </li>
+                                            <li><a><i class="fa-solid fa-play"></i> Phát</a></li>
+                                            <li><a><i class="fa-solid fa-plus"></i> Thêm vào playlist</a></li>
+                                            <li><a><i class="fa-solid fa-comment"></i> Bình Luận</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="sub_astists">
+
+                </div>
+                <!-- Code phần container ở đoạn này nha ! -->
+
+                <!-- End ! -->
+            </article>
+        </main>
+
+    </div>
+    <div id="modal__comment" data-des="Modal" class="hidden">
+
+    </div>
+    <div class="modal__comment-container hidden">
+        <div class="modal__comment--close" onclick="close_comment()">
+            <i class="fa-solid fa-xmark"></i>
+        </div>
+        <h2>Bình Luận</h2>
+        <hr>
+        <div class="list__user">
+            <ul>
+                <li>
+                    <div>
+                        <img src="./public/image/lisa.jpg" alt="">
+                    </div>
+                    <div class="user__comment-ifm">
+                        <div>
+                            <user-name>hoài Name</user-name> . <user-time>1 giờ trước</user-time>
+
+                        </div>
+                        <p class="user-content">Bài dasdsa asdnasdnasd sdandnsa asdnnasd asdnnasd asndnasdn nsdandsa
+                            nasdndsa nasdndnas nasnasdn nasdnasdn nsadnasdn nasdnsdan nasndsanasd nasdnsahát hay quá</p>
+
+                    </div>
+                </li>
+
+                <li>
+                    <div>
+                        <img src="./public/image/lisa.jpg" alt="">
+                    </div>
+                    <div class="user__comment-ifm">
+                        <div>
+                            <user-name>hoài Name</user-name> . <user-time>1 giờ trước</user-time>
+
+                        </div>
+                        <p class="user-content">Bài dasdsa asdnasdnasd sdandnsa asdnnasd asdnnasd asndnasdn nsdandsa
+                            nasdndsa nasdndnas nasnasdn nasdnasdn nsadnasdn nasdnsdan nasndsanasd nasdnsahát hay quá</p>
+
+                    </div>
+                </li>
+
+                <li>
+                    <div>
+                        <img src="./public/image/lisa.jpg" alt="">
+                    </div>
+                    <div class="user__comment-ifm">
+                        <div>
+                            <user-name>hoài Name</user-name> . <user-time>1 giờ trước</user-time>
+
+                        </div>
+                        <p class="user-content">Bài dasdsa asdnasdnasd sdandnsa asdnnasd asdnnasd asndnasdn nsdandsa
+                            nasdndsa nasdndnas nasnasdn nasdnasdn nsadnasdn nasdnsdan nasndsanasd nasdnsahát hay quá</p>
+
+                    </div>
+                </li>
+
+                <li>
+                    <div>
+                        <img src="./public/image/lisa.jpg" alt="">
+                    </div>
+                    <div class="user__comment-ifm">
+                        <div>
+                            <user-name>hoài Name</user-name> . <user-time>1 giờ trước</user-time>
+                        </div>
+                        <p class="user-content">Bài dasdsa asdnasdnasd sdandnsa asdnnasd asdnnasd asndnasdn nsdandsa
+                            nasdndsa nasdndnas nasnasdn nasdnasdn nsadnasdn nasdnsdan nasndsanasd nasdnsahát hay quá</p>
+                    </div>
+                </li>
+                <li>
+                    <div>
+                        <img src="./public/image/lisa.jpg" alt="">
+                    </div>
+                    <div class="user__comment-ifm">
+                        <div>
+                            <user-name>hoài Name</user-name> . <user-time>1 giờ trước</user-time>
+                        </div>
+                        <p class="user-content">Bài dasdsa asdnasdnasd sdandnsa asdnnasd asdnnasd asndnasdn nsdandsa
+                            nasdndsa nasdndnas nasnasdn nasdnasdn nsadnasdn nasdnsdan nasndsanasd nasdnsahát hay quá</p>
+                    </div>
+                </li>
+            </ul>
+            <div class="conments__container__submit" onsubmit="return false" method="POST" id="form__chatting">
+                <p class="text-danger text-center warning_chatting col-12 pt-1 fs-6 hidden"><a
+                        href="#form__chatting_direct" onclick="openElement(this,'#form__login')" class="fw-bold fs-5"
+                        style="text-decoration: none; cursor: pointer;" rel="noopener noreferrer"><em>Đăng nhập</em></a>
+                    để bình luận bình luận...!</p>
+                <input class="chating" name="comments" id="chatting" rows="1" maxlength="101"
+                    placeholder="Viết bình luận...">
+                <button type="submit" id="btn_Binhluan" class="btn btn-success" onclick=""><i
+                        class="fa-solid fa-share pe-1"></i>Gửi</button>
+
+            </div>
+        </div>
+    </div>
+
+
+    <div id="music__player">
+        <div class="row music__player--container mx-sm-0 mx-3">
+            <div class="col-md-3 col-0 d-md-block d-none">
+                <div class="song__ifm" id="song__ifm">
+                    <img class="playing" src="./public/image/lisa.jpg" alt="">
+                    <div>
+                        <marquee behavior="" direction="">Cứ Child thôi</marquee>
+                        <p class="song--des m-0">Chillies, Suni Hạ Linh, Rhymastic
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-md-6 col-12 player__control--container">
+                <div class="player__control-btn">
+                    <div class="control-btn btn_repeat" title="Phát Lại">
+                        <i class="fa-solid fa-repeat"></i>
+                    </div>
+                    <div class="control-btn preSong" title="Bài Hát Trước">
+                        <i class="fa-solid fa-backward-step"></i>
+                    </div>
+                    <div id="btn_playing" class="control-btn btn-play">
+                        <i class="fa-solid fa-circle-play"></i>
+                    </div>
+                    <div class="control-btn nextSong" title="Bài Hát Kế Tiếp">
+                        <i class="fa-solid fa-forward-step"></i>
+                    </div>
+                    <div class="control-btn btn_random" title="Phát Ngẫu Nhiên">
+                        <i class="fa-solid fa-shuffle"></i>
+                    </div>
+                </div>
+                <div class="progress-block">
+                    <span class="time__current">00:00</span>
+                    <audio src="/public/uploads/1.mp3">
+                    </audio>
+                    <div class="sub_progress">
+                        <div class="slide__sub_progress"></div>
+                    </div>
+                    <div class="main__progress">
+                        <div class="progress-block--timestamp">
+                            09:04
+                        </div>
+                        <input min="0" max="100" value="0" step="0.1" id="progress-range" class="progress-range"
+                            type="range" name="">
+                    </div>
+                    <span class="time__duration">02:00</span>
+                </div>
+            </div>
+            <div class="col-0 col-md-3 progress-volume d-md-flex d-none">
+                <span class="change__kindof--volumn me-2"><i class="fa-solid fa-volume-high"></i> </span>
+                <input value="1" type="range" id="range__volume" min="0" max="1" step="0.01">
+                <div class="box_process--volume">
+                    <div class="sub_process--volume"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Phần Login (Trương Tước Phi) -->
+    <div id="bg-login">
+        <div id="show-from" class="act-from">
+            <form action="" class="col-lg-6 col-md-8 com-sm-10 col-12" id="form">
+                <div class="btn-closer" id="close"><i class="far fa-times-circle"></i></div>
+                <div class="title-box">Login</div>
+                <div class="element-form">
+                    <label for="account">Email address or username</label>
+                    <input type="text" id="account" name=""  placeholder="Email address or username">
+                    <div class="error" id="noti-error"></div>
+                </div>
+                <div class="element-form">
+                    <label for="password">Password</label>
+                    <input type="text" id="password" name="" placeholder="Password">
+                    <div class="error" id="noti-error"></div>
+                </div>
+                <div class="element-form">
+                    <a href="">Forgot your password?</a>
+                </div>
+                <div class="element-form style-btn-login">
+                    <div class="box-remember">
+                        <input type="checkbox" name="" id="remember">
+                        <label for="remember">Remember me</label>
+                    </div>
+                    <div class="btn-login">
+                        <button type="submit">Log in</button>
+                    </div>
+                </div>
+                <div class="element-or">
+                    <span>or</span>
+                </div>
+                <div class="oder-login">
+                    <div class="btn-order-log">
+                        <svg width="16" height="15" viewBox="0 0 16 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M14.2934 0.13031H1.25876C1.04269 0.13031 0.83548 0.21614 0.682701 0.36892C0.529922 0.521699 0.444092 0.728912 0.444092 0.944974V13.9796C0.444092 14.1957 0.529922 14.4029 0.682701 14.5557C0.83548 14.7084 1.04269 14.7943 1.25876 14.7943H8.28116V9.09161H6.3667V6.90017H8.28116V5.27084C8.24211 4.88414 8.28814 4.49358 8.41604 4.12656C8.54394 3.75953 8.75059 3.42494 9.02151 3.14626C9.29244 2.86758 9.62106 2.65155 9.98432 2.51334C10.3476 2.37513 10.7367 2.31808 11.1243 2.3462C11.6958 2.34487 12.2669 2.37479 12.8351 2.43581V4.41544H11.662C10.7414 4.41544 10.5622 4.85536 10.5622 5.4908V6.90017H12.7537L12.4685 9.09161H10.5622V14.7943H14.2934C14.5094 14.7943 14.7167 14.7084 14.8694 14.5557C15.0222 14.4029 15.108 14.1957 15.108 13.9796V0.944974C15.108 0.728912 15.0222 0.521699 14.8694 0.36892C14.7167 0.21614 14.5094 0.13031 14.2934 0.13031V0.13031Z" fill="white" fill-opacity="0.9"/>
+                        </svg>
+                        <div class="content">Continue with Facebook</div>
+                    </div>
+                    <div class="btn-order-log">
+                        <svg width="16" height="20" viewBox="0 0 16 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M8.35804 5.22321C9.19642 5.22321 10.2474 4.65642 10.8732 3.90069C11.44 3.21582 11.8533 2.25935 11.8533 1.30288C11.8533 1.17299 11.8415 1.0431 11.8178 0.936829C10.885 0.972253 9.76322 1.56266 9.09015 2.35382C8.55878 2.95604 8.07464 3.90069 8.07464 4.86897C8.07464 5.01067 8.09826 5.15236 8.11006 5.1996C8.16911 5.21141 8.26357 5.22321 8.35804 5.22321ZM5.40598 19.5112C6.55138 19.5112 7.05913 18.7436 8.48793 18.7436C9.94034 18.7436 10.2592 19.4876 11.5344 19.4876C12.7861 19.4876 13.6245 18.3303 14.4157 17.1968C15.3013 15.8979 15.6673 14.6226 15.6909 14.5635C15.6083 14.5399 13.2112 13.5598 13.2112 10.8085C13.2112 8.42324 15.1005 7.34869 15.2068 7.26604C13.9551 5.47119 12.054 5.42395 11.5344 5.42395C10.1293 5.42395 8.98387 6.27415 8.26357 6.27415C7.48423 6.27415 6.45691 5.47119 5.24067 5.47119C2.92625 5.47119 0.576416 7.38412 0.576416 10.9974C0.576416 13.241 1.45022 15.6145 2.52477 17.1495C3.44581 18.4484 4.24877 19.5112 5.40598 19.5112Z" fill="white"/>
+                        </svg>
+                        <div class="content">Continue with Apple</div>
+                    </div>
+                    <div class="btn-order-log">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="20" preserveAspectRatio="xMidYMid" viewBox="0 0 256 262"><path fill="#4285F4" d="M255.878 133.451c0-10.734-.871-18.567-2.756-26.69H130.55v48.448h71.947c-1.45 12.04-9.283 30.172-26.69 42.356l-.244 1.622 38.755 30.023 2.685.268c24.659-22.774 38.875-56.282 38.875-96.027"/><path fill="#34A853" d="M130.55 261.1c35.248 0 64.839-11.605 86.453-31.622l-41.196-31.913c-11.024 7.688-25.82 13.055-45.257 13.055-34.523 0-63.824-22.773-74.269-54.25l-1.531.13-40.298 31.187-.527 1.465C35.393 231.798 79.49 261.1 130.55 261.1"/><path fill="#FBBC05" d="M56.281 156.37c-2.756-8.123-4.351-16.827-4.351-25.82 0-8.994 1.595-17.697 4.206-25.82l-.073-1.73L15.26 71.312l-1.335.635C5.077 89.644 0 109.517 0 130.55s5.077 40.905 13.925 58.602l42.356-32.782"/><path fill="#EB4335" d="M130.55 50.479c24.514 0 41.05 10.589 50.479 19.438l36.844-35.974C195.245 12.91 165.798 0 130.55 0 79.49 0 35.393 29.301 13.925 71.947l42.211 32.783c10.59-31.477 39.891-54.251 74.414-54.251"/></svg>
+                        <div class="content">Continue with Google</div>
+                    </div>
+                </div>
+                <div class="atc-sign">
+                    <div class="title">Don't have an account?</div>
+                    <button type="button">Sign up for Life & music</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <!-- Hết Phần Login -->
+</body>
+<script src="/public/js/style.js"></script>
+<script src="/public/js/music.js"></script>
+<script src="/public/js/login.js"></script>
+
+</html>
