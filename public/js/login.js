@@ -4,15 +4,13 @@ let bgLogin =$$("#bg-login");
 let showLogin =$$("#show-from");
 let closeLogin =$$("#close");
 
-openLogin.addEventListener('click', function() {
-    bgLogin.classList.add('atc-bg-login');
-    showLogin.classList.add('act-from');
-});
-
-closeLogin.addEventListener('click', function() {
-    bgLogin.classList.remove('atc-bg-login');
-    showLogin.classList.remove('act-from');
-});
+openLogin.onclick=()=> {
+    bgLogin.classList.remove('hidden');
+    offAll();
+};
+closeLogin.onclick=()=>{
+    bgLogin.classList.add('hidden');
+};
 // hết phần ẩn hiện from
 
 // kiểm tra from
