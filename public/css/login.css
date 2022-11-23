@@ -39,6 +39,7 @@
 #show-from{
     background-color: var(--bg--menu);
     padding: 0 12px;
+    border-radius: 12px;
 }
 #show-from form{
     width: 500px;
@@ -171,7 +172,6 @@ form .title-box {
 } */
 
 .oder-login .btn-order-log {
-    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;    
@@ -183,22 +183,17 @@ form .title-box {
     border-radius: 48px;
     cursor: pointer;
 }
-
-.oder-login .btn-order-log svg {
-    position: absolute;
-    left: 100px;
+.oder-login .btn-order-log .content{
+    min-width: 200px;
 }
-
-.oder-login .btn-order-log .content {
-    position: absolute;
-    left: 132px;
-    line-height: 40px;
-    font-size: 14px;
-    font-weight: 550;
-    letter-spacing: 1.2px;
-    color: white;
+.oder-login .btn-order-log i{
+    min-width: 20px;
+    font-size: 18px;
+    margin-right: 4px;
 }
-
+.oder-login .btn-order-log:last-child {
+    color: #000;
+}
 .oder-login .btn-order-log:first-child {
     background-color: #3B5998;
 }
@@ -256,7 +251,4 @@ form .title-box {
 
 .border-error-from {
     border: 1px solid #f02849 !important;
-}
-@media (max-width:400px) {
-    
 }
