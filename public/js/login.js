@@ -47,6 +47,6 @@ function setError(element, message) {
 }
 
 function successForm(element) {
-    console.log(element.parentElement.querySelector('.error'));;
+    element.parentElement.querySelector('.error').style.display = "none";
     element.classList.remove('border-error-from');
 }

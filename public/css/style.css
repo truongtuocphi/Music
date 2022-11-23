@@ -676,7 +676,7 @@ article {
 #music__container .singer__background {
   position: absolute;
   top: 0%;
-  right: -10%;
+  right: -1%;
   height: 600px;
   -o-object-fit: cover;
      object-fit: cover;
@@ -769,7 +769,6 @@ article {
 #music__container .music--topchart .list--topchart_singer .topchart_singer--box img {
   width: 80px;
   height: 80px;
-  border: 2px solid #0a0a0a;
   border-radius: 8px;
 }
 

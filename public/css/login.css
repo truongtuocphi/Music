@@ -18,7 +18,7 @@
     --bg--menu: #302724;
     --bg--container: #251B18;
     --text-hover: #f55858;
-  }
+}
   
 #bg-login{
     position: fixed;
@@ -31,16 +31,24 @@
     justify-content: center;
     align-items: center;
 }
-#show-from{
+#show-from {
+    height: fit-content;
     background-color: var(--bg--menu);
-    padding: 0 12px;
-    border-radius: 12px;
+    padding: 20px 25px;
+    border-radius: 20px;
+    /* overflow-y: scroll; */
 }
-#show-from form{
-    width: 500px;
+
+/* #show-from::-webkit-scrollbar {
+    width: 5px;
+    background-color: #000;
+} */
+
+#show-from form {
+    width: 365px;
     position: relative;
- 
 }
+
 @media (max-width:600px) {
     #show-from form{
         width: 420px;
@@ -48,27 +56,33 @@
     }
 }
 @media (max-width:400px) {
-    #show-from form{
-        width: 320px;
-     
+    #show-from form {
+        width: 300px;
+        
     }
 }
 form .btn-closer {
     position: absolute;
-    right: 25px;
-    top: 15px;
+    right: 0px;
+    top: -8px;
     color: var(--color-white-from);
-    font-size: 36px;
+    font-size: 25px;
     cursor: pointer;
     
 }
+
+form .btn-closer i {
+    color: 14px;
+}
+
 form .btn-closer:hover i{
     animation: rotatex 1s ease-in;
 }
 form .title-box {
-    font-size: 30px;
+    font-size: 25px;
     text-align: center;
-    margin-bottom: 25px;
+    font-weight: 700;
+    margin-bottom: 10px;
     color: var(--color-white-from);
 }
 
@@ -78,22 +92,22 @@ form .title-box {
 
 .element-form label {
     display: block;
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 500;
-    margin-bottom: 8px;
+    margin-bottom: 4px;
     color: var(--color-white-from);
 }
 
 .element-form input {
     width: 100%;
-    padding: 10px 15px;
-    border-radius: 14px;
+    padding: 5px 15px;
+    border-radius: 10px;
     outline: none;
     border: 1px solid white;
 }
 
 .style-btn-login {
-    margin-top: 10px;
+    margin-top: 8px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -117,8 +131,8 @@ form .title-box {
 
 .element-form .btn-login button {
     width: 100px;
-    padding: 10px 15px;
-    border-radius: 48px;
+    padding: 7px 15px;
+    border-radius: 40px;
     background-color: var(--text-hover);
     border: 2px solid var(--text-hover);
     outline: none;
@@ -135,6 +149,8 @@ form .title-box {
 .element-or {
     text-align: center;
     position: relative;
+    margin-bottom: 5px;
+    line-height: 1;
 }
 
 .element-or span {
@@ -172,9 +188,9 @@ form .title-box {
     align-items: center;
     justify-content: center;    
     width: 100%;
-    height: 40px;
-    padding: 10px 15px;
-    margin-bottom: 20px;
+    height: 35px;
+    padding: 0px 15px;
+    margin-bottom: 2%;
     border: 1px solid #878787;
     border-radius: 48px;
     cursor: pointer;
@@ -211,7 +227,7 @@ form .title-box {
 }
 
 .atc-sign .title {
-    margin-bottom: 15px;
+    margin-bottom: 8px;
     font-size: 15px;
     font-weight: 550;
     letter-spacing: 1.2px;
@@ -221,7 +237,7 @@ form .title-box {
 
 .atc-sign button {
     width: 100%;
-    height: 40px;
+    height: 35px;
     padding: 10px 15px;
     border: 1px solid #878787;
     border-radius: 48px;
