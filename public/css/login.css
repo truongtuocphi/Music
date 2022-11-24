@@ -12,14 +12,7 @@
   --color-white-from: #fff;
 }
 
-:root {
-    --textcolor-white: rgba(255, 255, 255, 0.7);
-    --textcolor-black: rgba(0, 0, 0, 0.87);
-    --bg--menu: #302724;
-    --bg--container: #251B18;
-    --text-hover: #f55858;
-}
-  
+
 #bg-login{
     position: fixed;
     top: 0;

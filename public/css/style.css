@@ -676,7 +676,7 @@ article {
 #music__container .singer__background {
   position: absolute;
   top: 0%;
-  right: -1%;
+  right: -10%;
   height: 600px;
   -o-object-fit: cover;
      object-fit: cover;
@@ -769,6 +769,7 @@ article {
 #music__container .music--topchart .list--topchart_singer .topchart_singer--box img {
   width: 80px;
   height: 80px;
+  border: 2px solid #0a0a0a;
   border-radius: 8px;
 }
 
@@ -1067,7 +1068,7 @@ article {
   border-radius: 24px;
 }
 
-#id_trends .playlists {
+.playlists {
   padding: 4px 8px;
   width: 100%;
   display: -webkit-box;
@@ -1082,12 +1083,12 @@ article {
   border-bottom: 1px solid var(--bg--menu);
 }
 
-#id_trends .playlists .playlist--box__item .playlist__singer {
+.playlists .playlist--box__item .playlist__singer {
   cursor: pointer;
   color: var(--textcolor-white);
 }
 
-#id_trends .playlists .playlist--box__item .playlist__singer .playlist__song-rank {
+.playlists .playlist--box__item .playlist__singer .playlist__song-rank {
   font-size: 32px;
   font-weight: 900;
   line-height: 1;
@@ -1096,22 +1097,22 @@ article {
   -webkit-text-stroke: white;
 }
 
-#id_trends .playlists .playlist--box__item .playlist__singer .playlist__singer-song {
+.playlists .playlist--box__item .playlist__singer .playlist__singer-song {
   font-size: 16px;
 }
 
-#id_trends .playlists .playlist--box__item .playlist__singer .playlist__singer-name {
+.playlists .playlist--box__item .playlist__singer .playlist__singer-name {
   font-size: 14px;
   opacity: 0.7;
 }
 
-#id_trends .playlists .playlists__avata {
+.playlists .playlists__avata {
   position: relative;
   margin: 0 12px;
   border-radius: 8px;
 }
 
-#id_trends .playlists .playlists__avata img {
+.playlists .playlists__avata img {
   max-width: 100px;
   width: 100%;
   height: 80px;
@@ -1121,7 +1122,7 @@ article {
   border: 4px solid var(--bg--menu);
 }
 
-#id_trends .playlists .playlists__avata .playlists__avata--wave {
+.playlists .playlists__avata .playlists__avata--wave {
   position: absolute;
   top: 0;
   right: 0;
@@ -1136,7 +1137,7 @@ article {
   opacity: 0.8;
 }
 
-#id_trends .playlists .playlists__avata .playlists__avata--wave .playlists__avata--pause {
+.playlists .playlists__avata .playlists__avata--wave .playlists__avata--pause {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1152,7 +1153,7 @@ article {
   height: 100%;
 }
 
-#id_trends .playlists .playlists__avata .playlists__avata--wave .playlists__avata--playing {
+.playlists .playlists__avata .playlists__avata--wave .playlists__avata--playing {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1166,7 +1167,7 @@ article {
   margin-left: 5%;
 }
 
-#id_trends .playlists .playlists__avata .playlists__avata--wave .playlists__avata--playing .bar {
+.playlists .playlists__avata .playlists__avata--wave .playlists__avata--playing .bar {
   border-radius: 10px;
   width: 4px;
   height: 4px;
@@ -1175,63 +1176,63 @@ article {
           animation: loader 1.5s ease-in-out infinite;
 }
 
-#id_trends .playlists .playlists__avata .playlists__avata--wave .playlists__avata--playing .bar:nth-child(1) {
+.playlists .playlists__avata .playlists__avata--wave .playlists__avata--playing .bar:nth-child(1) {
   background-color: var(--bg--menu);
   -webkit-animation-delay: 1s;
           animation-delay: 1s;
 }
 
-#id_trends .playlists .playlists__avata .playlists__avata--wave .playlists__avata--playing .bar:nth-child(2) {
+.playlists .playlists__avata .playlists__avata--wave .playlists__avata--playing .bar:nth-child(2) {
   background-color: crimson;
   -webkit-animation-delay: 0.8s;
           animation-delay: 0.8s;
 }
 
-#id_trends .playlists .playlists__avata .playlists__avata--wave .playlists__avata--playing .bar:nth-child(3) {
+.playlists .playlists__avata .playlists__avata--wave .playlists__avata--playing .bar:nth-child(3) {
   background-color: deeppink;
   -webkit-animation-delay: 0.6s;
           animation-delay: 0.6s;
 }
 
-#id_trends .playlists .playlists__avata .playlists__avata--wave .playlists__avata--playing .bar:nth-child(4) {
+.playlists .playlists__avata .playlists__avata--wave .playlists__avata--playing .bar:nth-child(4) {
   background-color: orange;
   -webkit-animation-delay: 0.4s;
           animation-delay: 0.4s;
 }
 
-#id_trends .playlists .playlists__avata .playlists__avata--wave .playlists__avata--playing .bar:nth-child(5) {
+.playlists .playlists__avata .playlists__avata--wave .playlists__avata--playing .bar:nth-child(5) {
   background-color: red;
 }
 
-#id_trends .playlists .playlists__avata .playlists__avata--wave .playlists__avata--playing .bar:nth-child(6) {
+.playlists .playlists__avata .playlists__avata--wave .playlists__avata--playing .bar:nth-child(6) {
   background-color: red;
 }
 
-#id_trends .playlists .playlists__avata .playlists__avata--wave .playlists__avata--playing .bar:nth-child(7) {
+.playlists .playlists__avata .playlists__avata--wave .playlists__avata--playing .bar:nth-child(7) {
   background-color: orange;
   -webkit-animation-delay: 0.4s;
           animation-delay: 0.4s;
 }
 
-#id_trends .playlists .playlists__avata .playlists__avata--wave .playlists__avata--playing .bar:nth-child(8) {
+.playlists .playlists__avata .playlists__avata--wave .playlists__avata--playing .bar:nth-child(8) {
   background-color: deeppink;
   -webkit-animation-delay: 0.6s;
           animation-delay: 0.6s;
 }
 
-#id_trends .playlists .playlists__avata .playlists__avata--wave .playlists__avata--playing .bar:nth-child(9) {
+.playlists .playlists__avata .playlists__avata--wave .playlists__avata--playing .bar:nth-child(9) {
   background-color: crimson;
   -webkit-animation-delay: 0.8s;
           animation-delay: 0.8s;
 }
 
-#id_trends .playlists .playlists__avata .playlists__avata--wave .playlists__avata--playing .bar:nth-child(10) {
+.playlists .playlists__avata .playlists__avata--wave .playlists__avata--playing .bar:nth-child(10) {
   background-color: var(--bg--menu);
   -webkit-animation-delay: 1s;
           animation-delay: 1s;
 }
 
-#id_trends .playlists .playlist__controller .playlist__option {
+.playlists .playlist__controller .playlist__option {
   position: relative;
   padding: 4px 6px;
   border-radius: 50%;
@@ -1247,17 +1248,17 @@ article {
   border: 1px solid transparent;
 }
 
-#id_trends .playlists .playlist__controller .playlist__option:hover {
+.playlists .playlist__controller .playlist__option:hover {
   border: 1px solid gray;
   background-color: var(--bg--container);
   fill-opacity: 0.8;
 }
 
-#id_trends .playlists .playlist__controller .playlist__option:hover .playlist__option-box {
+.playlists .playlist__controller .playlist__option:hover .playlist__option-box {
   display: block;
 }
 
-#id_trends .playlists .playlist__controller .playlist__option .playlist__option-box {
+.playlists .playlist__controller .playlist__option .playlist__option-box {
   display: none;
   padding: 16px 0;
   border-radius: 4px;
@@ -1270,14 +1271,14 @@ article {
           box-shadow: 0px 0px 4px #1d1515;
 }
 
-#id_trends .playlists .playlist__controller .playlist__option .playlist__option-box .option_box-song {
+.playlists .playlist__controller .playlist__option .playlist__option-box .option_box-song {
   padding: 0 12px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
 
-#id_trends .playlists .playlist__controller .playlist__option .playlist__option-box .option_box-song img {
+.playlists .playlist__controller .playlist__option .playlist__option-box .option_box-song img {
   margin-right: 12px;
   width: 50px;
   height: 50px;
@@ -1286,31 +1287,31 @@ article {
      object-fit: cover;
 }
 
-#id_trends .playlists .playlist__controller .playlist__option .playlist__option-box .option_box-song i {
+.playlists .playlist__controller .playlist__option .playlist__option-box .option_box-song i {
   font-size: 14px;
 }
 
-#id_trends .playlists .playlist__controller .playlist__option .playlist__option-box .option_box--controller ul {
+.playlists .playlist__controller .playlist__option .playlist__option-box .option_box--controller ul {
   list-style: none;
   margin: 0;
   padding: 0;
 }
 
-#id_trends .playlists .playlist__controller .playlist__option .playlist__option-box .option_box--controller ul li {
+.playlists .playlist__controller .playlist__option .playlist__option-box .option_box--controller ul li {
   display: block;
   padding: 12px 0;
 }
 
-#id_trends .playlists .playlist__controller .playlist__option .playlist__option-box .option_box--controller ul li a {
+.playlists .playlist__controller .playlist__option .playlist__option-box .option_box--controller ul li a {
   margin-left: 12px;
 }
 
-#id_trends .playlists .playlist__controller .playlist__option .playlist__option-box .option_box--controller ul li:hover {
+.playlists .playlist__controller .playlist__option .playlist__option-box .option_box--controller ul li:hover {
   cursor: pointer;
   background-color: var(--bg--container);
 }
 
-#id_trends .playlists:hover {
+.playlists:hover {
   background-color: var(--bg--menu);
 }
 
@@ -1539,6 +1540,52 @@ article {
     left: 5%;
     font-size: 17px;
   }
+}
+
+#sub_astists {
+  background-color: var(--bg--menu);
+  padding: 12px;
+  border-radius: 12px;
+}
+
+#sub_astists .sub_astists-header img {
+  border-radius: 12px;
+  width: 200px;
+  margin-right: 18px;
+  height: 250px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+#sub_astists .sub_astists-header .sub_astists-singer_des {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-item-align: center;
+      align-self: center;
+}
+
+#sub_astists .sub_astists-header .sub_astists-singer_des .singer_des--title {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+#sub_astists .sub_astists-header .sub_astists-singer_des .singer_des--fullname {
+  text-transform: capitalize;
+  font-size: 32px;
+  font-weight: bold;
+}
+
+#sub_astists .sub_astists-header .sub_astists-singer_des .singer_des--subtitle {
+  opacity: 0.87;
+}
+
+#sub_astists .sub_astists-footer {
+  color: var(--textcolor-white);
 }
 
 @media (max-width: 340px) {

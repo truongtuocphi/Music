@@ -977,7 +977,6 @@ article {
     }
 }
 
-#id_trends {
     .playlists {
         padding: 4px 8px;
         width: 100%;
@@ -1182,7 +1181,6 @@ article {
 
     }
 
-}
 
 #modal__comment {
     z-index: 4;
@@ -1408,6 +1406,43 @@ article {
         width: 90%;
         left: 5%;
         font-size: 17px;
+    } 
+}
+#sub_astists{
+    background-color: var(--bg--menu);
+    padding: 12px;
+    border-radius: 12px;
+    .sub_astists-header{
+  
+        img{
+            border-radius: 12px;
+            width: 200px;
+            margin-right: 18px;
+            height: 250px;
+            object-fit: cover;
+        }
+        .sub_astists-singer_des{
+            display: flex;
+            flex-direction: column;
+            align-self: center;
+            .singer_des--title{
+                font-size: 20px;
+                font-weight: 600;
+            }
+            .singer_des--fullname{
+                text-transform: capitalize;
+                font-size: 32px;
+                font-weight: bold;
+            }
+            .singer_des--subtitle{
+                opacity: 0.87;
+            }
+        }
+       
+    }
+    
+    .sub_astists-footer{
+       color: var(--textcolor-white);
     }
 }
 
