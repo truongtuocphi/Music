@@ -60,9 +60,7 @@ a.active {
 
 .container__web--music {
     display: flex;
-    flex-direction: column;
     flex-direction: row;
-
 }
 
 .menu--brand__mobile {
@@ -91,7 +89,7 @@ menu {
     padding-left: 12px;
     margin-right: 12px;
     border-right: 2px solid var(--bg--menu);
-
+    height: 120vh;
     .menu--brand {
         text-align: center;
 
@@ -103,7 +101,7 @@ menu {
 
     nav {
         position: relative;
-
+        
         .nav--header {
             font-weight: 700;
             margin-bottom: 12px;
@@ -113,7 +111,7 @@ menu {
             list-style: none;
             margin: 0 12px;
             padding: 0;
-
+        
             li {
                 margin-top: 8px;
                 display: block;
@@ -1054,7 +1052,7 @@ article {
                         border-radius: 10px;
                         width: 4px;
                         height: 4px;
-                        background-color: #f3f3f3 ;
+                        background-color: #f3f3f3 !important;
                         animation: loader 1.5s ease-in-out infinite;
                         &:nth-child(1){
                             background-color: var(--bg--menu);
@@ -1412,8 +1410,25 @@ article {
     background-color: var(--bg--menu);
     padding: 12px;
     border-radius: 12px;
+    height: 100vh;
+    .sub_astists-_list__music{
+        height: 420px;
+        overflow-y: scroll;
+
+        &::-webkit-scrollbar{
+            width: 5px;
+        }
+        &::-webkit-scrollbar-thumb{
+            background-color: var(--text-hover);
+            border-radius: 8px;
+            height: 4px;
+          
+        }
+        &::-webkit-scrollbar-track{
+            background-color: var(--bg--container);
+        }
+    }
     .sub_astists-header{
-  
         img{
             border-radius: 12px;
             width: 200px;

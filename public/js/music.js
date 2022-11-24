@@ -18,7 +18,6 @@ if (!creatLocal('volume').getLocal()) {
 }
 
 musicPlayer(api, 1);
-
 function getbinhluan(id){
     $$("#modal__comment").classList.toggle("hidden");
     $$(".modal__comment-container").classList.toggle("hidden");
@@ -40,6 +39,88 @@ function getbinhluan(id){
         `).join('');
        $$(".list__user ul").innerHTML=html;       
     }
+}
+function musicPlayList(i){
+    const sub_astists=$$("#sub_astists");
+    const signer="Lisa";
+    const birthday="12/04/2022";
+    const avata="./public/image/lisa.jpg";
+    let html='';
+    html=apiList.map(song=>` <div class="playlists" data-id="1">
+    <div class="playlist--box__item d-flex-align-center-justify-between">
+        <div onclick="musicArtists(this,${song.id},0)"
+            class="playlist__singer d-flex-align-center-justify-between">
+            <div class="playlist__song-rank">
+                <i class="fa-solid fa-music"></i>
+            </div>
+            <div class="playlists__avata">
+                <img src="${avata}" alt="">
+                <div class="playlists__avata--wave">
+                    <div class="playlists__avata--pause">
+                        <i class="fa-solid fa-play"></i>
+                    </div>
+                    <div class="playlists__avata--playing hidden">
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <h2 class="playlist__singer-song m-0">${song.song}</h2>
+                <p class="playlist__singer-name m-0">${signer}</p>
+            </div>
+        </div>
+    </div>
+    <div class="playlist__singer-time">
+        4:30
+    </div>
+    <div class="playlist__controller d-flex-align-center-justify-between">
+        <div class="playlist__heart me-2">
+            <i class="fa-regular fa-heart"></i>
+            <i class="fa-solid fa-heart text-danger hidden"></i>
+        </div>
+        <div class="playlist__option">
+            <i class="fa-solid fa-ellipsis"></i>
+            <div class="playlist__option-box">
+                <div class="option_box-song">
+                    <div>
+                        <img src="${avata}" alt="">
+                    </div>
+                    <div>
+                        <h3 class="fs-6">${song.song}</h3>
+                        <div class="fs-6">
+                            <i class="fa-regular fa-heart"></i>
+                            <span class="total_heart me-2">34k</span>
+                            <i class="fa-solid fa-headphones"></i>
+                            <span class="total_heart">2.6M</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="option_box--controller">
+                    <ul>
+                        <li><a href="" download><i class="fa-solid fa-download"></i> Tải
+                                xuống</a>
+                        </li>
+                        <li><a><i class="fa-solid fa-play"></i> Phát</a></li>
+                        <li><a><i class="fa-solid fa-plus"></i> Thêm vào playlist</a></li>
+                        <li onclick="getbinhluan(1)"><a><i class="fa-solid fa-comment"></i> Bình
+                                Luận</a></li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div> 
+    `);
 }
 function musicArtists(Element, idMusic, index) {
     let playlists__avata = $$l(".playlists__avata--pause");

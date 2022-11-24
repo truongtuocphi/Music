@@ -50,6 +50,33 @@ const api = [
         link: "/public/uploads/6.mp3",
     },
 ]
+const apiList=[
+    {
+        id: 1,
+        song: "Wating for you",
+        link: "/public/uploads/1.mp3",
+        listen:120000,
+    },
+    {
+        id: 2,
+        song: "Hãy trao cho anh",
+        link: "/public/uploads/1.mp3",
+        listen:140000,
+    },
+    {
+        id: 3,
+        song: "Có tiền có tất cả",
+        link: "/public/uploads/1.mp3",
+        listen:189000,
+    },
+    {
+        id: 4,
+        song: "Này người yêu ơi",
+        link: "/public/uploads/1.mp3",
+        listen:230000,
+    },
+  
+]
 const binhluan=[
     {
         name:"Eric",

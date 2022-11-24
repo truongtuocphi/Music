@@ -65,11 +65,10 @@ a.active {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
+  -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
 }
 
 .menu--brand__mobile {
@@ -98,6 +97,7 @@ menu {
   padding-left: 12px;
   margin-right: 12px;
   border-right: 2px solid var(--bg--menu);
+  height: 120vh;
 }
 
 menu .menu--brand {
@@ -1171,7 +1171,7 @@ article {
   border-radius: 10px;
   width: 4px;
   height: 4px;
-  background-color: #f3f3f3;
+  background-color: #f3f3f3 !important;
   -webkit-animation: loader 1.5s ease-in-out infinite;
           animation: loader 1.5s ease-in-out infinite;
 }
@@ -1546,6 +1546,26 @@ article {
   background-color: var(--bg--menu);
   padding: 12px;
   border-radius: 12px;
+  height: 100vh;
+}
+
+#sub_astists .sub_astists-_list__music {
+  height: 420px;
+  overflow-y: scroll;
+}
+
+#sub_astists .sub_astists-_list__music::-webkit-scrollbar {
+  width: 5px;
+}
+
+#sub_astists .sub_astists-_list__music::-webkit-scrollbar-thumb {
+  background-color: var(--text-hover);
+  border-radius: 8px;
+  height: 4px;
+}
+
+#sub_astists .sub_astists-_list__music::-webkit-scrollbar-track {
+  background-color: var(--bg--container);
 }
 
 #sub_astists .sub_astists-header img {
