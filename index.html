@@ -171,7 +171,7 @@
                                 <div class="submenu--settings hidden">
                                     <ul>
                                         <li id="open-login"><a> Đăng Nhập</a></li>
-                                        <li><a>Đăng Ký</a></li>
+                                        <li class="open-sign"><a>Đăng Ký</a></li>
                                         <li><a>Đăng Xuất</a></li>
                                     </ul>
                                 </div>
@@ -1172,7 +1172,7 @@
     <div id="bg-login" class="hidden">
         <!-- Phần Login (Trương Tước Phi) -->
         <div id="show-from">
-            <form action="" id="form">
+            <form action="" id="form-login">
                 <div class="btn-closer" id="close"><i class="fa-solid fa-xmark"></i></div>
                 <div class="title-box">Login</div>
                 <div class="element-form">
@@ -1216,24 +1216,21 @@
                 </div>
                 <div class="atc-sign">
                     <div class="title">Don't have an account?</div>
-                    <button type="button">Sign up for Life & music</button>
+                    <button type="button" id="switch-sign">Sign up for Life & music</button>
                 </div>
             </form>
-        </div>
-        <!-- Hết Phần Login -->
-        <!-- Phần sign in -->
-        <div id="show-sign" style="display: none;">
-            <form action="" id="form">
-                <div class="btn-closer" id="close"><i class="fa-solid fa-xmark"></i></div>
+            <!-- Hết Phần Login -->
+            <form action="" id="form-sign">
+                <div class="btn-closer" id="close-sign"><i class="fa-solid fa-xmark"></i></div>
                 <div class="title-box">Sign in</div>
                 <div class="element-form">
                     <label for="account">Email address or username</label>
-                    <input type="text" id="account" name="" placeholder="Email address or username">
+                    <input type="text" id="account-1" name="" placeholder="Email address or username">
                     <div class="error" id="noti-error"></div>
                 </div>
                 <div class="element-form">
                     <label for="password">Password</label>
-                    <input type="text" id="password" name="" placeholder="Password">
+                    <input type="text" id="password-1" name="" placeholder="Password">
                     <div class="error" id="noti-error"></div>
                 </div>
                 <div class="element-form">
@@ -1250,31 +1247,32 @@
                         <label for="remember">Remember me</label>
                     </div>
                     <div class="btn-login">
-                        <button type="submit">Log in</button>
+                        <button type="submit" class="open-sign">Sign in</button>
                     </div>
                 </div>
                 <div class="element-or">
                     <span>or</span>
                 </div>
-                <div class="oder-login">
-                    <div class="btn-order-log">
+                <div class="oder-login order-sign">
+                    <div class="btn-order-log backgrond-oder-sing">
                         <div> <i class="fa-brands fa-square-facebook"></i></div>
                         <!-- <div class="content">Continue with Facebook</div> -->
                     </div>
-                    <div class="btn-order-log">
+                    <div class="btn-order-log backgrond-oder-sing">
                         <div><i class="fa-brands fa-apple"></i></div>
                         <!-- <div class="content">Continue with Apple</div> -->
                     </div>
-                    <div class="btn-order-log">
+                    <div class="btn-order-log backgrond-oder-sing">
                         <div><i class="fa-brands fa-google"></i></div>
                         <!-- <div class="content">Continue with Google</div> -->
                     </div>
                 </div>
                 <div class="atc-sign">
                     <div class="title">Have an account</div>
-                    <button type="button">login for Life & music</button>
+                    <button type="button" id="switch-log">login for Life & music</button>
                 </div>
             </form>
+            <!-- Phần sign in -->
         </div>
     </div>
 </body>
