@@ -51,7 +51,6 @@ function hideForm(formHide, formShow) {
     // hiện form đăng ký
     formShow.classList.add('hidden');
 }
-
 // end chuyển form
 
 // kiểm tra from
