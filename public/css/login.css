@@ -29,13 +29,7 @@
     background-color: var(--bg--menu);
     padding: 20px 25px;
     border-radius: 20px;
-    /* overflow-y: scroll; */
 }
-
-/* #show-from::-webkit-scrollbar {
-    width: 5px;
-    background-color: #000;
-} */
 
 #show-from form {
     width: 365px;
