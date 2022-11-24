@@ -18,6 +18,29 @@ if (!creatLocal('volume').getLocal()) {
 }
 
 musicPlayer(api, 1);
+
+function getbinhluan(id){
+    $$("#modal__comment").classList.toggle("hidden");
+    $$(".modal__comment-container").classList.toggle("hidden");
+    if(!$$("#modal__comment").className.includes("hidden")){
+        let html="Hiện tại chưa có bình luận nào";
+        // lấy trên database
+         html+=binhluan.map(comment=>`
+        <li>
+        <div>
+            <img src="${comment.avata}" alt="">
+        </div>
+        <div class="user__comment-ifm">
+            <div>
+                <user-name>${comment.name}</user-name> . <user-time>${comment.time}</user-time>
+            </div>
+            <p class="user-content">${comment.conment}</p>
+        </div>
+    </li>
+        `).join('');
+       $$(".list__user ul").innerHTML=html;       
+    }
+}
 function musicArtists(Element, idMusic, index) {
     let playlists__avata = $$l(".playlists__avata--pause");
     let playlists__wave = $$l(".playlists__avata--playing");

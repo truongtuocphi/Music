@@ -52,7 +52,22 @@ const api = [
 ]
 const binhluan=[
     {
-
+        name:"Eric",
+        conment:"Bài hát hay quá",
+        avata:"/public/image/eric.jpg",
+        time:"4 giờ trước"
+    },
+    {
+        name:"Nguyễn Thanh Tùng",
+        conment:"Bài hát hay quá,",
+        avata:"/public/image/sontung.jpg",
+        time:"3 giờ trước"
+    },
+    {
+        name:"Lisa",
+        conment:"Lorem ipsum dolor, sit amet consectetur adipisicing elit. Itaque, quam magni officia necessitatibus repellat aliquid error similique dolorem accusamus laudantium molestiae aut tempora?",
+        avata:"/public/image/lisa.jpg",
+        time:"2 phút trước"
     }
 ]
 
