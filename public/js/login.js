@@ -9,6 +9,7 @@ let formSign = $$("#form-sign");
 openLogin.onclick = () => {
     bgLogin.classList.remove('hidden');
     formSign.classList.add('hidden');
+    offAll();
 };
 
 closeLogin.onclick = () => {
@@ -24,6 +25,7 @@ let closeSign =$$("#close-sign");
 openSign.onclick = () => {
     bgLogin.classList.remove('hidden');
     formLogin.classList.add('hidden');
+    offAll();
 };
 
 closeSign.onclick = () =>{

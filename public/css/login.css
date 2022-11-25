@@ -269,9 +269,8 @@ form .title-box {
      
     }
 }
-@media (max-width:400px) {
+@media (max-width:420px) {
     #show-from form {
         width: 300px;
-        
     }
 }
