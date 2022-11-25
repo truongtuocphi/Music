@@ -56,24 +56,40 @@ const apiList=[
         song: "Wating for you",
         link: "/public/uploads/1.mp3",
         listen:120000,
+        loves:452000,
+        singer: "Lisa",
+        avata: "/public/image/eric.jpg",
+        birthday:"12/04/2022",
     },
     {
         id: 2,
         song: "Hãy trao cho anh",
         link: "/public/uploads/1.mp3",
         listen:140000,
+        loves:3520,
+        singer: "Lisa",
+        avata: "/public/image/eric.jpg",
+        birthday:"12/04/2022",
     },
     {
         id: 3,
         song: "Có tiền có tất cả",
         link: "/public/uploads/1.mp3",
         listen:189000,
+        loves:350,
+        singer: "Lisa",
+        avata: "/public/image/eric.jpg",
+        birthday:"12/04/2022",
     },
     {
         id: 4,
-        song: "Này người yêu ơi",
+        song: "Này yesssssssssss ssssssssssssssssss sssssssss người yêu ơi",
         link: "/public/uploads/1.mp3",
         listen:230000,
+        loves:3520000,
+        singer: "Lisa",
+        avata: "/public/image/eric.jpg",
+        birthday:"12/04/2022",
     },
   
 ]
@@ -275,6 +291,15 @@ function close_comment(){
         $$(".modal__comment-container").classList.add("hidden");
         $$("#modal__comment").classList.add("hidden");
     }
+}
+
+function makeupNumber(number){
+    if(number>=1000000){
+        return (number/1000000).toFixed(1)+ "M";
+    }else if(number>=1000){
+        return (number/1000).toFixed(1)+ "K";
+    }
+    return number;
 }
 
 

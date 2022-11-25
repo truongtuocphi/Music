@@ -1083,6 +1083,10 @@ article {
   border-bottom: 1px solid var(--bg--menu);
 }
 
+.playlists .playlist--box__item {
+  width: 70%;
+}
+
 .playlists .playlist--box__item .playlist__singer {
   cursor: pointer;
   color: var(--textcolor-white);
@@ -1113,8 +1117,7 @@ article {
 }
 
 .playlists .playlists__avata img {
-  max-width: 100px;
-  width: 100%;
+  width: 80px;
   height: 80px;
   border-radius: 8px;
   -o-object-fit: cover;
@@ -1484,6 +1487,24 @@ article {
   }
 }
 
+@media (max-width: 400px) {
+  .playlists .playlist--box__item .playlist__singer .playlist__singer-song {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    width: 100px;
+  }
+  .playlists .playlist--box__item .playlist__singer .playlist__singer-name {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    width: 100px;
+  }
+  .playlist__singer-time {
+    margin: 0 12px;
+  }
+}
+
 @media (max-width: 576px) {
   .music--topchart {
     width: 100% !important;
@@ -1515,25 +1536,32 @@ article {
     width: 40px !important;
     height: 40px !important;
   }
-  #id_trends .playlists .playlist--box__item .playlist__singer .playlist__singer-song {
+  .sub_astists-_list__music {
+    padding: 0 !important;
+  }
+  .playlists .playlist--box__item .playlist__singer .playlist__song-rank {
+    display: none;
+  }
+  .playlists .playlist--box__item .playlist__singer .playlist__singer-song {
+    width: 150px;
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
-    width: 100px;
   }
-  #id_trends .playlists .playlist--box__item .playlist__singer .playlist__singer-name {
+  .playlists .playlist--box__item .playlist__singer .playlist__singer-name {
+    width: 150px;
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
-    width: 100px;
   }
-  #id_trends .playlists .playlist--box__item img {
+  .playlists .playlist--box__item img {
     width: 60px;
     height: 60px;
   }
-  #id_trends .playlists .playlist__controller .playlist__option .playlist__option-box {
-    right: 0;
+  .playlists .playlist__controller .playlist__option .playlist__option-box {
+    right: -50px;
     top: 100%;
+    z-index: 5;
   }
   .modal__comment-container {
     width: 90%;

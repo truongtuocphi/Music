@@ -983,10 +983,11 @@ article {
         justify-content: space-between;
         border-bottom: 1px solid var(--bg--menu);
         .playlist--box__item {
+            width: 70%;
             .playlist__singer {
                 cursor: pointer;
                 color: var(--textcolor-white);
-
+                
                 .playlist__song-rank {
                     font-size: 32px;
                     font-weight: 900;
@@ -999,12 +1000,13 @@ article {
 
                 .playlist__singer-song {
                     font-size: 16px;
-
+                   
                 }
 
                 .playlist__singer-name {
                     font-size: 14px;
                     opacity: 0.7;
+                   
                 }
             }
 
@@ -1016,8 +1018,7 @@ article {
             margin: 0 12px;
             border-radius: 8px;
             img {
-                max-width: 100px;
-                width: 100%;
+                width: 80px;
                 height: 80px;
                 border-radius: 8px;
                 object-fit: cover;
@@ -1337,6 +1338,26 @@ article {
     }
 
 }
+@media (max-width: 400px){
+    .playlists .playlist--box__item .playlist__singer .playlist__singer-song {
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        width: 100px;
+    }
+    // .playlist__singer-time{
+    //     margin: 0 12px;
+    // }
+    .playlists .playlist--box__item .playlist__singer .playlist__singer-name {
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        width: 100px;
+    }
+    .playlist__singer-time{
+        margin: 0 12px;
+    }
+}
 
 @media (max-width: 576px) {
     .music--topchart {
@@ -1376,29 +1397,35 @@ article {
         width: 40px !important;
         height: 40px !important;
     }
-
-    #id_trends .playlists .playlist--box__item .playlist__singer .playlist__singer-song {
+    .sub_astists-_list__music{
+        padding: 0 !important;
+    }
+    .playlists .playlist--box__item .playlist__singer .playlist__song-rank{
+        display: none;
+    }
+    .playlists .playlist--box__item .playlist__singer .playlist__singer-song {
+        width: 150px;
         overflow: hidden;
         white-space: nowrap;
         text-overflow: ellipsis;
-        width: 100px;
     }
-
-    #id_trends .playlists .playlist--box__item .playlist__singer .playlist__singer-name {
+    
+    .playlists .playlist--box__item .playlist__singer .playlist__singer-name {
+        width: 150px;
         overflow: hidden;
         white-space: nowrap;
         text-overflow: ellipsis;
-        width: 100px;
     }
 
-    #id_trends .playlists .playlist--box__item img {
+    .playlists .playlist--box__item img {
         width: 60px;
         height: 60px;
     }
 
-    #id_trends .playlists .playlist__controller .playlist__option .playlist__option-box {
-        right: 0;
+    .playlists .playlist__controller .playlist__option .playlist__option-box {
+        right: -50px;
         top: 100%;
+        z-index: 5;
     }
     .modal__comment-container{
         width: 90%;
@@ -1459,7 +1486,12 @@ article {
     .sub_astists-footer{
        color: var(--textcolor-white);
     }
+  
 }
+@media (min-width: 576px){
+  
+}
+
 
 @media (max-width: 340px) {
     .container__web--music {

@@ -18,6 +18,9 @@ if (!creatLocal('volume').getLocal()) {
 }
 
 musicPlayer(api, 1);
+
+
+// lấy bình luận theo id
 function getbinhluan(id){
     $$("#modal__comment").classList.toggle("hidden");
     $$(".modal__comment-container").classList.toggle("hidden");
@@ -40,21 +43,41 @@ function getbinhluan(id){
        $$(".list__user ul").innerHTML=html;       
     }
 }
-function musicPlayList(i){
+
+// playlist music singer
+function musicSubArtists(idMusic,index){
+    let playlists__avata = $$l("#sub_astists .playlists__avata--pause");
+    let playlists__wave = $$l("#sub_astists .playlists__avata--playing");
+
+
+    if (creatLocal('musicArtists').getLocal() != idMusic) {
+        playlists__avata.forEach(item => { item.classList.remove("hidden") });
+        playlists__wave.forEach(item => { item.classList.add("hidden") });
+    }
+    playlists__avata[index].classList.toggle("hidden");
+    playlists__wave[index].classList.toggle("hidden");
+    creatLocal('musicArtists').setLocal(idMusic);
+    musicPlayer(apiList, idMusic);
+    audio.play()
+}
+musicPlayList(0);
+// list ablums của ca sĩ
+function musicPlayList(idsinger){
+    creatLocal("history").reset();
     const sub_astists=$$("#sub_astists");
     const signer="Lisa";
     const birthday="12/04/2022";
     const avata="./public/image/lisa.jpg";
     let html='';
-    html=apiList.map(song=>` <div class="playlists" data-id="1">
+    html=apiList.map((song,index)=>` <div class="playlists" data-id="1">
     <div class="playlist--box__item d-flex-align-center-justify-between">
-        <div onclick="musicArtists(this,${song.id},0)"
+        <div onclick="musicSubArtists(${song.id},${index})"
             class="playlist__singer d-flex-align-center-justify-between">
             <div class="playlist__song-rank">
                 <i class="fa-solid fa-music"></i>
             </div>
             <div class="playlists__avata">
-                <img src="${avata}" alt="">
+                <img src="${song.avata}" alt="">
                 <div class="playlists__avata--wave">
                     <div class="playlists__avata--pause">
                         <i class="fa-solid fa-play"></i>
@@ -75,7 +98,7 @@ function musicPlayList(i){
             </div>
             <div>
                 <h2 class="playlist__singer-song m-0">${song.song}</h2>
-                <p class="playlist__singer-name m-0">${signer}</p>
+                <p class="playlist__singer-name m-0">${song.singer}</p>
             </div>
         </div>
     </div>
@@ -89,29 +112,29 @@ function musicPlayList(i){
         </div>
         <div class="playlist__option">
             <i class="fa-solid fa-ellipsis"></i>
-            <div class="playlist__option-box">
+            <div style="${index==0?"top:0px":""}" class="playlist__option-box">
                 <div class="option_box-song">
                     <div>
-                        <img src="${avata}" alt="">
+                        <img src="${song.avata}" alt="">
                     </div>
                     <div>
                         <h3 class="fs-6">${song.song}</h3>
                         <div class="fs-6">
                             <i class="fa-regular fa-heart"></i>
-                            <span class="total_heart me-2">34k</span>
+                            <span class="total_heart me-2">${makeupNumber(song.loves)}</span>
                             <i class="fa-solid fa-headphones"></i>
-                            <span class="total_heart">2.6M</span>
+                            <span class="total_heart">${makeupNumber(song.listen)}</span>
                         </div>
                     </div>
                 </div>
                 <div class="option_box--controller">
                     <ul>
-                        <li><a href="" download><i class="fa-solid fa-download"></i> Tải
+                        <li><a href="${song.link}" download><i class="fa-solid fa-download"></i> Tải
                                 xuống</a>
                         </li>
                         <li><a><i class="fa-solid fa-play"></i> Phát</a></li>
                         <li><a><i class="fa-solid fa-plus"></i> Thêm vào playlist</a></li>
-                        <li onclick="getbinhluan(1)"><a><i class="fa-solid fa-comment"></i> Bình
+                        <li onclick="getbinhluan(${song.id})"><a><i class="fa-solid fa-comment"></i> Bình
                                 Luận</a></li>
                     </ul>
                 </div>
@@ -120,11 +143,13 @@ function musicPlayList(i){
         </div>
     </div>
 </div> 
-    `);
+    `).join('');
+    $$('.sub_astists-_list__music').innerHTML=html;
 }
+// phát nhạc theo trend
 function musicArtists(Element, idMusic, index) {
-    let playlists__avata = $$l(".playlists__avata--pause");
-    let playlists__wave = $$l(".playlists__avata--playing");
+    let playlists__avata = $$l("#id_trends .playlists__avata--pause");
+    let playlists__wave = $$l("#id_trends .playlists__avata--playing");
 
     if (creatLocal('musicArtists').getLocal() != idMusic) {
         playlists__avata.forEach(item => { item.classList.remove("hidden") });
@@ -137,9 +162,9 @@ function musicArtists(Element, idMusic, index) {
     audio.play()
 };
 
-function cleanActive(listElement) {
+function cleanActive(listElement,classname) {
     listElement.forEach(element => {
-        element.classList.remove("active");
+        element.classList.remove(classname);
     })
 }
 function musicPlayer(api, idMusic = 1) {
