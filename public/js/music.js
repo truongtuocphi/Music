@@ -60,9 +60,14 @@ function musicSubArtists(idMusic,index){
     musicPlayer(apiList, idMusic);
     audio.play()
 }
-musicPlayList(0);
+function getListAblums(id=1){
+    $$("#sub_astists").classList.remove("hidden");
+    $$("#id_astists").classList.add("hidden");
+    musicPlayList(id,apiList);
+}
+
 // list ablums của ca sĩ
-function musicPlayList(idsinger){
+function musicPlayList(idsinger,apiList){
     creatLocal("history").reset();
     const sub_astists=$$("#sub_astists");
     const signer="Lisa";
@@ -112,7 +117,7 @@ function musicPlayList(idsinger){
         </div>
         <div class="playlist__option">
             <i class="fa-solid fa-ellipsis"></i>
-            <div style="${index==0?"top:0px":""}" class="playlist__option-box">
+            <div style="${index==0?"top:0px":""} ${(index==apiList.length-1)?"top:unset;bottom:0":""}" class="playlist__option-box">
                 <div class="option_box-song">
                     <div>
                         <img src="${song.avata}" alt="">

@@ -132,12 +132,13 @@ function search(api) {
         e.stopPropagation();
     })
     search.addEventListener("input", function (e) {
-        let value_search = e.target.value;
+        let value_search =String(e.target.value).toLowerCase();
         let html = '';
         if (value_search) {
             boxSearch.classList.remove("hidden");
             html = api.map(function (item) {
-                if (item.song.includes(value_search) || item.singer.includes(value_search) || item.des.includes(value_search)) {
+           
+                if (item.song.toLowerCase().includes(value_search) || item.singer.toLowerCase().includes(value_search) || item.des.toLowerCase().includes(value_search)) {
                     return `
                     <li><a class="singer" href="javascript:void()">
                     <img class="singer--avata" src="${item.avata}" alt="">
@@ -178,6 +179,10 @@ function menu() {
 function openMenuSub(element,index){
     let menu__leftsearch=$$l(".menu__leftsearch");
     let btn_menu__leftsearch=$$l(".list--menu__item .openMenuSub");
+    if($$("#sub_astists")){
+        $$("#sub_astists").classList.add("hidden");
+    }
+ 
   
     if(btn_menu__leftsearch){
         btn_menu__leftsearch.forEach(menu=>{

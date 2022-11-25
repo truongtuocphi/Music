@@ -75,8 +75,8 @@
                     </div>
 
                     <ul class="list--menu__item col-3 d-lg-flex d-none">
-                        <li><a class="openMenuSub" onclick="openMenuSub(this,0)">MUSIC</a></li>
-                        <li class="mx-3"><a onclick="openMenuSub(this,1)" class="openMenuSub active">ARTISTS</a></li>
+                        <li><a class="openMenuSub active" onclick="openMenuSub(this,0)">MUSIC</a></li>
+                        <li class="mx-3"><a onclick="openMenuSub(this,1)" class="openMenuSub">ARTISTS</a></li>
                         <li><a class="openMenuSub" onclick="openMenuSub(this,2)">TREND</a></li>
                     </ul>
 
@@ -186,7 +186,7 @@
 
             <article>
 
-                <div id="music__container" class="menu__leftsearch hidden">
+                <div id="music__container" class="menu__leftsearch">
                     <img src="/public/image/singer.png" class="singer__background" alt="">
                     <div class="d-inline-block">
                         <p>Treding</p>
@@ -264,8 +264,9 @@
                 </div>
 
                 <div id="id_astists" class="menu__leftsearch hidden">
+                    <!-- getListAblums(idsinger) -->
                     <div class="row">
-                        <div class="col-xl-3 col-md-4 col-6">
+                        <div class="col-xl-3 col-md-4 col-6" onclick="getListAblums(1)">
                             <div class="box_astist">
                                 <img src="/public/image/lisa.jpg" alt="">
                                 <div class="artists__des">
@@ -275,7 +276,7 @@
                             </div>
                         </div>
 
-                        <div class="col-xl-3 col-md-4 col-6">
+                        <div class="col-xl-3 col-md-4 col-6" onclick="getListAblums(2)">
                             <div class="box_astist">
                                 <img src="/public/image/lisa.jpg" alt="">
                                 <div class="artists__des">
@@ -284,7 +285,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-xl-3 col-md-4 col-6">
+                        <div class="col-xl-3 col-md-4 col-6" onclick="getListAblums(3)">
                             <div class="box_astist">
                                 <img src="/public/image/lisa.jpg" alt="">
                                 <div class="artists__des">
@@ -293,7 +294,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-xl-3 col-md-4 col-6">
+                        <div class="col-xl-3 col-md-4 col-6" onclick="getListAblums(4)">
                             <div class="box_astist">
                                 <img src="/public/image/lisa.jpg" alt="">
                                 <div class="artists__des">
@@ -302,7 +303,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-xl-3 col-md-4 col-6">
+                        <div class="col-xl-3 col-md-4 col-6" onclick="getListAblums(5)">
                             <div class="box_astist">
                                 <img src="/public/image/lisa.jpg" alt="">
                                 <div class="artists__des">
@@ -311,7 +312,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-xl-3 col-md-4 col-6">
+                        <div class="col-xl-3 col-md-4 col-6" onclick="getListAblums(6)">
                             <div class="box_astist">
                                 <img src="/public/image/lisa.jpg" alt="">
                                 <div class="artists__des">
@@ -475,7 +476,7 @@
                     </div>
                 </div>
 
-                <div id="sub_astists" class="row">
+                <div id="sub_astists" class="row hidden">
                     <div class="col-xl-3 col-12">
                         <div class="sub_astists-header d-xl-block d-sm-flex d-block text-xl-center text-sm-left text-center align-xl-center">
                             <div>
