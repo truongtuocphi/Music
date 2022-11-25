@@ -29,9 +29,11 @@
                             <span class="nav--title">Home</span>
                         </a>
                     </li>
-                    <li title="Expolore"><a href="javascript:void()">
+                    <li title="Expolore">
+                        <a href="javascript:void()" id="explore" onclick="openMenuSub(this, 3)">
                             <i class="fa-regular fa-compass"></i>
-                            <span class="nav--title">Explore</span></a>
+                            <span class="nav--title">Explore</span>
+                        </a>
                     </li>
                     <li title="Videos"><a href="javascript:void()">
                             <i class="fa-solid fa-video"></i> <span class="nav--title">Videos</span></a>
@@ -272,7 +274,6 @@
                                 </div>
                             </div>
                         </div>
-
                         <div class="col-xl-3 col-md-4 col-6" onclick="getListAblums(2)">
                             <div class="box_astist">
                                 <img src="/public/image/lisa.jpg" alt="">
@@ -570,9 +571,32 @@
                     </div>
                 </div>
                 <!-- Code phần container ở đoạn này nha ! -->
-                <!-- Trang Explore -->
-                <div id="box-explore">
-
+                <div id="box-explore" class="box-expl hidden">
+                    <div class="first-page">
+                        <div class="box-heart">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                        <div class="content">
+                            <div class="title-1">Playlist</div>
+                            <div class="title-2">Liked songs</div>
+                            <div class="user">
+                                <img src="/public/image/lisa.jpg" alt="">
+                                <span>Adree</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="second-page">
+                        <div class="content">
+                            <div class="icon"><i class="fas fa-music"></i></div>
+                            <div class="box-title">
+                                <div class="title-1">Songs you like will appear here</div>
+                                <div class="title-2">Save songs by tapping the heart icon</div>
+                            </div>
+                            <div class="button-find">
+                                <button>Find songs</button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <!-- End ! -->
             </article>
@@ -837,3 +861,4 @@
 <script src="/public/js/style.js"></script>
 <script src="/public/js/music.js"></script>
 <script src="/public/js/login.js"></script>
+<script src="/public/js/explore.js"></script>

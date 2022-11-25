@@ -176,27 +176,31 @@ function menu() {
         }
     }); 
 }
+
 function openMenuSub(element,index){
     let menu__leftsearch=$$l(".menu__leftsearch");
     let btn_menu__leftsearch=$$l(".list--menu__item .openMenuSub");
+    let showExplore = document.querySelector('#explore');   // lấy id Explore
+    
     if($$("#sub_astists")){
         $$("#sub_astists").classList.add("hidden");
     }
  
-  
     if(btn_menu__leftsearch){
-        btn_menu__leftsearch.forEach(menu=>{
+        btn_menu__leftsearch.forEach(menu => {
             menu.classList.remove('active');
         })
+
         menu__leftsearch.forEach(menu=>{
             menu.classList.add('hidden');
         })
+
         btn_menu__leftsearch[index].classList.add('active');
         menu__leftsearch[index].classList.remove('hidden');
     }
- 
-  
+    pageExplore.classList.add('hidden');  // code tạm hiện trang Explore =)) 
 }
+
 function offAll() {
     const submenu = $$l(".btn_submenu .submenu--settings");
     submenu.forEach(element => {
@@ -237,6 +241,7 @@ function chagenBgDefault(index){
             menu= creatLocal('menu-color').getLocal();
             container= creatLocal('container-color').getLocal();
     }
+
     $$("#menu__color").value=menu;
     $$("#container__color").value=container;
 
@@ -252,12 +257,14 @@ function chagenBgDefault(index){
     })
     setColorRoot(menu,container)
 }
+
 function setColorRoot(menu,container){
     creatLocal('menu-color').setLocal(menu);
     creatLocal('container-color').setLocal(container);
    document.documentElement.style.setProperty('--bg--menu', menu);
    document.documentElement.style.setProperty('--bg--container', container);
 }
+
 function creatLocal(namelocal){
     let result='';
    if(localStorage.getItem(namelocal)){

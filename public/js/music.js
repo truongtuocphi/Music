@@ -19,7 +19,6 @@ if (!creatLocal('volume').getLocal()) {
 
 musicPlayer(api, 1);
 
-
 // lấy bình luận theo id
 function getbinhluan(id){
     $$("#modal__comment").classList.toggle("hidden");
@@ -60,7 +59,8 @@ function musicSubArtists(idMusic,index){
     musicPlayer(apiList, idMusic);
     audio.play()
 }
-function getListAblums(id=1){
+
+function getListAblums(id = 1){
     $$("#sub_astists").classList.remove("hidden");
     $$("#id_astists").classList.add("hidden");
     musicPlayList(id,apiList);
@@ -151,6 +151,7 @@ function musicPlayList(idsinger,apiList){
     `).join('');
     $$('.sub_astists-_list__music').innerHTML=html;
 }
+
 // phát nhạc theo trend
 function musicArtists(Element, idMusic, index) {
     let playlists__avata = $$l("#id_trends .playlists__avata--pause");
