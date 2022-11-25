@@ -209,6 +209,7 @@ document.onclick = () => {
     $$(".result__search").classList.add("hidden");
     $$("#search").value="";
 }
+
 chagenBgDefault(0);
 function chagenBgDefault(index){
     let menu="";

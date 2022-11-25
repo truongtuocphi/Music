@@ -253,7 +253,6 @@ form .title-box {
     display: flex;
     justify-content: center;
     width: 0px !important;
-    /* height: 0px !important; */
     border: none !important;
     border-radius: 0;
     background-color: transparent !important;
@@ -269,6 +268,7 @@ form .title-box {
      
     }
 }
+
 @media (max-width:420px) {
     #show-from form {
         width: 300px;
