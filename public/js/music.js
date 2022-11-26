@@ -61,6 +61,10 @@ function musicSubArtists(idMusic,index){
 }
 
 function getListAblums(id = 1){
+    cleanActive($$l('.openMenuSub'),'active');
+    $$('.openMenuSub_artists').classList.add('active');
+    addlistHidden($$l('.menu__leftsearch'),"hidden");
+    console.log($$l('.menu__leftsearch'));
     $$("#sub_astists").classList.remove("hidden");
     $$("#id_astists").classList.add("hidden");
     musicPlayList(id,apiList);
@@ -138,7 +142,7 @@ function musicPlayList(idsinger,apiList){
                                 xuống</a>
                         </li>
                         <li><a><i class="fa-solid fa-play"></i> Phát</a></li>
-                        <li><a><i class="fa-solid fa-plus"></i> Thêm vào playlist</a></li>
+                        <li onclick=getplaylist(${song.id})><a><i class="fa-solid fa-plus"></i> Thêm vào playlist</a></li>
                         <li onclick="getbinhluan(${song.id})"><a><i class="fa-solid fa-comment"></i> Bình
                                 Luận</a></li>
                     </ul>
@@ -169,10 +173,16 @@ function musicArtists(Element, idMusic, index) {
 };
 
 function cleanActive(listElement,classname) {
-    listElement.forEach(element => {
+    Array.from(listElement).forEach(element => {
         element.classList.remove(classname);
     })
 }
+function addlistHidden(listElement,classname) {
+    Array.from(listElement).forEach(element => {
+        element.classList.add(classname);
+    })
+}
+
 function musicPlayer(api, idMusic = 1) {
 
     const app = {

@@ -162,6 +162,11 @@ function search(api) {
     })
 }
 
+// playlist
+
+function getplaylist(id){
+    console.log(id);
+}
 function menu() {
     let list__btn_submenu = $$l(".btn_submenu");
     list__btn_submenu.forEach(menuhead => {
@@ -316,3 +321,9 @@ function makeupNumber(number){
 }
 
 
+const uploadfile=$$('#uploadfile');
+uploadfile.addEventListener('change', function(e){
+    let url = URL.createObjectURL(this.files[0]);
+    $$('.main--profiles  img').src=url;
+    console.log(url);
+})

@@ -671,12 +671,13 @@ article {
 
 #music__container {
   position: relative;
+  overflow: hidden;
 }
 
 #music__container .singer__background {
   position: absolute;
   top: 0%;
-  right: -10%;
+  right: 0%;
   height: 600px;
   -o-object-fit: cover;
      object-fit: cover;
@@ -1684,6 +1685,10 @@ article {
 
 .showonmobile {
   display: none;
+}
+
+.topchart_singer--box {
+  cursor: pointer;
 }
 
 @media (max-width: 991.8px) {

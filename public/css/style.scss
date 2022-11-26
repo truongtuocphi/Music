@@ -634,13 +634,13 @@ article {
 
 #music__container {
     position: relative;
-
+    overflow: hidden;
     .singer__background {
         position: absolute;
         top: 0%;
-        right: -10%;
+        right: 0%;
         height: 600px;
-        object-fit: cover;
+        object-fit: cover;  
         z-index: -1;
     }
 
@@ -1524,6 +1524,9 @@ article {
 }
 .showonmobile{
     display: none;
+}
+.topchart_singer--box{
+    cursor: pointer;
 }
 @media (max-width: 991.8px) {
     .showonmobile{

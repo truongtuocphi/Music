@@ -80,7 +80,7 @@
 
                     <ul class="list--menu__item col-3 d-lg-flex d-none">
                         <li><a class="openMenuSub active" onclick="openMenuSub(this,0)">MUSIC</a></li>
-                        <li class="mx-3"><a onclick="openMenuSub(this,1)" class="openMenuSub">ARTISTS</a></li>
+                        <li class="mx-3"><a onclick="openMenuSub(this,1)" class="openMenuSub openMenuSub_artists">ARTISTS</a></li>
                         <li><a class="openMenuSub" onclick="openMenuSub(this,2)">TREND</a></li>
                     </ul>
 
@@ -155,11 +155,11 @@
                                 <span class="total--notice">Cài Đặt</span>
                                 <div class="submenu--settings hidden">
                                     <ul>
-                                        <li><a href="javascript:void()0"> Giới thiệu</a></li>
-                                        <li><a href="javascript:void()0"> Liên hệ</a></li>
-                                        <li><a href="javascript:void()0"> Quảng cáo</a></li>
-                                        <li><a href="javascript:void()0"> Thỏa thuận sử dụng</a></li>
-                                        <li><a href="javascript:void()0"> Chính sách bảo mật</a></li>
+                                        <li><a href="javascript:void()"> Giới thiệu</a></li>
+                                        <li><a href="javascript:void()"> Liên hệ</a></li>
+                                        <li><a href="javascript:void()"> Quảng cáo</a></li>
+                                        <li><a href="javascript:void()"> Thỏa thuận sử dụng</a></li>
+                                        <li><a href="javascript:void()"> Chính sách bảo mật</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -208,17 +208,17 @@
                         </div>
 
                         <div class="list--topchart_singer">
-                            <a class="topchart_singer--box" href="http://">
+                            <a  onclick="getListAblums(3)" class="topchart_singer--box">
                                 <img src="./public/image/lisa.jpg" alt="">
                                 <p class="singer--name">Lisa</p>
                                 <p class="singer--des">Backpign</p>
                             </a>
-                            <a class="topchart_singer--box" href="http://">
+                            <a  onclick="getListAblums(3)" class="topchart_singer--box">
                                 <img src="./public/image/lisa.jpg" alt="">
                                 <p class="singer--name">Lisa</p>
                                 <p class="singer--des">Backpign</p>
                             </a>
-                            <a class="topchart_singer--box" href="http://">
+                            <a  onclick="getListAblums(3)" class="topchart_singer--box">
                                 <img src="./public/image/lisa.jpg" alt="">
                                 <p class="singer--name">Lisa</p>
                                 <p class="singer--des">Backpign</p>
@@ -233,32 +233,32 @@
                         </div>
 
                         <div class="row ">
-                            <a class="topchart_singer--box col-lg-3 col-xl-2 col-md-3 col-4" href="http://">
+                            <a  onclick="getListAblums(3)" class="topchart_singer--box col-lg-3 col-xl-2 col-md-3 col-4">
                                 <img src="./public/image/lisa.jpg" alt="">
                                 <p class="singer--name">Lisa</p>
                                 <p class="singer--des">8.5M player</p>
                             </a>
-                            <a class="topchart_singer--box col-lg-3 col-xl-2 col-md-3 col-4" href="http://">
+                            <a  onclick="getListAblums(3)" class="topchart_singer--box col-lg-3 col-xl-2 col-md-3 col-4">
                                 <img src="./public/image/lisa.jpg" alt="">
                                 <p class="singer--name">Lisa</p>
                                 <p class="singer--des">8.5M player</p>
                             </a>
-                            <a class="topchart_singer--box col-lg-3 col-xl-2 col-md-3 col-4" href="http://">
+                            <a  onclick="getListAblums(3)" class="topchart_singer--box col-lg-3 col-xl-2 col-md-3 col-4">
                                 <img src="./public/image/lisa.jpg" alt="">
                                 <p class="singer--name">Lisa</p>
                                 <p class="singer--des">8.5M player</p>
                             </a>
-                            <a class="topchart_singer--box col-lg-3 col-xl-2 col-md-3 col-4" href="http://">
+                            <a  onclick="getListAblums(3)" class="topchart_singer--box col-lg-3 col-xl-2 col-md-3 col-4">
                                 <img src="./public/image/lisa.jpg" alt="">
                                 <p class="singer--name">Lisa</p>
                                 <p class="singer--des">8.5M player</p>
                             </a>
-                            <a class="topchart_singer--box col-lg-3 col-xl-2 col-md-3 col-4" href="http://">
+                            <a  onclick="getListAblums(3)" class="topchart_singer--box col-lg-3 col-xl-2 col-md-3 col-4">
                                 <img src="./public/image/lisa.jpg" alt="">
                                 <p class="singer--name">Lisa</p>
                                 <p class="singer--des">8.5M player</p>
                             </a>
-                            <a class="topchart_singer--box col-lg-3 col-xl-2 col-md-3 col-4" href="http://">
+                            <a  onclick="getListAblums(3)" class="topchart_singer--box col-lg-3 col-xl-2 col-md-3 col-4">
                                 <img src="./public/image/lisa.jpg" alt="">
                                 <p class="singer--name">Lisa</p>
                                 <p class="singer--des">8.5M player</p>
@@ -393,7 +393,7 @@
                                             <li><a href="" download><i class="fa-solid fa-download"></i> Tải xuống</a>
                                             </li>
                                             <li><a><i class="fa-solid fa-play"></i> Phát</a></li>
-                                            <li><a><i class="fa-solid fa-plus"></i> Thêm vào playlist</a></li>
+                                            <li onclick="getplaylist(3)"><a><i class="fa-solid fa-plus"></i> Thêm vào playlist</a></li>
                                             <li onclick="getbinhluan(1)"><a><i class="fa-solid fa-comment"></i> Bình
                                                     Luận</a></li>
                                         </ul>
@@ -466,7 +466,7 @@
                                             <li><a href="" download><i class="fa-solid fa-download"></i> Tải xuống</a>
                                             </li>
                                             <li><a><i class="fa-solid fa-play"></i> Phát</a></li>
-                                            <li><a><i class="fa-solid fa-plus"></i> Thêm vào playlist</a></li>
+                                            <li onclick="getplaylist(2)"><a><i class="fa-solid fa-plus"></i> Thêm vào playlist</a></li>
                                             <li onclick="getbinhluan(1)"><a><i class="fa-solid fa-comment"></i> Bình
                                                     Luận</a></li>
                                         </ul>
@@ -560,7 +560,7 @@
                                                     </a>
                                                 </li>
                                                 <li><a><i class="fa-solid fa-play"></i> Phát</a></li>
-                                                <li><a><i class="fa-solid fa-plus"></i> Thêm vào playlist</a></li>
+                                                <li onclick="getplaylist(1)"><a><i class="fa-solid fa-plus"></i> Thêm vào playlist</a></li>
                                                 <li onclick="getbinhluan(1)">
                                                     <a>
                                                         <i class="fa-solid fa-comment"></i> Bình Luận
