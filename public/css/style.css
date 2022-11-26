@@ -21,15 +21,8 @@
 
 body {
   background-color: var(--bg--container);
-  overflow-x: hidden;
   scroll-behavior: smooth;
   color: var(--textcolor-white);
-  margin-right: 12px;
-}
-
-html {
-  width: 100vw;
-  margin-right: 12px;
 }
 
 @media (min-width: 1400px) {
@@ -95,7 +88,6 @@ menu {
   -webkit-transition: 0.9s;
   transition: 0.9s;
   padding-left: 12px;
-  margin-right: 12px;
   border-right: 2px solid var(--bg--menu);
   height: 120vh;
 }
@@ -218,9 +210,9 @@ main .list--menu__item {
   display: -ms-flexbox;
   display: flex;
   list-style: none;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 main .list--menu__item a {
@@ -666,7 +658,7 @@ main .user--profile .total--notice::after {
 }
 
 article {
-  margin: 12px;
+  padding: 12px;
 }
 
 #music__container {
@@ -676,11 +668,13 @@ article {
 
 #music__container .singer__background {
   position: absolute;
-  top: 0%;
+  top: 0;
   right: 0%;
+  width: 600px;
   height: 600px;
-  -o-object-fit: cover;
-     object-fit: cover;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top center;
   z-index: -1;
 }
 
@@ -1521,9 +1515,6 @@ article {
     margin: 0 !important;
     padding: 0 !important;
   }
-  .container__web--music {
-    margin-right: 16px;
-  }
   #music__container p {
     font-size: 12px;
   }
@@ -1579,7 +1570,8 @@ article {
 }
 
 #sub_astists .sub_astists-_list__music {
-  height: 420px;
+  background-color: var(--bg--menu);
+  max-height: 420px;
   overflow-y: scroll;
 }
 
