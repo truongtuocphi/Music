@@ -1522,3 +1522,11 @@ article {
 .hidden {
     display: none !important;
 }
+.showonmobile{
+    display: none;
+}
+@media (max-width: 991.8px) {
+    .showonmobile{
+        display: block;
+    }
+}
