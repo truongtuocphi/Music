@@ -185,7 +185,7 @@ function menu() {
 function openMenuSub(element,index){
     let menu__leftsearch=$$l(".menu__leftsearch");
     let btn_menu__leftsearch=$$l(".list--menu__item .openMenuSub");
-    let showExplore = document.querySelector('#explore');   // lấy id Explore
+    let showExplore = document.querySelector('#explore');   // lấy id trang Explore
     
     if($$("#sub_astists")){
         $$("#sub_astists").classList.add("hidden");
