@@ -1642,7 +1642,8 @@ article {
 }
 
 @-webkit-keyframes loader {
-  0%, 100% {
+  0%,
+  100% {
     height: 2px;
   }
   50% {
@@ -1651,7 +1652,8 @@ article {
 }
 
 @keyframes loader {
-  0%, 100% {
+  0%,
+  100% {
     height: 2px;
   }
   50% {
@@ -1686,6 +1688,71 @@ article {
 @media (max-width: 991.8px) {
   .showonmobile {
     display: block;
+  }
+}
+
+#toast {
+  z-index: 10000;
+  color: var(--textcolor-white);
+  position: fixed;
+  top: 70vh;
+  left: 12px;
+  display: block;
+}
+
+#toast .toast__container {
+  font-size: 14px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: baseline;
+      -ms-flex-align: baseline;
+          align-items: baseline;
+  margin-top: 2px;
+  background-color: var(--bg--container);
+  padding: 4px 12px;
+  -webkit-box-shadow: 0px 0px 3px gray;
+          box-shadow: 0px 0px 3px gray;
+}
+
+@-webkit-keyframes fakeToast {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(-300px);
+            transform: translateX(-300px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateX(0px);
+            transform: translateX(0px);
+  }
+}
+
+@keyframes fakeToast {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(-300px);
+            transform: translateX(-300px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateX(0px);
+            transform: translateX(0px);
+  }
+}
+
+@-webkit-keyframes fakeout {
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes fakeout {
+  to {
+    opacity: 0;
   }
 }
 /*# sourceMappingURL=style.css.map */
