@@ -163,9 +163,47 @@ function search(api) {
 }
 
 // playlist
+function getplaylist(id,element){
+    if(creatLocal('playlist').getLocal()){
+        if(creatLocal('playlist').getLocal().includes(id)){
+            toastMessage("Bạn đã thêm trong danh sách phát")
+        }else{
+            toastMessage("Thêm thành công danh sách phát")
+            if(element.closest('.playlists')){
+                let parent=element.closest('.playlists');
+                parent.querySelector('.playlist__heart').innerHTML=`<i onclick="removeIdplaylist(${id},this)" class="fa-solid fa-heart"></i>`;
+            }
+        }
+    }
+    creatLocal('playlist').setListLocal(id);
+     
+}
+// xoá id playlist
+function removeIdplaylist(id,element){
+    if(creatLocal('playlist').getLocal().includes(id)){
+        creatLocal('playlist').deleteID(id);
+    }
+    if(element.closest('.playlists')){
+        let parent=element.closest('.playlists');
+        parent.querySelector('.playlist__heart').innerHTML=`<i onclick="getplaylist(${id},this)" class="fa-regular fa-heart"></i>`;
+    }
 
-function getplaylist(id){
-    console.log(id);
+    toastMessage("Xóa thành công bài hát trong danh sách phát");
+}
+// Thông báo
+function toastMessage(message,time=3000){
+    const creatBox=document.createElement("div");
+    creatBox.className="toast__container fakeanimation";
+    creatBox.innerHTML=`<span class="toast__notice">${message}</span> <button onclick="closeElement('#toast','hidden')" class="btn text-white">X</button>`;
+    creatBox.style.animation=`fakeToast 0.6s ease-in,fakeout linear 1s 3s forwards`;
+    $$('#toast').appendChild(creatBox);
+    setTimeout(()=>{
+        $$('#toast').removeChild(creatBox);
+    },time)
+}
+// closeElement
+function closeElement(boxElement,classHide){
+    $$(boxElement).classList.add(classHide);
 }
 function menu() {
     let list__btn_submenu = $$l(".btn_submenu");
@@ -203,7 +241,7 @@ function openMenuSub(element,index){
         btn_menu__leftsearch[index].classList.add('active');
         menu__leftsearch[index].classList.remove('hidden');
     }
-    pageExplore.classList.add('hidden');  // code tạm hiện trang Explore =)) 
+    $$("#box-explore").classList.add('hidden');  // code tạm hiện trang Explore =)) 
 }
 
 function offAll() {
@@ -279,6 +317,7 @@ function creatLocal(namelocal){
    }
     return {
         getLocal(){
+            if(result.includes(',')) result=JSON.parse(result)
                 return result;
         },
         setLocal(value){
@@ -292,6 +331,13 @@ function creatLocal(namelocal){
             }
             localStorage.setItem(namelocal,JSON.stringify(result));
         },
+        deleteID(value){
+            let result=JSON.parse(localStorage.getItem(namelocal));
+            if(result.includes(value)){
+                result.splice(result.findIndex(id=>id==value),1);
+            }
+            localStorage.setItem(namelocal,JSON.stringify(result));
+        },
         delete(){
             localStorage.removeItem(namelocal);
         },
@@ -302,6 +348,7 @@ function creatLocal(namelocal){
         
     }
 }
+
 
 // close comment chat  
 function close_comment(){
