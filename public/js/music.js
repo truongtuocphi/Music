@@ -182,7 +182,18 @@ function addlistHidden(listElement,classname) {
         element.classList.add(classname);
     })
 }
+$$('#playmain_home').onclick=function () {
+    console.log(this);
+    if(this.innerHTML.includes("fa-play")){
+        this.innerHTML='Pause <i class="ms-2 fa-solid fa-pause"></i>';
+     
+    }else{
+        this.innerHTML='Play Now <i class="ms-2 fa-solid fa-play"></i>';
 
+    }
+    $$("#btn_playing").click();
+   let sss= `<i class="ms-2 fa-solid fa-pause"></i>`;
+}
 function musicPlayer(api, idMusic = 1) {
 
     const app = {

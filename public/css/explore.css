@@ -125,3 +125,46 @@
 .second-page .content .button-find button:hover {
     background-color: var(--text-hover);
 }
+@media (max-width: 768px) {
+    #box-explore{
+      
+    }
+    #box-explore .box-heart{
+        width: 100px;
+        height: 100px;
+    }
+    .first-page .box-heart i{
+        font-size: 40px;
+    }
+    .first-page .title-1{
+        font-size: 14px;
+    }
+    .first-page .title-2{
+        font-size: 40px;
+    }
+    .second-page .content{
+        padding-top: 20px !important;
+        padding-bottom: 20px!important;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    .second-page .content .box-title .title-1{
+        font-size: 20px;
+    }
+    .second-page .content .box-title .title-2{
+        font-size: 16px;
+    }
+    .box-expl .second-page{
+       height: auto;
+    }
+}
+@media (max-width: 500px){
+    .first-page .title-1{
+        font-size: 12px;
+    }
+    .first-page .title-2{
+        font-size: 22px;
+    }
+}

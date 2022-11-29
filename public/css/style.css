@@ -1629,6 +1629,10 @@ article {
   color: var(--textcolor-white);
 }
 
+#sub_astists #music__container .singer-name {
+  font-size: 30px;
+}
+
 @media (max-width: 340px) {
   .container__web--music {
     margin-right: 32px;
