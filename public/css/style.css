@@ -21,6 +21,7 @@
 
 body {
   background-color: var(--bg--container);
+  overflow-x: hidden;
   scroll-behavior: smooth;
   color: var(--textcolor-white);
 }
@@ -658,7 +659,7 @@ main .user--profile .total--notice::after {
 }
 
 article {
-  padding: 12px;
+  padding: 4px 12px;
 }
 
 #music__container {

@@ -178,6 +178,10 @@ function getplaylist(id,element){
     creatLocal('playlist').setListLocal(id);
      
 }
+// show trang hoem 
+function homeShow(){
+    openMenuSub(this,0);
+}
 // xoá id playlist
 function removeIdplaylist(id,element){
     if(creatLocal('playlist').getLocal().includes(id)){
