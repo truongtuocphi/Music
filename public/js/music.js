@@ -64,7 +64,6 @@ function getListAblums(id = 1){
     cleanActive($$l('.openMenuSub'),'active');
     $$('.openMenuSub_artists').classList.add('active');
     addlistHidden($$l('.menu__leftsearch'),"hidden");
-    console.log($$l('.menu__leftsearch'));
     $$("#sub_astists").classList.remove("hidden");
     $$("#id_astists").classList.add("hidden");
     musicPlayList(id,apiList);
@@ -78,6 +77,8 @@ function musicPlayList(idsinger,apiList){
     const birthday="12/04/2022";
     const avata="./public/image/lisa.jpg";
     let html='';
+    let listPlaylist=(creatLocal('playlist').getLocal());
+    console.log(listPlaylist)
     html=apiList.map((song,index)=>` <div class="playlists" data-id="1">
     <div class="playlist--box__item d-flex-align-center-justify-between">
         <div onclick="musicSubArtists(${song.id},${index})"
@@ -116,8 +117,7 @@ function musicPlayList(idsinger,apiList){
     </div>
     <div class="playlist__controller d-flex-align-center-justify-between">
         <div class="playlist__heart me-2">
-            <i class="fa-regular fa-heart"></i>
-            <i class="fa-solid fa-heart text-danger hidden"></i>
+        ${listPlaylist.includes(song.id)?`<i onclick="removeIdplaylist(${song.id},this)" class="fa-solid fa-heart"></i>`:`<i onclick="getplaylist(${song.id},this)" class="fa-regular fa-heart"></i>`}     
         </div>
         <div class="playlist__option">
             <i class="fa-solid fa-ellipsis"></i>
@@ -142,7 +142,7 @@ function musicPlayList(idsinger,apiList){
                                 xuống</a>
                         </li>
                         <li><a><i class="fa-solid fa-play"></i> Phát</a></li>
-                        <li onclick=getplaylist(${song.id})><a><i class="fa-solid fa-plus"></i> Thêm vào playlist</a></li>
+                        <li onclick=getplaylist(${song.id},this)><a><i class="fa-solid fa-plus"></i> Thêm vào playlist</a></li>
                         <li onclick="getbinhluan(${song.id})"><a><i class="fa-solid fa-comment"></i> Bình
                                 Luận</a></li>
                     </ul>
