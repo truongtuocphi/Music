@@ -9,5 +9,5 @@ showExplore.addEventListener('click', function() {
 findSong.addEventListener('click', function() {
     let contentExplore = document.querySelector('#in-content-explore');
     contentExplore.classList.add('hidden');
-})
+});
 
