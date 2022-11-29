@@ -77,13 +77,11 @@
                             </div>
                         </label>
                     </div>
-
                     <ul class="list--menu__item col-3 d-lg-flex d-none">
                         <li><a class="openMenuSub active" onclick="openMenuSub(this,0)">MUSIC</a></li>
                         <li class="mx-3"><a onclick="openMenuSub(this,1)" class="openMenuSub openMenuSub_artists">ARTISTS</a></li>
                         <li><a class="openMenuSub" onclick="openMenuSub(this,2)">TREND</a></li>
                     </ul>
-
                     <div class="menu--search col-lg-5 col-md-8 col-12 mt-2 mt-md-0  ">
                         <div class="box__search">
                             <input id="search" type="text" placeholder="Nhập tên bài hát, nghệ sĩ hoặc MV "><i
@@ -325,9 +323,7 @@
                             </div>
                         </div>
                     </div>
-
                 </div>
-
                 <div id="id_trends" class="menu__leftsearch hidden">
                     <h1 class="fs-4"># Top 10 HOT TREND</h1>
                     <!-- musicArtists(Element,id,index) -->
@@ -473,12 +469,10 @@
                                         </ul>
                                     </div>
                                 </div>
-
                             </div>
                         </div>
                     </div>
                 </div>
-
                 <div id="sub_astists" class="row hidden">
                     <div class="col-xl-3 col-12">
                         <div
@@ -599,6 +593,158 @@
                             </div>
                             <div class="button-find">
                                 <button id="find-song">Find songs</button>
+                            </div>
+                        </div>
+                        <div class="song-second-box">
+                            <div id="id_trends" class="menu__leftsearch hidden">
+                                <h1 class="fs-4"># Top 10 HOT TREND</h1>
+                                <!-- musicArtists(Element,id,index) -->
+                                <div class="playlists" data-id="1">
+                                    <div class="playlist--box__item d-flex-align-center-justify-between">
+                                        <div onclick="musicArtists(this,1,0)"
+                                            class="playlist__singer d-flex-align-center-justify-between">
+                                            <div class="playlist__song-rank">
+                                                1
+                                            </div>
+                                            <div class="playlists__avata">
+                                                <img src="./public/image/lisa.jpg" alt="">
+                                                <div class="playlists__avata--wave">
+                                                    <div class="playlists__avata--pause">
+                                                        <i class="fa-solid fa-play"></i>
+                                                    </div>
+                                                    <div class="playlists__avata--playing hidden">
+                                                        <div class="bar"></div>
+                                                        <div class="bar"></div>
+                                                        <div class="bar"></div>
+                                                        <div class="bar"></div>
+                                                        <div class="bar"></div>
+                                                        <div class="bar"></div>
+                                                        <div class="bar"></div>
+                                                        <div class="bar"></div>
+                                                        <div class="bar"></div>
+                                                        <div class="bar"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div>
+                                                <h2 class="playlist__singer-song m-0">Wasdasdasdsating for you</h2>
+                                                <p class="playlist__singer-name m-0">Lissadsadsasdaa</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="playlist__singer-time">
+                                        4:30
+                                    </div>
+                                    <div class="playlist__controller d-flex-align-center-justify-between">
+                                        <div class="playlist__heart me-2">
+                                            <i class="fa-regular fa-heart"></i>
+                                            <i class="fa-solid fa-heart text-danger hidden"></i>
+                                        </div>
+                                        <div class="playlist__option">
+                                            <i class="fa-solid fa-ellipsis"></i>
+                                            <div class="playlist__option-box">
+                                                <div class="option_box-song">
+                                                    <div>
+                                                        <img src="./public/image/lisa.jpg" alt="">
+                                                    </div>
+                                                    <div>
+                                                        <h3 class="fs-6">Quân Hữu Vận</h3>
+                                                        <div class="fs-6">
+                                                            <i class="fa-regular fa-heart"></i>
+                                                            <span class="total_heart me-2">34k</span>
+                                                            <i class="fa-solid fa-headphones"></i>
+                                                            <span class="total_heart">2.6M</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="option_box--controller">
+                                                    <ul>
+                                                        <li><a href="" download><i class="fa-solid fa-download"></i> Tải xuống</a>
+                                                        </li>
+                                                        <li><a><i class="fa-solid fa-play"></i> Phát</a></li>
+                                                        <li onclick="getplaylist(3)"><a><i class="fa-solid fa-plus"></i> Thêm vào playlist</a></li>
+                                                        <li onclick="getbinhluan(1)"><a><i class="fa-solid fa-comment"></i> Bình
+                                                                Luận</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+            
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="playlists" data-id="2">
+                                    <div class="playlist--box__item d-flex-align-center-justify-between">
+                                        <div onclick="musicArtists(this,2,1)"
+                                            class="playlist__singer d-flex-align-center-justify-between">
+                                            <div class="playlist__song-rank">
+                                                1
+                                            </div>
+                                            <div class="playlists__avata">
+                                                <img src="./public/image/lisa.jpg" alt="">
+                                                <div class="playlists__avata--wave">
+                                                    <div class="playlists__avata--pause">
+                                                        <i class="fa-solid fa-play"></i>
+                                                    </div>
+                                                    <div class="playlists__avata--playing hidden">
+                                                        <div class="bar"></div>
+                                                        <div class="bar"></div>
+                                                        <div class="bar"></div>
+                                                        <div class="bar"></div>
+                                                        <div class="bar"></div>
+                                                        <div class="bar"></div>
+                                                        <div class="bar"></div>
+                                                        <div class="bar"></div>
+                                                        <div class="bar"></div>
+                                                        <div class="bar"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div>
+                                                <h2 class="playlist__singer-song m-0">Wasdasdasdsating for you</h2>
+                                                <p class="playlist__singer-name m-0">Lissadsadsasdaa</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="playlist__singer-time">
+                                        4:30
+                                    </div>
+                                    <div class="playlist__controller d-flex-align-center-justify-between">
+                                        <div class="playlist__heart me-2">
+                                            <i class="fa-regular fa-heart"></i>
+                                            <i class="fa-solid fa-heart text-danger hidden"></i>
+                                        </div>
+                                        <div class="playlist__option">
+                                            <i class="fa-solid fa-ellipsis"></i>
+                                            <div class="playlist__option-box">
+                                                <div class="option_box-song">
+                                                    <div>
+                                                        <img src="./public/image/lisa.jpg" alt="">
+                                                    </div>
+                                                    <div>
+                                                        <h3 class="fs-6">Quân Hữu Vận</h3>
+                                                        <div class="fs-6">
+                                                            <i class="fa-regular fa-heart"></i>
+                                                            <span class="total_heart me-2">34k</span>
+                                                            <i class="fa-solid fa-headphones"></i>
+                                                            <span class="total_heart">2.6M</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="option_box--controller">
+                                                    <ul>
+                                                        <li><a href="" download><i class="fa-solid fa-download"></i> Tải xuống</a>
+                                                        </li>
+                                                        <li><a><i class="fa-solid fa-play"></i> Phát</a></li>
+                                                        <li onclick="getplaylist(2)"><a><i class="fa-solid fa-plus"></i> Thêm vào playlist</a></li>
+                                                        <li onclick="getbinhluan(1)"><a><i class="fa-solid fa-comment"></i> Bình
+                                                                Luận</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+            
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
