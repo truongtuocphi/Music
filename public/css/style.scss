@@ -21,7 +21,7 @@
 
 body {
     background-color: var(--bg--container);
-    // overflow-x: hidden;
+    overflow-x: hidden;
     scroll-behavior: smooth;
     color: var(--textcolor-white);
 
@@ -626,7 +626,7 @@ main {
 }
 
 article {
-    padding: 12px;
+    padding: 4px 12px;
 }
 
 #music__container {
