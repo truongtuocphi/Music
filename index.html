@@ -95,41 +95,48 @@
                             </div>
                         </label>
                     </div>
-
                     <ul class="list--menu__item col-3 d-lg-flex d-none">
-                        <li><a class="openMenuSub active" onclick="openMenuSub(this,0)">MUSIC</a></li>
-                        <li class="mx-3"><a onclick="openMenuSub(this,1)" class="openMenuSub openMenuSub_artists">ARTISTS</a></li>
-                        <li><a class="openMenuSub" onclick="openMenuSub(this,2)">TREND</a></li>
+                        <li>
+                            <a class="openMenuSub active" onclick="openMenuSub(this,0)">MUSIC</a>
+                        </li>
+                        <li class="mx-3">
+                            <a onclick="openMenuSub(this,1)" class="openMenuSub openMenuSub_artists">ARTISTS</a>
+                        </li>
+                        <li>
+                            <a class="openMenuSub" onclick="openMenuSub(this,2)">TREND</a>
+                        </li>
                     </ul>
-
                     <div class="menu--search col-lg-5 col-md-8 col-12 mt-2 mt-md-0  ">
                         <div class="box__search">
-                            <input id="search" type="text" placeholder="Nhập tên bài hát, nghệ sĩ hoặc MV "><i
-                                class="fa-solid fa-magnifying-glass"></i>
+                            <input id="search" type="text" placeholder="Nhập tên bài hát, nghệ sĩ hoặc MV ">
+                            <i class="fa-solid fa-magnifying-glass"></i>
                         </div>
                         <div class="result__search hidden">
                             <div class="result__search--key">
                                 Tìm kiếm theo ký tự : <code id="result__search">ABC</code>
                             </div>
                             <ul class="list_result__search">
-                                <li><a class="singer" href="javascript:void()">
+                                <li>
+                                    <a class="singer" href="javascript:void()">
                                         <img class="singer--avata" src="/public/image/lisa.jpg" alt="">
                                         <div class="singer--imf ps-2">
                                             <h3 class="singer--name">Lalisa</h3>
                                             <p class="singer--des">lisa</p>
                                         </div>
-                                    </a></li>
-                                <li><a class="singer" href="javascript:void()">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="singer" href="javascript:void()">
                                         <img class="singer--avata" src="/public/image/lisa.jpg" alt="">
                                         <div class="singer--imf ps-2">
                                             <h3 class="singer--name">Lalisa</h3>
                                             <p class="singer--des">lisa</p>
                                         </div>
-                                    </a></li>
+                                    </a>
+                                </li>
                             </ul>
                         </div>
                     </div>
-
                     <div class="user--profile  col-lg-3 col-md-3 col-sm-4 col-7">
                         <div class="profile--notice">
                             <div class="main--notice guide__menufirst box__flex-style btn_submenu">
@@ -139,7 +146,6 @@
                                     <div class="clothes__defaut">
                                         <h5>Giao diện mặc định</h5>
                                         <div class="box__clothes">
-
                                             <div onclick="chagenBgDefault(1)" class="clothes__color bgdefault">
 
                                             </div>
@@ -155,19 +161,16 @@
                                             <h6><code>Thay đổi giao diện <br> tùy thích</code></h6>
                                             <div class="col-6">
                                                 <h6>Menu</h6>
-                                                <input style="height: 40px; cursor: pointer;" class="w-100" type="color"
-                                                    name="" id="menu__color">
+                                                <input style="height: 40px; cursor: pointer;" class="w-100" type="color" name="" id="menu__color">
                                             </div>
                                             <div class="col-6">
                                                 <h6>BackGround</h6>
-                                                <input style="height: 40px; cursor: pointer;" class="w-100" type="color"
-                                                    name="" id="container__color">
+                                                <input style="height: 40px; cursor: pointer;" class="w-100" type="color" name="" id="container__color">
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-
                             <div class="main--settings guide__menufirst box__flex-style btn_submenu">
                                 <i class="fa-solid fa-gear"></i>
                                 <span class="total--notice">Cài Đặt</span>
@@ -186,7 +189,6 @@
                                 <span style="min-width: 100px;" class="total--notice">Thay Avata</span>
                                 <input type="file" name="uploadfile" hidden id="uploadfile">
                             </label>
-
                             <div class="main--profiles guide__menufirst btn_submenu">
                                 <img src="/public/image/lisa.jpg" alt="">
                                 <span style="min-width: 140px;" class="total--notice">Phạm Hoài Nam</span>
@@ -198,16 +200,11 @@
                                     </ul>
                                 </div>
                             </div>
-
-
                         </div>
                     </div>
-
                 </div>
             </div>
-
             <article id="container__all">
-
                 <div id="music__container" class="menu__leftsearch hidden">
                     <div class="singer__background" style="background-image:url(/public/image/singer.png)">
                     </div>
@@ -225,7 +222,6 @@
                             <h2>Billboard Topchart</h2>
                             <p><a href="http://">See All</a></p>
                         </div>
-
                         <div class="list--topchart_singer">
                             <a  onclick="getListAblums(3)" class="topchart_singer--box">
                                 <img src="./public/image/lisa.jpg" alt="">
@@ -244,13 +240,11 @@
                             </a>
                         </div>
                     </div>
-
                     <div class="music--topchart mt-4" id="music--artist">
                         <div class="music--topchart__head">
                             <h2>Top Artists</h2>
                             <p><a href="http://">See All</a></p>
                         </div>
-
                         <div class="row ">
                             <a  onclick="getListAblums(3)" class="topchart_singer--box col-lg-3 col-xl-2 col-md-3 col-4">
                                 <img src="./public/image/lisa.jpg" alt="">
@@ -285,7 +279,6 @@
                         </div>
                     </div>
                 </div>
-
                 <div id="id_astists" class="menu__leftsearch hidden">
                     <!-- getListAblums(idsinger) -->
                     <div class="row">
@@ -344,9 +337,7 @@
                             </div>
                         </div>
                     </div>
-
                 </div>
-
                 <div id="id_trends" class="menu__leftsearch hidden">
                     <h1 class="fs-4"># Top 10 HOT TREND</h1>
                     <!-- musicArtists(Element,id,index) -->
@@ -354,9 +345,7 @@
                         <div class="playlist--box__item d-flex-align-center-justify-between">
                             <div onclick="musicArtists(this,1,0)"
                                 class="playlist__singer d-flex-align-center-justify-between">
-                                <div class="playlist__song-rank">
-                                    1
-                                </div>
+                                <div class="playlist__song-rank">1</div>
                                 <div class="playlists__avata">
                                     <img src="./public/image/lisa.jpg" alt="">
                                     <div class="playlists__avata--wave">
@@ -410,16 +399,33 @@
                                     </div>
                                     <div class="option_box--controller">
                                         <ul>
-                                            <li><a href="" download><i class="fa-solid fa-download"></i> Tải xuống</a>
+                                            <li>
+                                                <a href="" download>
+                                                    <i class="fa-solid fa-download"></i> 
+                                                    Tải xuống
+                                                </a>
                                             </li>
-                                            <li><a><i class="fa-solid fa-play"></i> Phát</a></li>
-                                            <li onclick="getplaylist(3)"><a><i class="fa-solid fa-plus"></i> Thêm vào playlist</a></li>
-                                            <li onclick="getbinhluan(1)"><a><i class="fa-solid fa-comment"></i> Bình
-                                                    Luận</a></li>
+                                            <li>
+                                                <a>
+                                                    <i class="fa-solid fa-play"></i> 
+                                                    Phát
+                                                </a>
+                                            </li>
+                                            <li onclick="getplaylist(3)">
+                                                <a>
+                                                    <i class="fa-solid fa-plus"></i> 
+                                                    Thêm vào playlist
+                                                </a>
+                                            </li>
+                                            <li onclick="getbinhluan(1)">
+                                                <a>
+                                                    <i class="fa-solid fa-comment"></i> 
+                                                    Bình Luận
+                                                </a>
+                                            </li>
                                         </ul>
                                     </div>
                                 </div>
-
                             </div>
                         </div>
                     </div>
@@ -427,9 +433,7 @@
                         <div class="playlist--box__item d-flex-align-center-justify-between">
                             <div onclick="musicArtists(this,2,1)"
                                 class="playlist__singer d-flex-align-center-justify-between">
-                                <div class="playlist__song-rank">
-                                    1
-                                </div>
+                                <div class="playlist__song-rank">1</div>
                                 <div class="playlists__avata">
                                     <img src="./public/image/lisa.jpg" alt="">
                                     <div class="playlists__avata--wave">
@@ -456,9 +460,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="playlist__singer-time">
-                            4:30
-                        </div>
+                        <div class="playlist__singer-time">4:30</div>
                         <div class="playlist__controller d-flex-align-center-justify-between">
                             <div class="playlist__heart me-2">
                                 <i class="fa-regular fa-heart"></i>
@@ -483,29 +485,43 @@
                                     </div>
                                     <div class="option_box--controller">
                                         <ul>
-                                            <li><a href="" download><i class="fa-solid fa-download"></i> Tải xuống</a>
+                                            <li>
+                                                <a href="" download>
+                                                    <i class="fa-solid fa-download"></i> 
+                                                    Tải xuống
+                                                </a>
                                             </li>
-                                            <li><a><i class="fa-solid fa-play"></i> Phát</a></li>
-                                            <li onclick="getplaylist(2)"><a><i class="fa-solid fa-plus"></i> Thêm vào playlist</a></li>
-                                            <li onclick="getbinhluan(1)"><a><i class="fa-solid fa-comment"></i> Bình
-                                                    Luận</a></li>
+                                            <li>
+                                                <a>
+                                                    <i class="fa-solid fa-play"></i> 
+                                                    Phát
+                                                </a>
+                                            </li>
+                                            <li onclick="getplaylist(2)">
+                                                <a>
+                                                    <i class="fa-solid fa-plus"></i> 
+                                                    Thêm vào playlist
+                                                </a>
+                                            </li>
+                                            <li onclick="getbinhluan(1)">
+                                                <a>
+                                                    <i class="fa-solid fa-comment"></i> 
+                                                    Bình Luận
+                                                </a>
+                                            </li>
                                         </ul>
                                     </div>
                                 </div>
-
                             </div>
                         </div>
                     </div>
                 </div>
-
                 <div id="sub_astists" class="row hidden">
                     <div class="col-xl-3 col-12">
-                        <div
-                            class="sub_astists-header d-xl-block d-sm-flex d-block text-xl-center text-sm-left text-center align-xl-center">
+                        <div class="sub_astists-header d-xl-block d-sm-flex d-block text-xl-center text-sm-left text-center align-xl-center">
                             <div>
                                 <img src="./public/image/lisa.jpg" alt="">
                             </div>
-
                             <div class="sub_astists-singer_des">
                                 <h3 class="m-0 singer_des--fullname">Lisa</h3>
                                 <p class="singer_des--subtitle m-0">Date: 21/02/2002 </p>
@@ -547,9 +563,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="playlist__singer-time">
-                                4:30
-                            </div>
+                            <div class="playlist__singer-time">4:30</div>
                             <div class="playlist__controller d-flex-align-center-justify-between">
                                 <div class="playlist__heart me-2">
                                     <i class="fa-regular fa-heart"></i>
@@ -687,8 +701,18 @@
                                                             <i class="fa-solid fa-download"></i> Tải xuống
                                                         </a>
                                                     </li>
-                                                    <li onclick="musicplayClick(1,this)"><a><i class="fa-solid fa-play"></i> Phát</a></li>
-                                                    <li onclick="getplaylist(1)"><a><i class="fa-solid fa-plus"></i> Thêm vào playlist</a></li>
+                                                    <li onclick="musicplayClick(1,this)">
+                                                        <a>
+                                                            <i class="fa-solid fa-play"></i> 
+                                                            Phát
+                                                        </a>
+                                                    </li>
+                                                    <li onclick="getplaylist(1)">
+                                                        <a>
+                                                            <i class="fa-solid fa-plus"></i> 
+                                                            Thêm vào playlist
+                                                        </a>
+                                                    </li>
                                                     <li onclick="getbinhluan(1)">
                                                         <a>
                                                             <i class="fa-solid fa-comment"></i> Bình Luận
@@ -754,7 +778,6 @@
                         </div>
                         <p class="user-content">Bài dasdsa asdnasdnasd sdandnsa asdnnasd asdnnasd asndnasdn nsdandsa
                             nasdndsa nasdndnas nasnasdn nasdnasdn nsadnasdn nasdnsdan nasndsanasd nasdnsahát hay quá</p>
-
                     </div>
                 </li>
                 <li>
