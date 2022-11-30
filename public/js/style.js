@@ -376,5 +376,5 @@ const uploadfile=$$('#uploadfile');
 uploadfile.addEventListener('change', function(e){
     let url = URL.createObjectURL(this.files[0]);
     $$('.main--profiles  img').src=url;
-    console.log(url);
+  
 })
