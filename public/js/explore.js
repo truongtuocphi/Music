@@ -7,13 +7,13 @@ showExplore.addEventListener('click', function() {
 });
 
 findSong.addEventListener('click', function() {
+    // ẩn thông báo tìm nhạc
     let contentExplore = document.querySelector('#in-content-explore');
     contentExplore.classList.add('hidden');
-
+    // thêm class có thuộc tính css mới cho box 
     let resetBoxExplore = document.querySelector('#content-page-explore');
     resetBoxExplore.classList.add('atc-second-page');
-
+    // remove class hidden cho danh sách nhạc
     let listSong = document.querySelector('#recent_playlist');
     listSong.classList.remove('hidden');
 });
-
