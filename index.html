@@ -188,9 +188,9 @@
                 </div>
             </div>
 
-            <article>
+            <article id="container__all">
 
-                <div id="music__container" class="menu__leftsearch">
+                <div id="music__container" class="menu__leftsearch hidden">
                     <div class="singer__background" style="background-image:url(/public/image/singer.png)">
                     </div>
                     <div class="d-inline-block">
@@ -267,6 +267,7 @@
                         </div>
                     </div>
                 </div>
+
                 <div id="id_astists" class="menu__leftsearch hidden">
                     <!-- getListAblums(idsinger) -->
                     <div class="row">
@@ -602,6 +603,90 @@
                             </div>
                         </div>
                     </div>
+                </div>
+
+                <div id="recent_playlist" class="">
+                    <h1 class="recent_playlist-title"># Recent </h1>
+
+                    <div class="playlists">
+                        <div class="playlist--box__item d-flex-align-center-justify-between">
+                            <div onclick="musicSubArtists(this,1,0)"
+                                class="playlist__singer d-flex-align-center-justify-between">
+                                <div class="playlist__song-rank">
+                                    <i class="fa-solid fa-music"></i>
+                                </div>
+                                <div class="playlists__avata">
+                                    <img src="./public/image/lisa.jpg" alt="">
+                                    <div class="playlists__avata--wave">
+                                        <div class="playlists__avata--pause">
+                                            <i class="fa-solid fa-play"></i>
+                                        </div>
+                                        <div class="playlists__avata--playing hidden">
+                                            <div class="bar"></div>
+                                            <div class="bar"></div>
+                                            <div class="bar"></div>
+                                            <div class="bar"></div>
+                                            <div class="bar"></div>
+                                            <div class="bar"></div>
+                                            <div class="bar"></div>
+                                            <div class="bar"></div>
+                                            <div class="bar"></div>
+                                            <div class="bar"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <h2 class="playlist__singer-song m-0">Wasdasdasdsating for you</h2>
+                                    <p class="playlist__singer-name m-0">Lissadsadsasdaa</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="playlist__singer-time">
+                            4:30
+                        </div>
+                        <div class="playlist__controller d-flex-align-center-justify-between">
+                            <div class="playlist__heart me-2">
+                                <i class="fa-regular fa-heart"></i>
+                                <i class="fa-solid fa-heart text-danger hidden"></i>
+                            </div>
+                            <div class="playlist__option">
+                                <i class="fa-solid fa-ellipsis"></i>
+                                <div class="playlist__option-box">
+                                    <div class="option_box-song">
+                                        <div>
+                                            <img src="./public/image/lisa.jpg" alt="">
+                                        </div>
+                                        <div>
+                                            <h3 class="fs-6">Quân Hữu Vận</h3>
+                                            <div class="fs-6">
+                                                <i class="fa-regular fa-heart"></i>
+                                                <span class="total_heart me-2">34k</span>
+                                                <i class="fa-solid fa-headphones"></i>
+                                                <span class="total_heart">2.6M</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="option_box--controller">
+                                        <ul>
+                                            <li>
+                                                <a href="" download>
+                                                    <i class="fa-solid fa-download"></i> Tải xuống
+                                                </a>
+                                            </li>
+                                            <li onclick="musicplayClick(1,this)"><a><i class="fa-solid fa-play"></i> Phát</a></li>
+                                            <li onclick="getplaylist(1)"><a><i class="fa-solid fa-plus"></i> Thêm vào playlist</a></li>
+                                            <li onclick="getbinhluan(1)">
+                                                <a>
+                                                    <i class="fa-solid fa-comment"></i> Bình Luận
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
                 </div>
                 <!-- End ! -->
             </article>

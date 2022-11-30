@@ -42,7 +42,23 @@ function getbinhluan(id){
        $$(".list__user ul").innerHTML=html;       
     }
 }
-
+//playmucisc when click
+// truyền id music
+function musicplayClick(id,element){
+    const listPlaylists=$$l(".playlists .playlists__avata--playing");
+    const playlists__avata=$$l(".playlists .playlists__avata--pause");
+    playlists__avata.forEach(item => { item.classList.remove("hidden") });
+    listPlaylists.forEach(item=>{item.classList.add('hidden')})
+    musicPlayer(api, id);
+    $$("#btn_playing").click();
+    console.log(element)
+ 
+    if(element.closest('.playlists')){
+        element.closest('.playlists').querySelector('.playlists__avata--playing').classList.remove('hidden')
+        element.closest('.playlists').querySelector('.playlists__avata--pause').classList.add('hidden')
+    }
+    
+}
 // playlist music singer
 function musicSubArtists(idMusic,index){
     let playlists__avata = $$l("#sub_astists .playlists__avata--pause");
@@ -79,7 +95,7 @@ function musicPlayList(idsinger,apiList){
     let html='';
     let listPlaylist=(creatLocal('playlist').getLocal());
     console.log(listPlaylist)
-    html=apiList.map((song,index)=>` <div class="playlists" data-id="1">
+    html=apiList.map((song,index)=>` <div class="playlists" data-id="${song.id}">
     <div class="playlist--box__item d-flex-align-center-justify-between">
         <div onclick="musicSubArtists(${song.id},${index})"
             class="playlist__singer d-flex-align-center-justify-between">
@@ -141,7 +157,7 @@ function musicPlayList(idsinger,apiList){
                         <li><a href="${song.link}" download><i class="fa-solid fa-download"></i> Tải
                                 xuống</a>
                         </li>
-                        <li><a><i class="fa-solid fa-play"></i> Phát</a></li>
+                        <li onclick="musicplayClick(${song.id},this)"><a><i class="fa-solid fa-play"></i> Phát</a></li>
                         <li onclick=getplaylist(${song.id},this)><a><i class="fa-solid fa-plus"></i> Thêm vào playlist</a></li>
                         <li onclick="getbinhluan(${song.id})"><a><i class="fa-solid fa-comment"></i> Bình
                                 Luận</a></li>
@@ -229,7 +245,7 @@ function musicPlayer(api, idMusic = 1) {
 
             creatLocal("history").setListLocal(this.currentId);
 
-            if (creatLocal("history").getLocal() && JSON.parse(creatLocal("history").getLocal()).length >= this.songs.length) {
+            if (creatLocal("history").getLocal() && creatLocal("history").getLocal().length >= this.songs.length) {
                 creatLocal("history").reset();
             }
         },
@@ -254,8 +270,10 @@ function musicPlayer(api, idMusic = 1) {
             btn_playing.onclick = function () {
                 if (_this.isplaying) {
                     audio.pause();
+                    toastMessage("Bài hát đã bị dừng lại",1000);
+                    return true;
                 } else audio.play();
-
+                 toastMessage("Bài hát đang được phát",1000);
             };
 
             audio.onplay = function () {
