@@ -266,8 +266,8 @@ document.onclick = () => {
 
 chagenBgDefault(0);
 function chagenBgDefault(index){
-    let menu="";
-    let container="";
+    let menu = "";
+    let container = "";
     if(!localStorage.getItem('menu-color')){
          menu='#202020';
          container='#000';
@@ -276,8 +276,8 @@ function chagenBgDefault(index){
     }
     switch(index){
         case 1:
-            menu='#202020';
-            container='#000';
+            menu = '#202020';
+            container = '#000';
             break;
         case 2:
             menu='#302724';
