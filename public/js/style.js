@@ -345,10 +345,10 @@ function creatLocal(namelocal){
             }
             localStorage.setItem(namelocal,JSON.stringify(result));
         },
-        delete(){
+        delete() {
             localStorage.removeItem(namelocal);
         },
-        reset(){
+        reset() {
             localStorage.removeItem(namelocal);
             localStorage.setItem(namelocal,[]);
         }
@@ -358,14 +358,14 @@ function creatLocal(namelocal){
 
 
 // close comment chat  
-function close_comment(){
-    if($$("#modal__comment")){
+function close_comment() { 
+    if($$("#modal__comment")) {
         $$(".modal__comment-container").classList.add("hidden");
         $$("#modal__comment").classList.add("hidden");
     }
 }
 
-function makeupNumber(number){
+function makeupNumber(number) {
     if(number>=1000000){
         return (number/1000000).toFixed(1)+ "M";
     }else if(number>=1000){
