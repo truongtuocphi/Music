@@ -131,9 +131,10 @@
     background-color: var(--text-hover);
 }
 @media (max-width: 768px) {
-    #box-explore{
+    /* #box-explore{
       
-    }
+    } */
+
     #box-explore .box-heart{
         width: 100px;
         height: 100px;
