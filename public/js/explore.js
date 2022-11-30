@@ -2,6 +2,7 @@ let showExplore = document.querySelector('#explore');
 let findSong = document.querySelector("#find-song");
 
 showExplore.addEventListener('click', function() {
+    // hiện trang Explore
     let pageExplore = document.querySelector("#box-explore");
     pageExplore.classList.remove('hidden');
 });
