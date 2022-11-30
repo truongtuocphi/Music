@@ -131,7 +131,7 @@ function search(api) {
         e.stopPropagation();
     })
     search.addEventListener("input", function (e) {
-        let value_search =String(e.target.value).toLowerCase();
+        let value_search = String(e.target.value).toLowerCase();
         let html = '';
         if (value_search) {
             boxSearch.classList.remove("hidden");
@@ -153,9 +153,9 @@ function search(api) {
         }
         result__search.innerHTML = value_search;
         if(html){
-            list_result__search.innerHTML=html;
+            list_result__search.innerHTML = html;
         }else{
-            list_result__search.innerHTML=`<code class="ms-2">Không tìm thấy</code>`;
+            list_result__search.innerHTML = `<code class="ms-2">Không tìm thấy</code>`;
         }
         
     })
@@ -170,7 +170,7 @@ function getplaylist(id,element){
             toastMessage("Thêm thành công danh sách phát")
             if(element.closest('.playlists')){
                 let parent=element.closest('.playlists');
-                parent.querySelector('.playlist__heart').innerHTML=`<i onclick="removeIdplaylist(${id},this)" class="fa-solid fa-heart"></i>`;
+                parent.querySelector('.playlist__heart').innerHTML = `<i onclick="removeIdplaylist(${id},this)" class="fa-solid fa-heart"></i>`;
             }
         }
     }
@@ -189,17 +189,17 @@ function removeIdplaylist(id,element){
     }
     if(element.closest('.playlists')){
         let parent=element.closest('.playlists');
-        parent.querySelector('.playlist__heart').innerHTML=`<i onclick="getplaylist(${id},this)" class="fa-regular fa-heart"></i>`;
+        parent.querySelector('.playlist__heart').innerHTML = `<i onclick="getplaylist(${id},this)" class="fa-regular fa-heart"></i>`;
     }
 
     toastMessage("Xóa thành công bài hát trong danh sách phát");
 }
 // Thông báo
-function toastMessage(message,time=3000){
-    const creatBox=document.createElement("div");
-    creatBox.className="toast__container fakeanimation";
-    creatBox.innerHTML=`<span class="toast__notice">${message}</span> <button onclick="closeElement('#toast','hidden')" class="btn text-white">X</button>`;
-    creatBox.style.animation=`fakeToast 0.6s ease-in,fakeout linear 1s 3s forwards`;
+function toastMessage(message,time = 3000){
+    const creatBox = document.createElement("div");
+    creatBox.className = "toast__container fakeanimation";
+    creatBox.innerHTML = `<span class="toast__notice">${message}</span> <button onclick="closeElement('#toast','hidden')" class="btn text-white">X</button>`;
+    creatBox.style.animation = `fakeToast 0.6s ease-in,fakeout linear 1s 3s forwards`;
     $$('#toast').appendChild(creatBox);
     setTimeout(() => {
         $$('#toast').removeChild(creatBox);
@@ -280,28 +280,28 @@ function chagenBgDefault(index){
             container = '#000';
             break;
         case 2:
-            menu='#302724';
-            container='#251B18';
+            menu = '#302724';
+            container = '#251B18';
             break;
         case 3:
-            menu='#26275e';
-            container='#1e1b3a';
+            menu = '#26275e';
+            container = '#1e1b3a';
             break;
         default:
-            menu= creatLocal('menu-color').getLocal();
-            container= creatLocal('container-color').getLocal();
+            menu = creatLocal('menu-color').getLocal();
+            container = creatLocal('container-color').getLocal();
     }
 
-    $$("#menu__color").value=menu;
-    $$("#container__color").value=container;
+    $$("#menu__color").value = menu;
+    $$("#container__color").value = container;
 
     $$("#menu__color").addEventListener("input", function(e){
-        menu=e.target.value;
+        menu = e.target.value;
         creatLocal('menu-color').setLocal(menu);
         document.documentElement.style.setProperty('--bg--menu', menu);
     })
     $$("#container__color").addEventListener("input", function(e){
-        container=e.target.value;
+        container = e.target.value;
         creatLocal('container-color').setLocal(container);
         document.documentElement.style.setProperty('--bg--container', container);
     })
@@ -331,8 +331,8 @@ function creatLocal(namelocal){
             localStorage.setItem(namelocal,value);
         },
         setListLocal(value){
-            if(!result) result=[];
-            else result=JSON.parse(localStorage.getItem(namelocal));
+            if(!result) result = [];
+            else result = JSON.parse(localStorage.getItem(namelocal));
             if(!Array.from(result).includes(value)){
                 result.push(value);
             }
@@ -341,16 +341,16 @@ function creatLocal(namelocal){
         deleteID(value){
             let result=JSON.parse(localStorage.getItem(namelocal));
             if(result.includes(value)){
-                result.splice(result.findIndex(id=>id==value),1);
+                result.splice(result.findIndex(id => id == value),1);
             }
-            localStorage.setItem(namelocal,JSON.stringify(result));
+            localStorage.setItem(namelocal, JSON.stringify(result));
         },
         delete() {
             localStorage.removeItem(namelocal);
         },
         reset() {
             localStorage.removeItem(namelocal);
-            localStorage.setItem(namelocal,[]);
+            localStorage.setItem(namelocal, []);
         }
         
     }
@@ -366,18 +366,17 @@ function close_comment() {
 }
 
 function makeupNumber(number) {
-    if(number>=1000000){
-        return (number/1000000).toFixed(1)+ "M";
-    }else if(number>=1000){
-        return (number/1000).toFixed(1)+ "K";
+    if(number >= 1000000){
+        return (number / 1000000).toFixed(1) + "M";
+    }else if(number >= 1000){
+        return (number / 1000).toFixed(1) + "K";
     }
     return number;
 }
 
 
-const uploadfile=$$('#uploadfile');
+const uploadfile = $$('#uploadfile');
 uploadfile.addEventListener('change', function(e){
     let url = URL.createObjectURL(this.files[0]);
-    $$('.main--profiles  img').src=url;
-  
-})
+    $$('.main--profiles  img').src = url;
+});
