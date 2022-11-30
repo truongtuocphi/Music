@@ -9,5 +9,11 @@ showExplore.addEventListener('click', function() {
 findSong.addEventListener('click', function() {
     let contentExplore = document.querySelector('#in-content-explore');
     contentExplore.classList.add('hidden');
+
+    let resetBoxExplore = document.querySelector('#content-page-explore');
+    resetBoxExplore.classList.add('atc-second-page');
+
+    let listSong = document.querySelector('#recent_playlist');
+    listSong.classList.remove('hidden');
 });
 

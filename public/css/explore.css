@@ -81,6 +81,11 @@
     background: linear-gradient(to bottom, #202020 60%, #393939) no-repeat;
 }
 
+.atc-second-page {
+    display: inline-block !important;
+    padding: 25px 40px !important;
+}
+
 .second-page .content {
     padding-top: 60px;
     text-align: center;
