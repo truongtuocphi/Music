@@ -54,7 +54,7 @@
 }
 
 .first-page .title-2 {
-    font-size: 60px;
+    font-size: 45px;
     font-weight: bold;
     margin-bottom: 10px;
     letter-spacing: 2px;
@@ -229,6 +229,6 @@
         font-size: 12px;
     }
     .first-page .title-2{
-        font-size: 22px;
+        font-size: 20px;
     }
 }

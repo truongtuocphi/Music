@@ -201,7 +201,7 @@ function toastMessage(message,time=3000){
     creatBox.innerHTML=`<span class="toast__notice">${message}</span> <button onclick="closeElement('#toast','hidden')" class="btn text-white">X</button>`;
     creatBox.style.animation=`fakeToast 0.6s ease-in,fakeout linear 1s 3s forwards`;
     $$('#toast').appendChild(creatBox);
-    setTimeout(()=>{
+    setTimeout(() => {
         $$('#toast').removeChild(creatBox);
     },time)
 }
