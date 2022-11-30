@@ -316,7 +316,7 @@ function setColorRoot(menu,container){
 }
 
 function creatLocal(namelocal){
-    let result='';
+    let result = '';
    if(localStorage.getItem(namelocal)){
        result=localStorage.getItem(namelocal);
    }else{
