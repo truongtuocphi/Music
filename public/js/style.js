@@ -1,5 +1,4 @@
-
-"use strict";
+// "use strict";
 const api = [
     {
         id: 1,
@@ -182,6 +181,7 @@ function getplaylist(id,element){
 function homeShow(){
     openMenuSub(this,0);
 }
+
 // xoá id playlist
 function removeIdplaylist(id,element){
     if(creatLocal('playlist').getLocal().includes(id)){
@@ -225,27 +225,30 @@ function menu() {
 }
 
 function openMenuSub(element,index){
-    let menu__leftsearch=$$l(".menu__leftsearch");
-    let btn_menu__leftsearch=$$l(".list--menu__item .openMenuSub");
-    let showExplore = document.querySelector('#explore');   // lấy id trang Explore
+    let menu__leftsearch = $$l(".menu__leftsearch");
+    let btn_menu__leftsearch = $$l(".list--menu__item .openMenuSub");
+    let showExplore = document.querySelector('#box-explore');   // lấy id trang Explore
     
-    if($$("#sub_astists")){
+    if($$("#sub_astists")) {
         $$("#sub_astists").classList.add("hidden");
     }
  
-    if(btn_menu__leftsearch){
+    if(btn_menu__leftsearch) {
         btn_menu__leftsearch.forEach(menu => {
             menu.classList.remove('active');
-        })
+        });
 
-        menu__leftsearch.forEach(menu=>{
+        menu__leftsearch.forEach(menu => {
             menu.classList.add('hidden');
-        })
+        });
 
-        btn_menu__leftsearch[index].classList.add('active');
-        menu__leftsearch[index].classList.remove('hidden');
+        // nếu index == 3 thì không chạy đoạn code dưới này
+        if(index != 3) {
+            btn_menu__leftsearch[index].classList.add('active');
+            menu__leftsearch[index].classList.remove('hidden');
+        }
     }
-    $$("#box-explore").classList.add('hidden');  // code tạm hiện trang Explore =)) 
+    showExplore.classList.add('hidden');  // code tạm ẩn trang Explore =)) 
 }
 
 function offAll() {

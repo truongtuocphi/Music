@@ -10,7 +10,7 @@
   --textcolor-white: rgba(255, 255, 255, 0.7);
   --textcolor-black: rgba(0, 0, 0, 0.87);
   --bg--menu: #302724;
-  --bg--container: #251B18;
+  --bg--container: #202020;
   --text-hover: #f55858;
 }
 
@@ -722,7 +722,7 @@ article {
 #music__container .music--box__header .btn-play {
   width: 160px;
   height: 46px;
-  border-radius: 24px;
+  border-radius: 18px;
   background-color: var(--text-hover);
   font-size: 18px;
   font-weight: 600;
@@ -731,10 +731,10 @@ article {
 
 #music__container .music--box__header .btn-add {
   margin-left: 6px;
-  width: 40px;
-  height: 40px;
+  width: 45px;
+  height: 43px;
   font-size: 28px;
-  border-radius: 4px;
+  border-radius: 6px;
   color: var(--textcolor-black);
   background-color: var(--textcolor-white);
 }

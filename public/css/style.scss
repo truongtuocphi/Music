@@ -1398,9 +1398,11 @@ article {
     .playlist__singer-time {
         margin: 0 12px;
     }
+
     body main{
         width: 100%;
     }
+    
     .playlists .playlist--box__item .playlist__singer .playlist__singer-song{
        width: 60px !important;
     }
@@ -1421,15 +1423,12 @@ article {
     body {
         margin: 0 !important;
         padding: 0 !important;
-
     }
 
     html {
         margin: 0 !important;
         padding: 0 !important;
     }
-
-
 
     #music__container p {
         font-size: 12px;
