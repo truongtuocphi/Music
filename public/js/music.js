@@ -44,36 +44,17 @@ function getbinhluan(id) {
 }
 //playmucisc when click
 // truyền id music
-function musicplayClick(id, element) {
-    const listPlaylists = $$l(".playlists .playlists__avata--playing");
-    const playlists__avata = $$l(".playlists .playlists__avata--pause");
-    playlists__avata.forEach(item => { item.classList.remove("hidden") });
-    listPlaylists.forEach(item => { item.classList.add('hidden') })
+function musicplayClick(id) {
     musicPlayer(api, id);
     $$("#btn_playing").click();
-    console.log(element)
-
-    if (element.closest('.playlists')) {
-        element.closest('.playlists').querySelector('.playlists__avata--playing').classList.remove('hidden')
-        element.closest('.playlists').querySelector('.playlists__avata--pause').classList.add('hidden')
-    }
 
 }
 // playlist music singer
 function musicSubArtists(idMusic, index) {
-    let playlists__avata = $$l("#sub_astists .playlists__avata--pause");
-    let playlists__wave = $$l("#sub_astists .playlists__avata--playing");
-
-
-    if (creatLocal('musicArtists').getLocal() != idMusic) {
-        playlists__avata.forEach(item => { item.classList.remove("hidden") });
-        playlists__wave.forEach(item => { item.classList.add("hidden") });
-    }
-    playlists__avata[index].classList.toggle("hidden");
-    playlists__wave[index].classList.toggle("hidden");
+    console.log(idMusic)
     creatLocal('musicArtists').setLocal(idMusic);
     musicPlayer(apiList, idMusic);
-    audio.play()
+   $$("#btn_playing").click();
 }
 
 function getListAblums(id = 1) {
@@ -84,10 +65,10 @@ function getListAblums(id = 1) {
     $$("#id_astists").classList.add("hidden");
     musicPlayList(id, apiList);
 }
+
 //list recent or playlists
 function playlistORRecent(namelocal) {
     let listPlaylist = creatLocal(namelocal).getLocal();
- 
  if(typeof listPlaylist=="string")listPlaylist=JSON.parse(listPlaylist);
     let arrList=[];
     if (listPlaylist.length>0) {
@@ -96,9 +77,10 @@ function playlistORRecent(namelocal) {
            arrList.push(song);
         })
     }
-
     if(arrList.length>0){
-        $$("#recent_playlist .recent__playlist--container").innerHTML=creatPlaylistcontainer(arrList,listPlaylist,2);
+        $$("#recent_playlist .recent__playlist--container").innerHTML=creatPlaylistcontainer(arrList,2);
+    }else{
+        $$("#recent_playlist .recent__playlist--container").innerHTML="Not music";
     }
 }
 // list ablums của ca sĩ
@@ -109,15 +91,16 @@ function musicPlayList(idsinger, apiList) {
     const birthday = "12/04/2022";
     const avata = "./public/image/lisa.jpg";
     let html = '';
-    let listPlaylist = (creatLocal('playlist').getLocal());
+
     
-    $$('.sub_astists-_list__music').innerHTML = creatPlaylistcontainer(apiList,listPlaylist,1);
+    $$('.sub_astists-_list__music').innerHTML = creatPlaylistcontainer(apiList,1);
 }
-function creatPlaylistcontainer(apiList,listPlaylist,kind){
+function creatPlaylistcontainer(apiList,kind){
+    let listPlaylist = (creatLocal('playlist').getLocal());
     let html='';
     html = apiList.map((song, index) => ` <div class="playlists" data-id="${song.id}">
     <div class="playlist--box__item d-flex-align-center-justify-between">
-        <div onclick="${kind==1?`musicSubArtists(${song.id},${index})`:`musicplayClick(${song.id},this)`}"
+        <div onclick="${kind==1?`musicSubArtists(${song.id},${index})`:`musicplayClick(${song.id})`}"
             class="playlist__singer d-flex-align-center-justify-between">
             <div class="playlist__song-rank">
                 <i class="fa-solid fa-music"></i>
@@ -177,7 +160,7 @@ function creatPlaylistcontainer(apiList,listPlaylist,kind){
                         <li><a href="${song.link}" download><i class="fa-solid fa-download"></i> Tải
                                 xuống</a>
                         </li>
-                        <li onclick="musicplayClick(${song.id},this)"><a><i class="fa-solid fa-play"></i> Phát</a></li>
+                        <li onclick="musicplayClick(${song.id})"><a><i class="fa-solid fa-play"></i> Phát</a></li>
                         <li onclick=getplaylist(${song.id},this)><a><i class="fa-solid fa-plus"></i> Thêm vào playlist</a></li>
                         <li onclick="getbinhluan(${song.id})"><a><i class="fa-solid fa-comment"></i> Bình
                                 Luận</a></li>
@@ -204,7 +187,7 @@ function musicArtists(Element, idMusic, index) {
     playlists__wave[index].classList.toggle("hidden");
     creatLocal('musicArtists').setLocal(idMusic);
     musicPlayer(api, idMusic);
-    audio.play()
+    audio.play();
 };
 
 function cleanActive(listElement, classname) {
@@ -217,8 +200,8 @@ function addlistHidden(listElement, classname) {
         element.classList.add(classname);
     })
 }
+
 $$('#playmain_home').onclick = function () {
-    console.log(this);
     if (this.innerHTML.includes("fa-play")) {
         this.innerHTML = 'Pause <i class="ms-2 fa-solid fa-pause"></i>';
 
@@ -229,8 +212,7 @@ $$('#playmain_home').onclick = function () {
     $$("#btn_playing").click();
     let sss = `<i class="ms-2 fa-solid fa-pause"></i>`;
 }
-function musicPlayer(api, idMusic = 1) {
-
+function musicPlayer(api, idMusic = 1) {  
     const app = {
         currentId: idMusic,
         songs: api,
@@ -242,7 +224,6 @@ function musicPlayer(api, idMusic = 1) {
         defineProperties: function () {
             Object.defineProperty(this, 'currentSong', {
                 get: function () {
-
                     return this.songs.find(song => song.id == this.currentId);
                 }
             })
@@ -252,21 +233,21 @@ function musicPlayer(api, idMusic = 1) {
             song__ifm.querySelector("img").src = musicImformation.avata;
             song__ifm.querySelector("marquee").innerText = musicImformation.song;
             song__ifm.querySelector(".song--des").innerText = musicImformation.singer;
+            serUrl(musicImformation.song);
             audio.src = musicImformation.link;
             audio.onloadeddata = () => {
                 progress.value = 1;
                 time__duration.innerText = this.makeUptime(audio.duration);
             }
             sub_progress.style.width = '0%';
-
             range__volume.value = creatLocal('volume').getLocal();
             sub__volume.style.width = (creatLocal('volume').getLocal() * 100) + "%";
-
             creatLocal("history").setListLocal(this.currentId);
             creatLocal("recent").setListLocal(this.currentId);
             if (creatLocal("history").getLocal() && creatLocal("history").getLocal().length >= this.songs.length) {
                 creatLocal("history").reset();
             }
+            stopWave(this.currentId);
         },
         makeUptime(time) {
             let minute = Math.floor(time / 60);
@@ -279,8 +260,8 @@ function musicPlayer(api, idMusic = 1) {
         handleEvent() {
             const _this = this;
             //Xử lý quay CD play / stop
-            const cd_thumpAnimation = song__ifm.querySelector("img").animate([
-                { transform: 'rotate(360deg)' }], {
+            const cd_thumpAnimation = $$(".music__player--container  img").animate([
+                { transform: 'rotate(359deg)' }], {
                 duration: 10000, iterations: Infinity
             }
             )
@@ -325,10 +306,6 @@ function musicPlayer(api, idMusic = 1) {
 
             })
 
-            //Tua bài hát
-            progress.addEventListener('change', function (e) {
-                console.log(e.target.value);
-            })
             let mouseClick = 0;
             progress.addEventListener('mousemove', function (e) {
                 let lentMouseX = e.pageX;
@@ -361,7 +338,7 @@ function musicPlayer(api, idMusic = 1) {
                     _this.nextSong();
                 }
                 audio.play();
-
+              
             }
             // pre song
             preSong.onclick = () => {
@@ -371,6 +348,7 @@ function musicPlayer(api, idMusic = 1) {
                     _this.backSong();
                 }
                 audio.play();
+              
             }
             // random song
             btn_random.onclick = () => {
@@ -390,7 +368,7 @@ function musicPlayer(api, idMusic = 1) {
                 } else {
                     nextSong.click();
                 }
-
+                
             }
         },
         nextSong() {
@@ -451,4 +429,18 @@ function musicPlayer(api, idMusic = 1) {
             app.start();
         }
     };
+}
+
+function stopWave(idMusic){
+    const listPlaylists = $$l(".playlists .playlists__avata--playing");
+    const playlists__avata = $$l(".playlists .playlists__avata--pause");
+    playlists__avata.forEach(item => { item.classList.remove("hidden") });
+    listPlaylists.forEach(item => { item.classList.add('hidden') })
+    const playlists=$$l('.playlists');
+    playlists.forEach(element=>{        
+        if(element.getAttribute('data-id')==idMusic){
+            element.querySelector(".playlists__avata--playing").classList.remove('hidden');
+            element.querySelector(".playlists__avata--pause").classList.add('hidden');;
+        }
+    })
 }
