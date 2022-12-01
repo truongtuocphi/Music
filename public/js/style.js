@@ -209,6 +209,7 @@ function toastMessage(message, time = 3000) {
 function closeElement(boxElement, classHide) {
     $$(boxElement).classList.add(classHide);
 }
+
 function menu() {
     let list__btn_submenu = $$l(".btn_submenu");
     list__btn_submenu.forEach(menuhead => {
