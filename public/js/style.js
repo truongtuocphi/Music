@@ -7,6 +7,8 @@ const api = [
         des: "Ca Sĩ chuyển Nghiệp",
         avata: "/public/image/momo.jpg",
         link: "/public/uploads/1.mp3",
+        listen: 120000,
+        loves: 452000,
     },
     {
         id: 2,
@@ -15,6 +17,8 @@ const api = [
         des: "Ca Sĩ chuyển Nghiệp",
         avata: "/public/image/mytam.jpg",
         link: "/public/uploads/2.mp3",
+        listen: 120000,
+        loves: 452000,
     },
     {
         id: 3,
@@ -23,6 +27,8 @@ const api = [
         des: "Ca Sĩ chuyển Nghiệp",
         avata: "/public/image/lisa.jpg",
         link: "/public/uploads/3.mp3",
+        listen: 120000,
+        loves: 452000,
     },
     {
         id: 4,
@@ -31,6 +37,8 @@ const api = [
         des: "Ca Sĩ chuyển Nghiệp",
         avata: "/public/image/tuanhung.jpg",
         link: "/public/uploads/4.mp3",
+        listen: 120000,
+        loves: 452000,
     },
     {
         id: 5,
@@ -39,6 +47,8 @@ const api = [
         des: "Blackpink",
         avata: "/public/image/sontung.jpg",
         link: "/public/uploads/5.mp3",
+        listen: 120000,
+        loves: 452000,
     },
     {
         id: 6,
@@ -47,6 +57,8 @@ const api = [
         des: "Ca Sĩ chuyển Nghiệp",
         avata: "/public/image/eric.jpg",
         link: "/public/uploads/6.mp3",
+        listen: 120000,
+        loves: 452000,
     },
 ]
 const apiList = [
@@ -63,7 +75,7 @@ const apiList = [
     {
         id: 2,
         song: "Hãy trao cho anh",
-        link: "/public/uploads/1.mp3",
+        link: "/public/uploads/2.mp3",
         listen: 140000,
         loves: 3520,
         singer: "Lisa",
@@ -73,7 +85,7 @@ const apiList = [
     {
         id: 3,
         song: "Có tiền có tất cả",
-        link: "/public/uploads/1.mp3",
+        link: "/public/uploads/3.mp3",
         listen: 189000,
         loves: 350,
         singer: "Lisa",
@@ -83,7 +95,7 @@ const apiList = [
     {
         id: 4,
         song: "Này yesssssssssss ssssssssssssssssss sssssssss người yêu ơi",
-        link: "/public/uploads/1.mp3",
+        link: "/public/uploads/4.mp3",
         listen: 230000,
         loves: 3520000,
         singer: "Lisa",
@@ -161,6 +173,26 @@ function search(api) {
     })
 }
 
+// creat url
+
+function serUrl(nameURL='',action=''){
+
+    if(!nameURL) return false;
+    const url = new URL(window.location);
+    nameURL=removeVietnameseTones(nameURL.trim());
+    if(nameURL.includes('  ')){
+        nameURL=nameURL.replaceAll('  ',' ')
+    } 
+    if(nameURL.includes(' ')){
+        nameURL=nameURL.replaceAll(' ','-')
+    }
+    if(action){
+        nameURL=url.origin+`/${action}/`+nameURL;
+    }else{
+        nameURL=url.origin+"/"+nameURL;
+    }
+//    window.history.pushState({}, '', nameURL);
+}
 // playlist
 function getplaylist(id, element) {
     if (creatLocal('playlist').getLocal()) {
@@ -175,11 +207,11 @@ function getplaylist(id, element) {
         }
     }
     creatLocal('playlist').setListLocal(id);
-
 }
 // show trang hoem 
 function homeShow() {
     openMenuSub(this, 0);
+    serUrl('home');
 }
 
 // xoá id playlist
@@ -245,16 +277,27 @@ function openMenuSub(element, index) {
         }
            
     }
+    if(index==0){
+        serUrl('music');
+    }else if(index==1){
+        serUrl('artists');
+    }else if(index==2){
+        serUrl('trend');
+    }else if(index==3){
+        serUrl('explore');
+    }
     if(index==4 || index==5){
         let recent_playlist= $$("#recent_playlist .recent_playlist--title");
         let title="";
-        recent_playlist.classList.remove("hidden");
+        $$("#recent_playlist").classList.remove("hidden");
         if(index==4){
             playlistORRecent("recent");
             title="<h1># Recent</h1>";
+            serUrl('recent');
         }else{
             playlistORRecent("playlist");
             title="<h1># Playlist</h1>";
+            serUrl('playlist');
         }
         recent_playlist.innerHTML=title;
     }
@@ -391,3 +434,32 @@ uploadfile.addEventListener('change', function (e) {
     let url = URL.createObjectURL(this.files[0]);
     $$('.main--profiles  img').src = url;
 });
+
+function removeVietnameseTones(str) {
+    str = str.replace(/à|á|ạ|ả|ã|â|ầ|ấ|ậ|ẩ|ẫ|ă|ằ|ắ|ặ|ẳ|ẵ/g,"a"); 
+    str = str.replace(/è|é|ẹ|ẻ|ẽ|ê|ề|ế|ệ|ể|ễ/g,"e"); 
+    str = str.replace(/ì|í|ị|ỉ|ĩ/g,"i"); 
+    str = str.replace(/ò|ó|ọ|ỏ|õ|ô|ồ|ố|ộ|ổ|ỗ|ơ|ờ|ớ|ợ|ở|ỡ/g,"o"); 
+    str = str.replace(/ù|ú|ụ|ủ|ũ|ư|ừ|ứ|ự|ử|ữ/g,"u"); 
+    str = str.replace(/ỳ|ý|ỵ|ỷ|ỹ/g,"y"); 
+    str = str.replace(/đ/g,"d");
+    str = str.replace(/À|Á|Ạ|Ả|Ã|Â|Ầ|Ấ|Ậ|Ẩ|Ẫ|Ă|Ằ|Ắ|Ặ|Ẳ|Ẵ/g, "A");
+    str = str.replace(/È|É|Ẹ|Ẻ|Ẽ|Ê|Ề|Ế|Ệ|Ể|Ễ/g, "E");
+    str = str.replace(/Ì|Í|Ị|Ỉ|Ĩ/g, "I");
+    str = str.replace(/Ò|Ó|Ọ|Ỏ|Õ|Ô|Ồ|Ố|Ộ|Ổ|Ỗ|Ơ|Ờ|Ớ|Ợ|Ở|Ỡ/g, "O");
+    str = str.replace(/Ù|Ú|Ụ|Ủ|Ũ|Ư|Ừ|Ứ|Ự|Ử|Ữ/g, "U");
+    str = str.replace(/Ỳ|Ý|Ỵ|Ỷ|Ỹ/g, "Y");
+    str = str.replace(/Đ/g, "D");
+    // Some system encode vietnamese combining accent as individual utf-8 characters
+    // Một vài bộ encode coi các dấu mũ, dấu chữ như một kí tự riêng biệt nên thêm hai dòng này
+    str = str.replace(/\u0300|\u0301|\u0303|\u0309|\u0323/g, ""); // ̀ ́ ̃ ̉ ̣  huyền, sắc, ngã, hỏi, nặng
+    str = str.replace(/\u02C6|\u0306|\u031B/g, ""); // ˆ ̆ ̛  Â, Ê, Ă, Ơ, Ư
+    // Remove extra spaces
+    // Bỏ các khoảng trắng liền nhau
+    str = str.replace(/ + /g," ");
+    str = str.trim();
+    // Remove punctuations
+    // Bỏ dấu câu, kí tự đặc biệt
+    str = str.replace(/!|@|%|\^|\*|\(|\)|\+|\=|\<|\>|\?|\/|,|\.|\:|\;|\'|\"|\&|\#|\[|\]|~|\$|_|`|-|{|}|\||\\/g," ");
+    return str.toLowerCase();
+}

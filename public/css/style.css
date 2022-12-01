@@ -10,7 +10,7 @@
   --textcolor-white: rgba(255, 255, 255, 0.7);
   --textcolor-black: rgba(0, 0, 0, 0.87);
   --bg--menu: #302724;
-  --bg--container: #202020;
+  --bg--container: #251B18;
   --text-hover: #f55858;
 }
 
@@ -722,7 +722,7 @@ article {
 #music__container .music--box__header .btn-play {
   width: 160px;
   height: 46px;
-  border-radius: 18px;
+  border-radius: 24px;
   background-color: var(--text-hover);
   font-size: 18px;
   font-weight: 600;
@@ -731,10 +731,10 @@ article {
 
 #music__container .music--box__header .btn-add {
   margin-left: 6px;
-  width: 45px;
-  height: 43px;
+  width: 40px;
+  height: 40px;
   font-size: 28px;
-  border-radius: 6px;
+  border-radius: 4px;
   color: var(--textcolor-black);
   background-color: var(--textcolor-white);
 }
@@ -1268,6 +1268,7 @@ article {
   width: 320px;
   -webkit-box-shadow: 0px 0px 4px #1d1515;
           box-shadow: 0px 0px 4px #1d1515;
+  min-height: 300px;
 }
 
 .playlists .playlist__controller .playlist__option .playlist__option-box .option_box-song {
@@ -1735,21 +1736,21 @@ article {
   width: 0px;
 }
 
-#recent_playlist {
+#recent_playlist .recent__playlist--container {
+  height: 68vh;
   overflow-y: auto;
-  height: 80vh;
 }
 
-#recent_playlist::-webkit-scrollbar {
+#recent_playlist .recent__playlist--container::-webkit-scrollbar {
   width: 5px;
 }
 
-#recent_playlist::-webkit-scrollbar-thumb {
+#recent_playlist .recent__playlist--container::-webkit-scrollbar-thumb {
   background-color: var(--text-hover);
   border-radius: 8px;
 }
 
-#recent_playlist::-webkit-scrollbar-track {
+#recent_playlist .recent__playlist--container::-webkit-scrollbar-track {
   background-color: rgba(70, 11, 179, 0.445);
   border-radius: 8px;
 }

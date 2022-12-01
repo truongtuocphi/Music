@@ -1162,7 +1162,7 @@ article {
                 background-color: var(--bg--menu);
                 width: 320px;
                 box-shadow: 0px 0px 4px rgb(29, 21, 21);
-
+                min-height: 300px;
                 .option_box-song {
                     padding: 0 12px;
                     display: flex;
@@ -1629,19 +1629,26 @@ article {
   
 }
 #recent_playlist{
-    overflow-y: auto;
-    height: 80vh ;
-    &::-webkit-scrollbar{
-        width: 5px;
+
+
+    .recent__playlist--container{
+        height: 68vh ;
+        overflow-y: auto;
+        &::-webkit-scrollbar{
+            width: 5px;
+        }
+        &::-webkit-scrollbar-thumb{
+            background-color: var(--text-hover);
+            border-radius: 8px;
+        }
+        &::-webkit-scrollbar-track{
+            background-color: rgba(70, 11, 179, 0.445);
+            border-radius: 8px;
+        }
+      
     }
-    &::-webkit-scrollbar-thumb{
-        background-color: var(--text-hover);
-        border-radius: 8px;
-    }
-    &::-webkit-scrollbar-track{
-        background-color: rgba(70, 11, 179, 0.445);
-        border-radius: 8px;
-    }
+    
+   
 }
 @keyframes fakeToast{
     0% {
