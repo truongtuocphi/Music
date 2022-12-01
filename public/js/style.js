@@ -385,7 +385,6 @@ function makeupNumber(number) {
     return number;
 }
 
-
 const uploadfile = $$('#uploadfile');
 uploadfile.addEventListener('change', function (e) {
     let url = URL.createObjectURL(this.files[0]);
