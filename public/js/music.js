@@ -20,13 +20,13 @@ if (!creatLocal('volume').getLocal()) {
 musicPlayer(api, 1);
 
 // lấy bình luận theo id
-function getbinhluan(id){
+function getbinhluan(id) {
     $$("#modal__comment").classList.toggle("hidden");
     $$(".modal__comment-container").classList.toggle("hidden");
-    if(!$$("#modal__comment").className.includes("hidden")){
-        let html="Hiện tại chưa có bình luận nào";
+    if (!$$("#modal__comment").className.includes("hidden")) {
+        let html = "Hiện tại chưa có bình luận nào";
         // lấy trên database
-         html+=binhluan.map(comment=>`
+        html += binhluan.map(comment => `
         <li>
         <div>
             <img src="${comment.avata}" alt="">
@@ -39,28 +39,28 @@ function getbinhluan(id){
         </div>
     </li>
         `).join('');
-       $$(".list__user ul").innerHTML=html;       
+        $$(".list__user ul").innerHTML = html;
     }
 }
 //playmucisc when click
 // truyền id music
-function musicplayClick(id,element){
-    const listPlaylists=$$l(".playlists .playlists__avata--playing");
-    const playlists__avata=$$l(".playlists .playlists__avata--pause");
+function musicplayClick(id, element) {
+    const listPlaylists = $$l(".playlists .playlists__avata--playing");
+    const playlists__avata = $$l(".playlists .playlists__avata--pause");
     playlists__avata.forEach(item => { item.classList.remove("hidden") });
-    listPlaylists.forEach(item=>{item.classList.add('hidden')})
+    listPlaylists.forEach(item => { item.classList.add('hidden') })
     musicPlayer(api, id);
     $$("#btn_playing").click();
     console.log(element)
- 
-    if(element.closest('.playlists')){
+
+    if (element.closest('.playlists')) {
         element.closest('.playlists').querySelector('.playlists__avata--playing').classList.remove('hidden')
         element.closest('.playlists').querySelector('.playlists__avata--pause').classList.add('hidden')
     }
-    
+
 }
 // playlist music singer
-function musicSubArtists(idMusic,index){
+function musicSubArtists(idMusic, index) {
     let playlists__avata = $$l("#sub_astists .playlists__avata--pause");
     let playlists__wave = $$l("#sub_astists .playlists__avata--playing");
 
@@ -76,28 +76,48 @@ function musicSubArtists(idMusic,index){
     audio.play()
 }
 
-function getListAblums(id = 1){
-    cleanActive($$l('.openMenuSub'),'active');
+function getListAblums(id = 1) {
+    cleanActive($$l('.openMenuSub'), 'active');
     $$('.openMenuSub_artists').classList.add('active');
-    addlistHidden($$l('.menu__leftsearch'),"hidden");
+    addlistHidden($$l('.menu__leftsearch'), "hidden");
     $$("#sub_astists").classList.remove("hidden");
     $$("#id_astists").classList.add("hidden");
-    musicPlayList(id,apiList);
+    musicPlayList(id, apiList);
 }
+//list recent or playlists
+function playlistORRecent(namelocal) {
+    let listPlaylist = creatLocal(namelocal).getLocal();
+ 
+ if(typeof listPlaylist=="string")listPlaylist=JSON.parse(listPlaylist);
+    let arrList=[];
+    if (listPlaylist.length>0) {
+        listPlaylist.forEach(idPlaylist => {
+           let song= api.find(song=>song.id === idPlaylist)
+           arrList.push(song);
+        })
+    }
 
+    if(arrList.length>0){
+        $$("#recent_playlist .recent__playlist--container").innerHTML=creatPlaylistcontainer(arrList,listPlaylist,2);
+    }
+}
 // list ablums của ca sĩ
-function musicPlayList(idsinger,apiList){
+function musicPlayList(idsinger, apiList) {
     creatLocal("history").reset();
-    const sub_astists=$$("#sub_astists");
-    const signer="Lisa";
-    const birthday="12/04/2022";
-    const avata="./public/image/lisa.jpg";
+    const sub_astists = $$("#sub_astists");
+    const signer = "Lisa";
+    const birthday = "12/04/2022";
+    const avata = "./public/image/lisa.jpg";
+    let html = '';
+    let listPlaylist = (creatLocal('playlist').getLocal());
+    
+    $$('.sub_astists-_list__music').innerHTML = creatPlaylistcontainer(apiList,listPlaylist,1);
+}
+function creatPlaylistcontainer(apiList,listPlaylist,kind){
     let html='';
-    let listPlaylist=(creatLocal('playlist').getLocal());
-    console.log(listPlaylist)
-    html=apiList.map((song,index)=>` <div class="playlists" data-id="${song.id}">
+    html = apiList.map((song, index) => ` <div class="playlists" data-id="${song.id}">
     <div class="playlist--box__item d-flex-align-center-justify-between">
-        <div onclick="musicSubArtists(${song.id},${index})"
+        <div onclick="${kind==1?`musicSubArtists(${song.id},${index})`:`musicplayClick(${song.id},this)`}"
             class="playlist__singer d-flex-align-center-justify-between">
             <div class="playlist__song-rank">
                 <i class="fa-solid fa-music"></i>
@@ -133,11 +153,11 @@ function musicPlayList(idsinger,apiList){
     </div>
     <div class="playlist__controller d-flex-align-center-justify-between">
         <div class="playlist__heart me-2">
-        ${listPlaylist.includes(song.id)?`<i onclick="removeIdplaylist(${song.id},this)" class="fa-solid fa-heart"></i>`:`<i onclick="getplaylist(${song.id},this)" class="fa-regular fa-heart"></i>`}     
+        ${listPlaylist.includes(song.id) ? `<i onclick="removeIdplaylist(${song.id},this)" class="fa-solid fa-heart"></i>` : `<i onclick="getplaylist(${song.id},this)" class="fa-regular fa-heart"></i>`}     
         </div>
         <div class="playlist__option">
             <i class="fa-solid fa-ellipsis"></i>
-            <div style="${index==0?"top:0px":""} ${(index==apiList.length-1)?"top:unset;bottom:0":""}" class="playlist__option-box">
+            <div style="${index == 0 ? "top:0px" : ""} ${(index == apiList.length - 1) ? "top:unset;bottom:0" : ""}" class="playlist__option-box">
                 <div class="option_box-song">
                     <div>
                         <img src="${song.avata}" alt="">
@@ -169,9 +189,8 @@ function musicPlayList(idsinger,apiList){
     </div>
 </div> 
     `).join('');
-    $$('.sub_astists-_list__music').innerHTML=html;
+    return html;
 }
-
 // phát nhạc theo trend
 function musicArtists(Element, idMusic, index) {
     let playlists__avata = $$l("#id_trends .playlists__avata--pause");
@@ -188,27 +207,27 @@ function musicArtists(Element, idMusic, index) {
     audio.play()
 };
 
-function cleanActive(listElement,classname) {
+function cleanActive(listElement, classname) {
     Array.from(listElement).forEach(element => {
         element.classList.remove(classname);
     })
 }
-function addlistHidden(listElement,classname) {
+function addlistHidden(listElement, classname) {
     Array.from(listElement).forEach(element => {
         element.classList.add(classname);
     })
 }
-$$('#playmain_home').onclick=function () {
+$$('#playmain_home').onclick = function () {
     console.log(this);
-    if(this.innerHTML.includes("fa-play")){
-        this.innerHTML='Pause <i class="ms-2 fa-solid fa-pause"></i>';
-     
-    }else{
-        this.innerHTML='Play Now <i class="ms-2 fa-solid fa-play"></i>';
+    if (this.innerHTML.includes("fa-play")) {
+        this.innerHTML = 'Pause <i class="ms-2 fa-solid fa-pause"></i>';
+
+    } else {
+        this.innerHTML = 'Play Now <i class="ms-2 fa-solid fa-play"></i>';
 
     }
     $$("#btn_playing").click();
-   let sss= `<i class="ms-2 fa-solid fa-pause"></i>`;
+    let sss = `<i class="ms-2 fa-solid fa-pause"></i>`;
 }
 function musicPlayer(api, idMusic = 1) {
 
@@ -244,7 +263,7 @@ function musicPlayer(api, idMusic = 1) {
             sub__volume.style.width = (creatLocal('volume').getLocal() * 100) + "%";
 
             creatLocal("history").setListLocal(this.currentId);
-
+            creatLocal("recent").setListLocal(this.currentId);
             if (creatLocal("history").getLocal() && creatLocal("history").getLocal().length >= this.songs.length) {
                 creatLocal("history").reset();
             }
@@ -270,10 +289,10 @@ function musicPlayer(api, idMusic = 1) {
             btn_playing.onclick = function () {
                 if (_this.isplaying) {
                     audio.pause();
-                    toastMessage("Bài hát đã bị dừng lại",1000);
+                    toastMessage("Bài hát đã bị dừng lại", 1000);
                     return true;
                 } else audio.play();
-                 toastMessage("Bài hát đang được phát",1000);
+                toastMessage("Bài hát đang được phát", 1000);
             };
 
             audio.onplay = function () {
