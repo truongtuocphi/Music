@@ -195,6 +195,7 @@ function cleanActive(listElement, classname) {
         element.classList.remove(classname);
     })
 }
+
 function addlistHidden(listElement, classname) {
     Array.from(listElement).forEach(element => {
         element.classList.add(classname);
