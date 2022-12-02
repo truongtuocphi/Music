@@ -26,13 +26,13 @@
             <nav>
                 <p class="nav--header">MENU</p>
                 <ul>
-                    <li onclick="homeShow()" title="Home"><a href="javascript:void(0)">
+                    <li title="Home"><a onclick="openMenuSub(this, 0)" class="menuactive" href="javascript:void(0)">
                             <i class="fa-solid fa-house"></i>
                             <span class="nav--title">Home</span>
                         </a>
                     </li>
                     <li title="Expolore">
-                        <a href="javascript:void(0)" id="explore" onclick="openMenuSub(this,3)">
+                        <a href="javascript:void(0)" id="explore" class="menuactive" onclick="openMenuSub(this,3)">
                             <i class="fa-regular fa-compass"></i>
                             <span class="nav--title">Explore</span>
                         </a>
@@ -59,19 +59,19 @@
                 <p class="nav--header mt-2">LIBRARY</p>
                 <ul>
                     <li title="Recent">
-                        <a href="javascript:void(0)" onclick="openMenuSub(this,4)">
+                        <a href="javascript:void(0)" class="menuactive" onclick="openMenuSub(this,4)">
                             <i class="fa-solid fa-clock-rotate-left"></i>
                             <span class="nav--title">Recent</span>
                         </a>
                     </li>
                     <li title="PlayList">
-                        <a href="javascript:void(0)" onclick="openMenuSub(this,5)">
+                        <a href="javascript:void(0)" class="menuactive"  onclick="openMenuSub(this,5)">
                             <i class="fa-solid fa-record-vinyl"></i>
                             <span class="nav--title">PlayList</span>
                         </a>
                     </li>
                     <li title="Downloads">
-                        <a href="javascript:void(0)">
+                        <a  class="menuactive" href="javascript:void(0)">
                             <i class="fa-solid fa-download"></i>
                             <span class="nav--title">Downloads</span>
                         </a>
@@ -209,7 +209,7 @@
                 </div>
             </div>
             <article id="container__all">
-                <div id="music__container" class="menu__leftsearch hidden">
+                <div id="music__container" class="menu__leftsearch">
                     <div class="singer__background" style="background-image:url(/public/image/singer.png)">
                     </div>
                     <div class="d-inline-block">
@@ -220,12 +220,12 @@
                     <div class="music--box__header">
                         <button id="playmain_home" data-id="1" class="btn-play">Play Now <i
                                 class="ms-2 fa-solid fa-play"></i></button>
-                        <button class="btn-add "><i class="fa-solid fa-plus"></i></button>
+                        <button class="btn-add" onclick="getplaylist(1,this)"><i class="fa-solid fa-plus"></i></button>
                     </div>
                     <div class="music--topchart music--Billboard mt-4">
                         <div class="music--topchart__head">
                             <h2>Billboard Topchart</h2>
-                            <p><a href="http://">See All</a></p>
+                            <p><a onclick="openMenuSub(this,1)" href="javascript:void(0)">See All</a></p>
                         </div>
                         <div class="list--topchart_singer">
                             <a onclick="getListAblums(3)" class="topchart_singer--box">
@@ -248,7 +248,7 @@
                     <div class="music--topchart mt-4" id="music--artist">
                         <div class="music--topchart__head">
                             <h2>Top Artists</h2>
-                            <p><a href="http://">See All</a></p>
+                            <p><a  onclick="openMenuSub(this,1)" href="javascript:void(0">See All</a></p>
                         </div>
                         <div class="row ">
                             <a onclick="getListAblums(3)" class="topchart_singer--box col-lg-3 col-xl-2 col-md-3 col-4">
@@ -348,7 +348,7 @@
                     <!-- musicArtists(Element,id,index) -->
                     <div class="playlists" data-id="1">
                         <div class="playlist--box__item d-flex-align-center-justify-between">
-                            <div onclick="musicArtists(this,1,0)"
+                            <div onclick="musicplayClick(1)"
                                 class="playlist__singer d-flex-align-center-justify-between">
                                 <div class="playlist__song-rank">1</div>
                                 <div class="playlists__avata">
@@ -434,9 +434,10 @@
                             </div>
                         </div>
                     </div>
-                    <div class="playlists" data-id="2">
+
+                    <div class="playlists" data-id="3">
                         <div class="playlist--box__item d-flex-align-center-justify-between">
-                            <div onclick="musicArtists(this,2,1)"
+                            <div onclick="musicplayClick(3)"
                                 class="playlist__singer d-flex-align-center-justify-between">
                                 <div class="playlist__song-rank">1</div>
                                 <div class="playlists__avata">
@@ -521,6 +522,8 @@
                         </div>
                     </div>
                 </div>
+
+
                 <div id="sub_astists" class="row hidden">
                     <div class="col-xl-3 col-12">
                         <div
@@ -931,6 +934,7 @@
             </article>
         </main>
     </div>
+
     <div id="modal__comment" data-des="Modal" class="hidden">
     </div>
     <div class="modal__comment-container hidden">

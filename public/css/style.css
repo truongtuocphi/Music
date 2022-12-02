@@ -1266,6 +1266,7 @@ article {
   top: -90px;
   background-color: var(--bg--menu);
   width: 320px;
+  z-index: 6;
   -webkit-box-shadow: 0px 0px 4px #1d1515;
           box-shadow: 0px 0px 4px #1d1515;
   min-height: 300px;
@@ -1736,6 +1737,16 @@ article {
   width: 0px;
 }
 
+#recent_playlist .recent_playlist--title {
+  margin: 12px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
 #recent_playlist .recent__playlist--container {
   height: 68vh;
   overflow-y: auto;
@@ -1753,6 +1764,14 @@ article {
 #recent_playlist .recent__playlist--container::-webkit-scrollbar-track {
   background-color: rgba(70, 11, 179, 0.445);
   border-radius: 8px;
+}
+
+.button_play i {
+  border-radius: 50%;
+  background-color: var(--textcolor-white);
+  font-size: 36px;
+  border: 2px solid var(--text-hover);
+  color: var(--text-hover);
 }
 
 @-webkit-keyframes fakeToast {
