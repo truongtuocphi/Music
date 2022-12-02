@@ -52,6 +52,7 @@ function musicplayClick(id) {
         musicPlayer(api, id);
     }
     $$("#btn_playing").click();
+    console.log(id)
 }
 
 // playlist music singer
@@ -74,7 +75,11 @@ function getListAblums(id = 1) {
 function playlistRecent(){
     $$("#btn_playing").click();
 }
-
+function playlistTrend(){
+    let id=$$("#id_trends .playlists").getAttribute("data-id");
+    musicPlayer(api, id);
+    $$("#btn_playing").click();
+}
 //list recent or playlists
 function playlistORRecent(namelocal) {
     let listPlaylist = creatLocal(namelocal).getLocal();
@@ -106,12 +111,11 @@ function musicPlayList(idsinger, apiList) {
     let html = '';
     $$('.sub_astists-_list__music').innerHTML = creatPlaylistcontainer(apiList,1);
 }
-musicPlaylistToptrend()
-function musicPlaylistToptrend(){
-    title=`<h2>#Top Trend <span onclick="playlistRecent()" class="button_play"><i class="fa-solid fa-circle-play"></i></span></h2>`;
-    $$("#id_trends").innerHTML=title+creatPlaylistcontainer(api,3);
-//    console.log(creatPlaylistcontainer(api,3));
 
+musicPlaylistToptrend();
+function musicPlaylistToptrend(){
+    title=`<h2>#Top Trend <span onclick="playlistTrend()" class="button_play"><i class="fa-solid fa-circle-play"></i></span></h2>`;
+    $$("#id_trends").innerHTML=title+creatPlaylistcontainer(api,3);
 }
 function creatPlaylistcontainer(apiList,kind){
     let listPlaylist = (creatLocal('playlist').getLocal());
@@ -232,6 +236,7 @@ $$('#playmain_home').onclick = function () {
     let sss = `<i class="ms-2 fa-solid fa-pause"></i>`;
 }
 function musicPlayer(listsong, idMusic = 1) {  
+    
     const app = {
         currentId: idMusic,
         songs: listsong,
@@ -261,8 +266,8 @@ function musicPlayer(listsong, idMusic = 1) {
             sub_progress.style.width = '0%';
             range__volume.value = creatLocal('volume').getLocal();
             sub__volume.style.width = (creatLocal('volume').getLocal() * 100) + "%";
-            creatLocal("history").setListLocal(this.currentId);
-            creatLocal("recent").setListLocal(this.currentId);
+            creatLocal("history").setListLocal(Number(this.currentId));
+            creatLocal("recent").setListLocal(Number(this.currentId));
             if (creatLocal("history").getLocal() && creatLocal("history").getLocal().length >= this.songs.length) {
                 creatLocal("history").reset();
             }
@@ -452,12 +457,10 @@ function musicPlayer(listsong, idMusic = 1) {
         }
     }
     app.start();
+    const chuyennhac=()=>{app.nextSong()};
     return {
-        setCurrentIndex(index) {
-            app.currentIndex = index;
-            app.start();
-        }
-    };
+        continue:chuyennhac,
+    }
 }
 
 function stopWave(idMusic,ischose=false){

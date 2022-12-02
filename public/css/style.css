@@ -1305,6 +1305,7 @@ article {
 
 .playlists .playlist__controller .playlist__option .playlist__option-box .option_box--controller ul li a {
   margin-left: 12px;
+  display: block;
 }
 
 .playlists .playlist__controller .playlist__option .playlist__option-box .option_box--controller ul li:hover {

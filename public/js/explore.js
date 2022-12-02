@@ -15,6 +15,6 @@ findSong.addEventListener('click', function() {
     let resetBoxExplore = document.querySelector('#content-page-explore');
     resetBoxExplore.classList.add('atc-second-page');
     // remove class hidden cho danh sách nhạc
-    let listSong = document.querySelector('#recent_playlist');
+    let listSong = document.querySelector('#supexplore');
     listSong.classList.remove('hidden');
 });
