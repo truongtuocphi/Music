@@ -1161,6 +1161,7 @@ article {
                 top: -90px;
                 background-color: var(--bg--menu);
                 width: 320px;
+                z-index: 6;
                 box-shadow: 0px 0px 4px rgb(29, 21, 21);
                 min-height: 300px;
                 .option_box-song {
@@ -1629,7 +1630,11 @@ article {
   
 }
 #recent_playlist{
-
+    .recent_playlist--title{
+        margin: 12px 0;
+        display: flex;
+        align-items: center;
+    }
 
     .recent__playlist--container{
         height: 68vh ;
@@ -1648,6 +1653,17 @@ article {
       
     }
     
+   
+}
+
+.button_play{
+    i{
+        border-radius: 50%;
+        background-color: var(--textcolor-white);
+        font-size: 36px;
+        border: 2px solid var(--text-hover);
+        color: var(--text-hover);
+    }
    
 }
 @keyframes fakeToast{
