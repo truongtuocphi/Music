@@ -151,7 +151,7 @@ function search(api) {
 
                 if (item.song.toLowerCase().includes(value_search) || item.singer.toLowerCase().includes(value_search) || item.des.toLowerCase().includes(value_search)) {
                     return `
-                    <li><a class="singer" href="javascript:void()">
+                    <li onclick="musicplayClick(${item.id})"><a class="singer" href="javascript:void()">
                     <img class="singer--avata" src="${item.avata}" alt="">
                     <div class="singer--imf ps-2">
                         <h3 class="singer--name">${item.song}</h3>
@@ -208,7 +208,7 @@ function getplaylist(id, element) {
     }
     creatLocal('playlist').setListLocal(id);
 }
-// show trang hoem 
+// show trang home 
 function homeShow() {
     openMenuSub(this, 0);
     serUrl('home');
@@ -241,7 +241,6 @@ function toastMessage(message, time = 3000) {
 function closeElement(boxElement, classHide) {
     $$(boxElement).classList.add(classHide);
 }
-
 function menu() {
     let list__btn_submenu = $$l(".btn_submenu");
     list__btn_submenu.forEach(menuhead => {
@@ -278,31 +277,41 @@ function openMenuSub(element, index) {
         }
            
     }
+    console.log(element);
+    $$l('.menuactive').forEach(item=>{item.classList.remove('active')});
+    element.classList.add('active');
+    creatLocal('layout').setLocal("home");
     if(index==0){
         serUrl('music');
     }else if(index==1){
         serUrl('artists');
     }else if(index==2){
         serUrl('trend');
+        creatLocal('layout').setLocal("trend");
     }else if(index==3){
         serUrl('explore');
+        creatLocal('layout').setLocal("explore");
     }
     if(index==4 || index==5){
+        creatLocal('layout').setLocal("recent");
         let recent_playlist= $$("#recent_playlist .recent_playlist--title");
         let title="";
         $$("#recent_playlist").classList.remove("hidden");
         if(index==4){
             playlistORRecent("recent");
-            title="<h1># Recent</h1>";
+            title=`<h2># Recent <span onclick="playlistRecent()" class="button_play"><i class="fa-solid fa-circle-play"></i></span></h2>`;
             serUrl('recent');
         }else{
             playlistORRecent("playlist");
-            title="<h1># Playlist</h1>";
+            title=`<h2># Playlist <span onclick="playlistRecent()" class="button_play"><i class="fa-solid fa-circle-play"></i></d></h2>`;
             serUrl('playlist');
         }
         recent_playlist.innerHTML=title;
     }
-  
+    stopWave('1',true);
+    $$("#btn_playing").innerHTML = `<i class="fa-solid fa-circle-play"></i>`;
+    $$("audio").pause();
+
    
 }
 
