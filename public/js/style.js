@@ -294,6 +294,7 @@ function openMenuSub(element, index) {
         serUrl('explore');
         creatLocal('layout').setLocal("explore");
     }
+
     if (index == 4 || index == 5) {
         creatLocal('layout').setLocal("recent");
         let recent_playlist = $$("#recent_playlist .recent_playlist--title");
@@ -310,11 +311,17 @@ function openMenuSub(element, index) {
         }
         recent_playlist.innerHTML = title;
     }
+    /// remove và add class hidden để hiện thị và ẩn trang downlaod
+    let pageDownload = document.querySelector("#download-page");
+    if(index == 6) {
+        pageDownload.classList.remove("hidden");
+    }else if(index != 6) {
+        pageDownload.classList.add("hidden");
+    }
+
     stopWave('1', true);
     $$("#btn_playing").innerHTML = `<i class="fa-solid fa-circle-play"></i>`;
     $$("audio").pause();
-
-
 }
 
 function offAll() {

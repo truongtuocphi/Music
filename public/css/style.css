@@ -722,7 +722,7 @@ article {
 #music__container .music--box__header .btn-play {
   width: 160px;
   height: 46px;
-  border-radius: 24px;
+  border-radius: 12px;
   background-color: var(--text-hover);
   font-size: 18px;
   font-weight: 600;
@@ -731,8 +731,8 @@ article {
 
 #music__container .music--box__header .btn-add {
   margin-left: 6px;
-  width: 40px;
-  height: 40px;
+  width: 43px;
+  height: 43px;
   font-size: 28px;
   border-radius: 4px;
   color: var(--textcolor-black);
@@ -1076,7 +1076,7 @@ article {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  border-bottom: 1px solid var(--bg--menu);
+  /* border-bottom: 1px solid var(--bg--menu); */
 }
 
 .playlists .playlist--box__item {

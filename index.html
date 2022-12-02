@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -14,6 +13,7 @@
     <link rel="stylesheet" href="/public/css/style.css">
     <link rel="stylesheet" href="/public/css/login.css">
     <link rel="stylesheet" href="/public/css/explore.css">
+    <link rel="stylesheet" href="/public/css/download.css">
     <title>Life & Music</title>
 </head>
 <body>
@@ -71,7 +71,7 @@
                         </a>
                     </li>
                     <li title="Downloads">
-                        <a  class="menuactive" href="javascript:void(0)">
+                        <a  class="menuactive" href="javascript:void(0)" onclick="openMenuSub(this,6)">
                             <i class="fa-solid fa-download"></i>
                             <span class="nav--title">Downloads</span>
                         </a>
@@ -646,7 +646,7 @@
                                 <button id="find-song">Find songs</button>
                             </div>
                         </div>
-                        <div class="subexplore__container">
+                        <div id="subexplore" class="subexplore__container hidden">
                             <div class="header-explore">
                                 <h1 class="recent_playlist-title title-explore">Top Music</h1>
                                 <div class="search">
@@ -929,6 +929,38 @@
                         </div>
                     </div>  
                 </div>
+                <!-- Phần Download (Trương Tươc Phi) -->
+                <div id="download-page" class="page-download hidden">
+                    <div id="page-no-list">
+                        <div class="icon-download">
+                            <i class="fas fa-download"></i>
+                        </div>
+                        <div class="content-download">
+                            <h3 class="title">Let’s find  new song</h3>
+                            <p class="content">Save albums by tapping the heart icon</p>
+                        </div>
+                        <div class="button-find-download">
+                            <button id="find-song-download">Find song</button>
+                        </div>
+                    </div>
+                    <div id="list-download" class="page-list-download hidden">
+                        <div class="box-header">
+                            <div class="in-header">
+                                <div class="picture-music-download">
+                                    <img src="public/image/Rectangle 97.png" alt="">
+                                </div>
+                                <div class="box-title-download">
+                                    <p class="title-dl">MY PLAYLIST</p>
+                                    <h3 class="main-title">Dowload playlist</h3>
+                                    <div class="user">
+                                        <img src="public/image/lisa.jpg" alt="">
+                                        <span class="name-user">Adree</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <!-- End ! -->
             </article>
         </main>
@@ -1197,3 +1229,4 @@
 <script src="/public/js/music.js"></script>
 <script src="/public/js/login.js"></script>
 <script src="/public/js/explore.js"></script>
+<script src="/public/js/download.js"></script>
