@@ -69,10 +69,11 @@
     padding: 8px 30px;
     border-radius: 12px;
     font-weight: 550;
+    border: none;
 }
 
 .button-find-download #find-song-download:hover {
-    background-color: var(--text-hover);
+   opacity: 0.9;
 }
 
 .page-list-download .box-header .in-header {

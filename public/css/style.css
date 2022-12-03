@@ -98,6 +98,7 @@ menu .menu--brand {
 }
 
 menu .menu--brand .logo {
+  cursor: pointer;
   width: 100px;
   -o-object-fit: cover;
      object-fit: cover;
@@ -1602,7 +1603,7 @@ article {
   background-color: var(--bg--menu);
   padding: 12px;
   border-radius: 12px;
-  height: 100vh;
+  height: 74vh;
 }
 
 #sub_astists .sub_astists-_list__music {
