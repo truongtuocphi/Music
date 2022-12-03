@@ -124,3 +124,24 @@
 .box-title-download .user .name-user {
     font-size: 18px;
 }
+@media (max-width: 450px){
+    #page-no-list .content-download .title{
+        font-size: 32px ;
+      }
+      .page-download{
+        height: 70% ;
+      }
+      #page-no-list .button-find-download #find-song-download{
+        width: 100% ;
+      }
+      .page-download #page-no-list .icon-download .fa-download{
+        font-size: 36px;
+      }
+      .box-expl .first-page{
+          gap: unset;
+      }
+      .box-expl .first-page{
+          padding: 20px 6px;
+        justify-content: space-evenly;
+      }
+}

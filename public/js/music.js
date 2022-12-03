@@ -52,7 +52,7 @@ function musicplayClick(id) {
         musicPlayer(api, id);
     }
     $$("#btn_playing").click();
-    console.log(id)
+
 }
 
 // playlist music singer
@@ -74,6 +74,7 @@ function getListAblums(id = 1) {
 
 function playlistRecent(){
     $$("#btn_playing").click();
+    toastMessage("Đã bật chế độ phát danh sách")
 }
 function playlistTrend(){
     let id=$$("#id_trends .playlists").getAttribute("data-id");
@@ -294,11 +295,11 @@ function musicPlayer(listsong, idMusic = 1) {
             btn_playing.onclick = function () {
                 if (_this.isplaying) {
                     audio.pause();
-                    toastMessage("Bài hát đã bị dừng lại", 1000);
+            
                 stopWave(_this.currentId,true);
                     return true;
                 } else audio.play();
-                toastMessage("Bài hát đang được phát", 1000);
+              
                 stopWave(_this.currentId,false);
             };
 
@@ -306,14 +307,14 @@ function musicPlayer(listsong, idMusic = 1) {
                 _this.isplaying = true;
                 cd_thumpAnimation.play();
                 btn_playing.innerHTML = `<i class="fa-solid fa-circle-pause"></i>`;
-                
+                toastMessage("Bài hát đang được phát");
      
             };
             audio.onpause = function () {
                 _this.isplaying = false;
                 cd_thumpAnimation.pause();
                 btn_playing.innerHTML = `<i class="fa-solid fa-circle-play"></i>`;
-
+                toastMessage("Bài hát đã bị dừng");
             };
 
             audio.onloadeddata = () => {
@@ -404,6 +405,30 @@ function musicPlayer(listsong, idMusic = 1) {
                 }
                 
             }
+            // event keyboard
+
+            document.addEventListener('keydown', (e) => {
+                switch(e.keyCode){
+                    case 32:
+                        btn_playing.click()
+                        break;
+                    case 38:
+                    case 39:
+                        if(btn_playing.querySelector('i').className.includes('pause')){
+                            _this.nextSong();
+                            audio.play();
+                        }
+                      break;
+                    case 37:
+                    case 40:
+                        if(btn_playing.querySelector('i').className.includes('pause')){
+                            _this.backSong();
+                            audio.play();
+                        }
+                        
+                        break;
+                }
+            })
         },
         nextSong() {
             let indexsss = this.songs.findIndex((song) => {
@@ -414,7 +439,7 @@ function musicPlayer(listsong, idMusic = 1) {
             } else {
                 this.currentId = this.songs[indexsss + 1].id
             }
-
+            toastMessage("Phát Bài tiếp theo");
             this.loadCurrentSong();
         },
         backSong() {
@@ -426,7 +451,7 @@ function musicPlayer(listsong, idMusic = 1) {
             } else {
                 this.currentId = this.songs[indexsss - 1].id
             }
-
+            toastMessage("Phát bài  hát trước");
             this.loadCurrentSong();
 
         },

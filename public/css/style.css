@@ -90,7 +90,7 @@ menu {
   transition: 0.9s;
   padding-left: 12px;
   border-right: 2px solid var(--bg--menu);
-  height: 90vh;
+  height: 89vh;
 }
 
 menu .menu--brand {
@@ -620,14 +620,14 @@ main .user--profile .total--notice::after {
   }
 }
 
-@media (max-width: 992px) {
+@media (max-width: 995px) {
   menu {
     position: fixed;
     top: 0;
     left: 0;
     -webkit-transform: translateX(-400px);
             transform: translateX(-400px);
-    height: 90vh;
+    height: 100vh;
   }
   menu .menu--brand {
     margin-top: 20%;
@@ -682,6 +682,9 @@ article {
 #music__container p {
   padding: 0;
   margin: 6px 0;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;;
 }
 
 #music__container .singer-name {
@@ -722,7 +725,7 @@ article {
 #music__container .music--box__header .btn-play {
   width: 160px;
   height: 46px;
-  border-radius: 12px;
+  border-radius: 24px;
   background-color: var(--text-hover);
   font-size: 18px;
   font-weight: 600;
@@ -731,8 +734,8 @@ article {
 
 #music__container .music--box__header .btn-add {
   margin-left: 6px;
-  width: 43px;
-  height: 43px;
+  width: 40px;
+  height: 40px;
   font-size: 28px;
   border-radius: 4px;
   color: var(--textcolor-black);
@@ -1076,7 +1079,7 @@ article {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  /* border-bottom: 1px solid var(--bg--menu); */
+  border-bottom: 1px solid var(--bg--menu);
 }
 
 .playlists .playlist--box__item {
@@ -1484,6 +1487,12 @@ article {
   .song--des {
     width: 80px !important;
   }
+  #container__all{
+    margin-top: 8px;
+}
+#music__container #music--artist{
+  width: 100%;
+}
 }
 
 @media (max-width: 400px) {
@@ -1511,6 +1520,20 @@ article {
   .playlists .playlist--box__item .playlist__singer .playlist__singer-name {
     width: 60px !important;
   }
+  #music__container .music--topchart{
+    padding: 8px 4px;
+    border-radius: 12px;
+  }
+  #music__container .music--topchart__head{
+    margin:12px 8px;
+  }
+  #music__container .music--topchart__head h2{
+    font-size: 16px;
+   
+  }
+  #container__all{
+    height: 62vh;
+  }
 }
 
 @media (max-width: 576px) {
@@ -1529,7 +1552,7 @@ article {
     padding: 0 !important;
   }
   #music__container p {
-    font-size: 12px;
+    font-size: 14px;
   }
   .submenu--settings {
     width: 320px !important;
@@ -1732,6 +1755,7 @@ article {
 #container__all {
   overflow-y: auto;
   height: 75vh;
+  margin-bottom: 90px;
 }
 
 #container__all::-webkit-scrollbar {
@@ -1810,6 +1834,46 @@ article {
 @keyframes fakeout {
   to {
     opacity: 0;
+  }
+}
+
+#footer_container{
+  height: 18vh;
+  width: 100%;
+}
+
+@media (min-width: 1000px) {
+  #footer_container{
+    height: 0px ;
+  }
+}
+
+@media (max-width: 450px) {
+  
+  #id_astists .box_astist img{
+    width: 96%;
+    height: 180px;
+    border-radius: 16px;
+  }
+  #id_astists .box_astist{
+    padding-top: 12px;
+    padding-bottom: 12px;
+  }
+}
+@media (max-width: 350px) {
+  #id_astists .box_astist img{
+    width: 98%;
+    height: 140px;
+
+  }
+  #id_astists .box_astist .artists__des--singer{
+    font-size: 18px;
+    font-weight: bold;
+    margin: 0;
+    margin-top: 8px;
+  }
+  #id_astists .box_astist .artists__des--song__des{
+    font-size: 16px;
   }
 }
 /*# sourceMappingURL=style.css.map */

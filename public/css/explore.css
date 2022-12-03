@@ -1,10 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Chewy&family=Lato:wght@100;300;400;700;900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
-* {
-  margin: 0;
-  padding: 0;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-}
+
 
 :root {
     --textcolor-white: rgba(255, 255, 255, 0.7);
@@ -36,7 +31,7 @@
     width: 200px;
     height: 200px;
     border-radius: 20px;
-    background: linear-gradient(to right bottom, #202020, #5f5f5f) no-repeat;
+   background-color:  var(--bg--menu);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -78,7 +73,7 @@
     padding: 0 0 30px 0;
     margin: 0 20px 0 0;
     border-radius: 12px;
-    background: linear-gradient(to bottom, #202020 60%, #393939) no-repeat;
+    background-color: var(--bg--menu);
 }
 
 .atc-second-page {
@@ -185,6 +180,7 @@
     }
     .first-page .title-1{
         font-size: 14px;
+        font-weight: 600;
     }
     .first-page .title-2{
         font-size: 40px;
@@ -223,6 +219,9 @@
         border: none;
         font-size: 13px;
     }
+    .second-page .content .button-find button{
+        width: 300px;
+    }
 }
 @media (max-width: 500px){
     .first-page .title-1{
@@ -230,5 +229,30 @@
     }
     .first-page .title-2{
         font-size: 20px;
+    }
+    .second-page .content .button-find button{
+        width: 250px;
+    }
+    .second-page .content .box-title .title-1{
+        font-size: 16px;
+    }
+}
+@media (max-width: 330px){
+    #box-explore .box-heart{
+        width: 80px;
+        height: 80px;
+    }
+    .first-page .title-2{
+        font-size: 16px;
+    }
+    .second-page .content .box-title .title-1{
+        font-size: 15px;
+        font-weight: bold;
+    }
+    .second-page .content .box-title .title-2{
+        font-size: 14px;
+    }
+    .second-page .content .button-find button{
+        width: 200px;
     }
 }

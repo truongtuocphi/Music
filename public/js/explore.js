@@ -7,6 +7,23 @@ showExplore.addEventListener('click', function() {
     pageExplore.classList.remove('hidden');
 });
 
+// tìm kiếm nhạc tại trang Explore
+$$("#explore_search--btn").onclick=()=>{
+    $$("#explore_search").focus();
+}
+$$("#explore_search").addEventListener("input", (e)=>{
+    let valueSearch=e.target.value.trim().toLowerCase();
+    if(valueSearch){
+        console.log(valueSearch);
+        let newApi=api.filter(item=> (item.song.toLowerCase().includes(valueSearch) || item.singer.toLowerCase().includes(valueSearch)));
+        if(newApi.length>0){
+            $$("#explore__container").innerHTML=creatPlaylistcontainer(newApi,2);
+        }
+    }
+  
+})
+//End tìm kiếm nhạc tại trang Explore
+
 findSong.addEventListener('click', function() {
     // ẩn thông báo tìm nhạc
     let contentExplore = document.querySelector('#in-content-explore');

@@ -555,6 +555,7 @@ main {
 }
 
 @media (max-width: 768px) {
+
     .menu--search {
         order: 3;
         width: 96%;
@@ -579,13 +580,13 @@ main {
     }
 }
 
-@media (max-width: 992px) {
+@media (max-width: 995px) {
     menu {
         position: fixed;
         top: 0;
         left: 0;
         transform: translateX(-400px);
-        height: 90vh;
+        height: 100vh !important;
 
         .menu--brand {
             margin-top: 20%;
@@ -1379,7 +1380,9 @@ article {
     .song--des {
         width: 80px !important;
     }
-
+    #container__all{
+        margin-top: 8px;
+    }
 }
 
 @media (max-width: 400px) {
@@ -1682,3 +1685,4 @@ article {
       opacity: 0;
   }
 }
+

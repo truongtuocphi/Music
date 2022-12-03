@@ -226,15 +226,22 @@ function removeIdplaylist(id, element) {
 
     toastMessage("Xóa thành công bài hát trong danh sách phát");
 }
+function closeToast(){
+    $$('#toast').innerHTML="";
+}
 // Thông báo
 function toastMessage(message, time = 3000) {
     const creatBox = document.createElement("div");
     creatBox.className = "toast__container fakeanimation";
-    creatBox.innerHTML = `<span class="toast__notice">${message}</span> <button onclick="closeElement('#toast','hidden')" class="btn text-white">X</button>`;
+    creatBox.innerHTML = `<span class="toast__notice">${message}</span> <button onclick="closeToast()" class="btn text-white">X</button>`;
     creatBox.style.animation = `fakeToast 0.6s ease-in,fakeout linear 1s 3s forwards`;
     $$('#toast').appendChild(creatBox);
+   
     setTimeout(() => {
-        $$('#toast').removeChild(creatBox);
+        if($$('#toast').innerHTML){
+            $$('#toast').removeChild(creatBox);
+        }
+      
     }, time)
 }
 // closeElement
@@ -258,7 +265,7 @@ function menu() {
 
 function openMenuSub(element, index) {
     let menu__leftsearch = $$l(".menu__leftsearch");
-    let btn_menu__leftsearch = $$l(".list--menu__item .openMenuSub");
+    let btn_menu__leftsearch = $$l(".openMenuSub");
 
     if ($$("#sub_astists")) {
         $$("#sub_astists").classList.add("hidden");
@@ -306,7 +313,7 @@ function openMenuSub(element, index) {
             serUrl('recent');
         } else {
             playlistORRecent("playlist");
-            title = `<h2># Playlist <span onclick="playlistRecent()" class="button_play"><i class="fa-solid fa-circle-play"></i></d></h2>`;
+            title = `<h2># Play List <span onclick="playlistRecent()" class="button_play"><i class="fa-solid fa-circle-play"></i></d></h2>`;
             serUrl('playlist');
         }
         recent_playlist.innerHTML = title;
@@ -508,24 +515,29 @@ function openSpeaking() {
         toastMessage("Đã mở phần mềm hỗ trợ giọng nói");
         creatvoidreading("We will support you");  
         recognition.start();
-
+        localStorage.setItem("speaker","1234")
         recognition.onresult = function (event) {
             var resultIndex = event.resultIndex;
             var value_search = event.results[resultIndex][0].transcript.toLowerCase();
-            localStorage.setItem("speaker",value_search);
-            let songss = api.find(function (item) {
-                return item.song.toLowerCase().includes(value_search)
-            })
-            
-          if(songss){ 
-            musicPlayer(api, songss.id);
-            toastMessage("Đã tìm thấy bài hát ");
-            speaking.innerHTML = `<i title="Mở Mic" class="fa-solid fa-microphone-lines-slash "></i>    `;
-            isMicSpeak = true;
-            creatvoidreading(`I find song`);
-            recognition.stop();
-          }         
-             caseSpeaking(value_search);              
+            if(localStorage.getItem("speaker")!=value_search && value_search){
+                localStorage.setItem("speaker",value_search);
+                let songss = api.find(function (item) {
+                    return item.song.toLowerCase().includes(value_search)
+                })
+                
+              if(songss){ 
+                musicPlayer(api, songss.id);
+                toastMessage("Đã tìm thấy bài hát ");
+                speaking.innerHTML = `<i title="Mở Mic" class="fa-solid fa-microphone-lines-slash "></i>    `;
+                isMicSpeak = true;
+                creatvoidreading(`I find song`);
+                $$("#btn_playing").click();
+                recognition.stop();
+                
+              }         
+                 caseSpeaking(value_search);  
+            }
+                      
         }
     }
 
@@ -537,21 +549,24 @@ function creatvoidreading(text){
     window.speechSynthesis.speak(msg);
 }
 function caseSpeaking(textSpeak){
-console.log(textSpeak);
+    console.log(textSpeak)
     if(textSpeak=="chơi nhạc" || textSpeak=="play" || textSpeak=="phát" || textSpeak.includes("phát nhạc")){
         if($$("audio").paused){
             $$("#btn_playing").click();
         }
-       
-    }else if(textSpeak=="dừng nhạc"|| textSpeak=="stop" || textSpeak=="dừng lại" || textSpeak.includes("stop")){
+    }else if(textSpeak.includes("dừng nhạc")  || textSpeak.includes("dừng lại") || textSpeak.includes("stop")){
         $$("audio").pause();
         stopWave(0,true)
-    }else if(textSpeak=="chuyển bài"  || textSpeak=="chuyển nhạc"  || textSpeak=="next song" || textSpeak.includes("tiếp theo")){
+    }else if(textSpeak.includes("chuyển bài")  || textSpeak.includes("chuyển nhạc")  || textSpeak.includes("next song") || textSpeak.includes("tiếp theo")){
         $$(".nextSong").click();   
-    }else if(textSpeak=="back song" || textSpeak=="trở về"){
+    }else if(textSpeak.includes("back song") || textSpeak.includes("trở về")){
         $$(".preSong").click();     
-    }else if(textSpeak=="tắt mic"){
+    }else if(textSpeak.includes("mic") || textSpeak.includes("hỗ trợ")){
         $$("#speaking").click();
+    }else if(textSpeak.includes("phát ngẫu nhiên") || textSpeak.includes("random")){
+        $$(".btn_random").click();    
+    }else if(textSpeak.includes("phát lại") || textSpeak.includes("lặp lại")){
+        $$(".btn_repeat").click();
     }
  
 }
