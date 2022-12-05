@@ -170,9 +170,11 @@ form .title-box {
     border-radius: 48px;
     cursor: pointer;
 }
+
 .oder-login .btn-order-log .content{
     min-width: 200px;
 }
+
 .oder-login .btn-order-log i{
     min-width: 20px;
     font-size: 18px;
