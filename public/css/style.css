@@ -13,6 +13,7 @@
   --bg--container: #251B18;
   --text-hover: #f55858;
   --text-normal: #fff;
+  --hover-box-menu: #393939;
 }
 
 .row {
@@ -86,10 +87,11 @@ a.active {
 menu {
   background-color: var(--bg--menu);
   color: var(--textcolor-white);
-  width: 250px;
+  width: 225px;
   -webkit-transition: 0.9s;
   transition: 0.9s;
   padding-left: 12px;
+  padding-right: 12px;
   border-right: 2px solid var(--bg--menu);
   height: 89vh;
 }
@@ -107,16 +109,18 @@ menu .menu--brand .logo {
 
 menu nav {
   position: relative;
+  padding-left: 5px;
 }
 
 menu nav .nav--header {
   font-weight: 700;
   margin-bottom: 12px;
+  padding: 8px 10px;
 }
 
 menu nav ul {
   list-style: none;
-  margin: 0 12px;
+  /* margin: 0 12px; */
   padding: 0;
 }
 
@@ -136,7 +140,12 @@ menu nav ul li i {
 
 menu nav ul li a {
   display: block;
-  padding: 8px 12px;
+  padding: 8px 10px;
+}
+
+menu nav ul li:hover {
+  border-radius: 8px;
+  background-color: var(--hover-box-menu);
 }
 
 menu nav ul li:hover a {
@@ -191,6 +200,7 @@ main {
           flex: 1;
   color: var(--textcolor-white);
   padding-bottom: 100px;
+  padding-left: 20px;
   margin-top: 24px;
 }
 
@@ -1515,6 +1525,7 @@ article {
   }
   body main {
     width: 100%;
+    padding-left: 0;
   }
   .playlists .playlist--box__item .playlist__singer .playlist__singer-song {
     width: 60px !important;
