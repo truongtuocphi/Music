@@ -1525,7 +1525,7 @@ article {
   }
   body main {
     width: 100%;
-    padding-left: 0;
+    padding-left: 0px;
   }
   .playlists .playlist--box__item .playlist__singer .playlist__singer-song {
     width: 60px !important;

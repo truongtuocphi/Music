@@ -244,10 +244,12 @@ function toastMessage(message, time = 3000) {
       
     }, time)
 }
+
 // closeElement
 function closeElement(boxElement, classHide) {
     $$(boxElement).classList.add(classHide);
 }
+
 function menu() {
     let list__btn_submenu = $$l(".btn_submenu");
     list__btn_submenu.forEach(menuhead => {
@@ -540,14 +542,14 @@ function openSpeaking() {
                       
         }
     }
-
-  
 }
+
 function creatvoidreading(text){
     var msg = new SpeechSynthesisUtterance();
     msg.text = text;
     window.speechSynthesis.speak(msg);
 }
+
 function caseSpeaking(textSpeak){
     console.log(textSpeak)
     if(textSpeak=="chơi nhạc" || textSpeak=="play" || textSpeak=="phát" || textSpeak.includes("phát nhạc")){
@@ -568,7 +570,6 @@ function caseSpeaking(textSpeak){
     }else if(textSpeak.includes("phát lại") || textSpeak.includes("lặp lại")){
         $$(".btn_repeat").click();
     }
- 
 }
 
 
