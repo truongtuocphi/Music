@@ -102,7 +102,6 @@ const apiList = [
         avata: "/public/image/eric.jpg",
         birthday: "12/04/2022",
     },
-
 ]
 const binhluan = [
     {
